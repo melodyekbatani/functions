@@ -16,11 +16,11 @@ let output = () => {
     results.innerHTML = '<h2>Your Girl Dinner</h2>'
 
     document.querySelectorAll('select').forEach(select => {
-        results.innerHTML += `<li>${select.value}</li>`
-    
+        results.innerHTML += `<li>${select.value}</li>` // Reviewed this with tutor += is the addition assignment operator which performs addition on the two operands and assigns the result.
 })
 }
-// I was struggling to get the event listener to be clicked by the user, I used ChatGPT to help trouble shoot this. This issue is that the event listener is appears before the second set of brackets. Needs to go after the output let function is closed https://chatgpt.com/share/69cd5fe1-65c0-832c-9846-165c9b75ddf0
+
+// I was struggling to get the event listener to be clicked by the user, I used ChatGPT to help trouble shoot this. This issue is that the event listener is appears before the second set of brackets. Needs to go after the output let function is closed, also side note, noticing how many ; llms use which I dont think is correct https://chatgpt.com/share/69cd5fe1-65c0-832c-9846-165c9b75ddf0
 
     document.querySelector('button').addEventListener('click', output)
 
