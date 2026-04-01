@@ -1,38 +1,21 @@
 // Function to render your items.
+// I started by customizing the Json file from Erics lecture then reviewed this with the tutor. Rather then calling each part of the JSON I want each of the categories to function as a drop down at first- I'm setting up the dropdown menu then calling each child. 
 let renderItems = (data) => {
-	// The `ul` where the items will be inserted.
-	let dataList = document.getElementById('data-list')
+    data.forEach((item) => {
+        let dropdown = document.getElementById(item.Category)
 
-	// Loop through each item in the data array:
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-	data.forEach((item) => {
-		let conditionalClass = '' // Set an empty class variable.
+        if (dropdown) {
+            let option = document.createElement ('option')
+            option.textContent =item.Name
+            dropdown.appendChild(option)
+    }
+})
+    // looping through each item from the data.json 
 
-		// Conditional if this is `false` (“not true”):
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
-		if (!item.alsoWrote) {
-			conditionalClass = 'faded' // Update the variable.
-		}
+    }
+// Adding drop downs - using this https://www.w3schools.com/howto/howto_js_dropdown.asp https://medium.com/@kyleducharme/developing-custom-dropdowns-with-vanilla-js-css-in-under-5-minutes-e94a953cee75
 
-		// Make a “template literal” as we have before, inserting your data (and maybe the class):
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-		let listItem =
-			`
-				<li class="${conditionalClass}">
-					<h2>${item.Name}</h2>
-					<p>Released in <time>${item.Category}</time></p>
-                    <img src="${item.Image}">
-					<p><em>${item.Personality}</em></p>
-					<a href="${item.Linktoitem}">
-					</a>
-				</li>
-			`
 
-		dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
-
-		// Don’t feel limited to `ul > li` for these—you can insert any DOM, anywhere!
-	})
-}
 
 // Fetch gets your (local) JSON file…
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
