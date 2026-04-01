@@ -1,0 +1,107 @@
+[
+  {
+    "Name": "Pinks & Whites Cookies",
+    "Category": "Sweet",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21002/56959.png/jcr:content/renditions/webp-1280.webp",
+    "Personality": "Sweet, Nostalgic, Cheerful",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/pinks-whites-cookies-056959"
+  },
+  {
+    "Name": "Garlic Butter Nut Mix",
+    "Category": "Crunchy",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21003/83372.png/jcr:content/renditions/webp-1280.webp",
+    "Personality": "Nutty, Semisweet",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/garlic-butter-nut-mix-083372"
+  },
+  {
+    "Name": "Organic Roasted Seaweed with Sea Salt",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21004/65319.png/jcr:content/renditions/webp-640.webp",
+    "Personality": "Oceanic, Salty, Minimalist, Briny",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/organic-roasted-seaweed-with-sea-salt-062405"
+  },
+  {
+    "Name": "Spicy Cheese Crunchies",
+    "Category": "Crunchy",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83669-spicy-cheese-crunchies-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Fiery, Cheesy, Bold",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/spicy-cheese-crunchies-083669"
+  },
+  {
+    "Name": "Just Mango Slices",
+    "Category": "Fresh",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/94329-just-mango-slices-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Sunny, Fruity, Sweet",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/just-mango-slices-094329"
+  },
+  {
+    "Name": "Ranch Flavored Rolled Corn Tortilla Chips",
+    "Category": "Chrunchy",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83292-ranch-rolled-tortilla-chips-pdp.jpg/jcr:content/renditions/webp-1280.webp",
+    "Personality": "Bold, Rowdy, Charismatic",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/ranch-flavored-rolled-corn-tortilla-chips-083292"
+  },
+  {
+    "Name": "Olive Tapenade Hummus",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20404/79901.png/jcr:content/renditions/webp-640.webp",
+    "Personality": "Smooth, Earthy, Salty",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/olive-tapenade-hummus-079901"
+  },
+  {
+    "Name": "Salted Caramel Mochi",
+    "Category": "Sweet",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20604/83237.png/jcr:content/renditions/webp-640.webp",
+    "Personality": "Soft, Indulgent, Delightful",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/salted-caramel-mochi-083237"
+  },
+  {
+    "Name": "Garlic & Cheese Bread Sticks",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/06640-garlic-cheese-bread-sticks-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Soft, Rustic, Cheesy",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/garlic-cheese-bread-sticks-006640"
+  },
+  {
+    "Name": "Parmesan Cheese",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/09369-parmesan-domestic-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Nutty, Slightly Fruity, Rich, Cheesy",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/parmesan-cheese-009369"
+  },
+  {
+    "Name": "Hot Honey Goat Milk Cheese",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83506-hot-honey-goat-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Tangy, Bold, Cultured",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/hot-honey-goat-milk-cheese-083506"
+  },
+  {
+    "Name": "Double Cream Brie",
+    "Category": "Savory",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/79003-dbl-cream-brie-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Buttery, Cultured, Velvety",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/double-cream-brie-074953"
+  },
+  {
+    "Name": "Mango Pineapple Pico de Gallo Salsa",
+    "Category": "Fresh",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20403/82077.png/jcr:content/renditions/webp-640.webp",
+    "Personality": "Fiesty, Playful, Juicy",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/mango-pineapple-pico-de-gallo-salsa-082077"
+  },
+  {
+    "Name": "Organic Chunky Homestyle Guacamole",
+    "Category": "Fresh",
+    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/71498-organic-chunky-homestyle-guacamole-pdp.jpg/jcr:content/renditions/webp-640.webp",
+    "Personality": "Chuncky, Zesty, Fresh",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/organic-chunky-homestyle-guacamole-071498"
+  },
+  {
+    "Name": "Soft Bite Mini Almond Biscotti",
+    "Category": "Sweet",
+    "Image": "https://www.traderjoes.com/home/products/pdp/soft-bite-mini-almond-biscotti-096743",
+    "Personality": "Velvety, Chrunchy, Warm",
+    "Link to item": "https://www.traderjoes.com/home/products/pdp/soft-bite-mini-almond-biscotti-096743"
+  }
+]
