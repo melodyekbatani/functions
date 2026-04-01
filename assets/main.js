@@ -1,5 +1,5 @@
 // Function to render your items.
-// I started by customizing the Json file from Eric's lecture then reviewed this with the tutor. Rather then calling each part of the JSON I want each of the categories to function as a drop down at first- I'm setting up the dropdown menu then calling each child. 
+// I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
 let renderItems = (data) => {
 	data.forEach((item) => {
 		let dropdown = document.getElementById(item.Category)
