@@ -14,6 +14,7 @@ let renderItems = (data) => {
 		}
 	})
 }
+// Here I'm defining the output
 let output = () => {
 	let results = document.querySelector('.output')
 	results.innerHTML = `<h1>Your Girl Dinner</h1>`
@@ -22,12 +23,12 @@ let output = () => {
 		let selected = select.querySelector('option:checked') //https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:checked used this to figure out the selected drop down menu js. It is finding the currently selected object from the drop down and store it as selected
 		results.innerHTML += ` 
 		<li>
-			<h2>${select.value}</h2>
+			<h2>${selected.value}</h2> 
 			<img src="${selected.dataset.image}"></img>
 			<p><em>${selected.dataset.personality}</em></p>
 		</li>
 		`
-// Reviewed this with tutor += is the addition assignment operator which performs addition on the two operands and assigns the result.
+// Reviewed this with tutor += is the addition assignment operator which performs addition on the two operands and assigns the result. We went over the selected is a class I created then its calling using the project 4 lectures, I added the dataset - personality/image
 	})
 }
 // I was struggling to get the event listener to be clicked by the user, I used ChatGPT to help troubleshoot this. The issue was that the event listener was placed before the the second set of brackets. Needs to go after the output let function is closed https://chatgpt.com/share/69cd5fe1-65c0-832c-9846-165c9b75ddf0
