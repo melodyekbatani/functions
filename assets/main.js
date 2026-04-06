@@ -10,7 +10,7 @@ let renderItems = (data) => {
 			option.dataset.image = item.Image
 			option.dataset.personality = item.Personality
 			// Note - from Working with data section from Project 4 lectures
-			dropdown.appendChild(option) // Went through this article to review this to figure out the step by step for the dropdown https://medium.com/@ashleyburnett081/creating-a-dropdown-menu-with-javascript-3e739a652320
+			dropdown.appendChild(option) // Wondering if theres a better way to do this. Went through this article to review this to figure out the step by step for the dropdown https://medium.com/@ashleyburnett081/creating-a-dropdown-menu-with-javascript-3e739a652320
 		}
 	})
 }

@@ -1,107 +1,476 @@
- [
+[
   {
-    "Name": "Pinks & Whites Cookies",
+    "Name": "Bagel",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/19/99/a2/1999a294a3c14562365671521292295a.jpg",
+    "Personality": "Classic"
+  },
+  {
+    "Name": "Toast",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/0e/df/01/0edf01b50223544e6ffb4b40d4874869.jpg",
+    "Personality": "Basic"
+  },
+  {
+    "Name": "Crackers",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/f1/ff/c3/f1ffc3bf2356bdb576225887258713af.jpg",
+    "Personality": "Minimalist"
+  },
+  {
+    "Name": "Pita",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/dc/6b/8a/dc6b8ab5e598b27925f5624a7798c6c7.jpg",
+    "Personality": "Chill"
+  },
+  {
+    "Name": "Loaf",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/58/1a/6d/581a6d4ac51090a2c8bc7375379cdd0f.jpg",
+    "Personality": "Comforting"
+  },
+  {
+    "Name": "Tortilla",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/26/6f/eb/266feb91787feb09e626f483cecdb71d.jpg",
+    "Personality": "Flexible"
+  },
+  {
+    "Name": "Rice",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/20/e8/a3/20e8a3831b9ff35bf6d786c751b475e1.jpg",
+    "Personality": "Balanced"
+  },
+  {
+    "Name": "Pasta",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/b1/23/76/b12376ed3d16606c55c81dfc4a1fc322.jpg",
+    "Personality": "Adaptable"
+  },
+  {
+    "Name": "French Fries",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/59/35/be/5935beb683d77f2bfea518d07c0d5967.jpg",
+    "Personality": "Playful"
+  },
+  {
+    "Name": "English Muffin",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/12/db/54/12db54eeb043cec78a57213613ba07c9.jpg",
+    "Personality": "Brunchy"
+  },
+  {
+    "Name": "Crossiant",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/f1/b0/4d/f1b04dfc10c473e46d3c64fca90173b2.jpg",
+    "Personality": "Layered"
+  },
+  {
+    "Name": "Baguette",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/31/1d/5c/311d5cc564a310cf15c007f01df29508.jpg",
+    "Personality": "Cultured"
+  },
+  {
+    "Name": "Leftover Pizza",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/736x/3b/17/2b/3b172bbde5bd5030533b2ae75f14712f.jpg",
+    "Personality": "Chaotic"
+  },
+  {
+    "Name": "Leftover Noodles",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/d3/96/1f/d3961fda1b1f99a2c892b6779793881d.jpg",
+    "Personality": "Improvised"
+  },
+  {
+    "Name": "Leftover Sandwich",
+    "Category": "Base",
+    "Image": "https://i.pinimg.com/1200x/35/af/bd/35afbd9ab4eee964656236058951cf35.jpg",
+    "Personality": "Traditional"
+  },
+  {
+    "Name": "Eggs",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/0d/83/c3/0d83c3bbb3c0af825087e5b728633bd3.jpg",
+    "Personality": "Emotional Stable"
+  },
+  {
+    "Name": "Cheese",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/b7/a9/d0/b7a9d066963e0188ff0a896de7b74e70.jpg",
+    "Personality": "Indulgent"
+  },
+  {
+    "Name": "Hummus",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/c3/75/a2/c375a24d4fdf18d78417a4633695cc3d.jpg",
+    "Personality": "Grounded"
+  },
+  {
+    "Name": "Yogurt",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/07/76/9c/07769cf8e98e65e690adaf12076890b2.jpg",
+    "Personality": "Balanced"
+  },
+  {
+    "Name": "Canned Tuna",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/99/ee/58/99ee5864a0c64001e4f4a7e8c699b41a.jpg",
+    "Personality": "Dependable"
+  },
+  {
+    "Name": "Peanut Butter",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/43/0e/9c/430e9cf3711035b3ff05e8324a1bef56.jpg",
+    "Personality": "Practical"
+  },
+  {
+    "Name": "Smoked Salmon",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/34/bc/e5/34bce5b6aa9ae16405dd09c3e06106cf.jpg",
+    "Personality": "Fancy"
+  },
+  {
+    "Name": "Salami",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/75/03/9c/75039c0bea2489edcc48387d7f640e1e.jpg",
+    "Personality": "Extra"
+  },
+  {
+    "Name": "Prosciutto",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/b0/08/d4/b008d4dd1144c33252e765a9d23223d9.jpg",
+    "Personality": "Dramatic"
+  },
+  {
+    "Name": "Turkey",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/06/73/ab/0673ab99e213a433bc9ce87f84f15f80.jpg",
+    "Personality": "Sensible"
+  },
+  {
+    "Name": "Ham",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/00/9b/ef/009bef47cd071da569d05212c92315c8.jpg",
+    "Personality": "Definitive"
+  },
+  {
+    "Name": "Lentils",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/b7/48/3d/b7483d2f5ba166a6ab00f846d61093a9.jpg",
+    "Personality": "Focused"
+  },
+  {
+    "Name": "Chickpeas",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/af/11/87/af1187fe1dc3d212fb0fe3338c5a3584.jpg",
+    "Personality": "Serious"
+  },
+  {
+    "Name": "Tofu",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/4e/9e/f1/4e9ef18c35bfbe5347f7e4f6e07216f5.jpg",
+    "Personality": "Calm"
+  },
+  {
+    "Name": "Falafel",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/d2/59/95/d25995b3a248ba68bd38402641c4ed6b.jpg",
+    "Personality": "Playful"
+  },
+  {
+    "Name": "Almonds",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/9b/f1/b6/9bf1b639f135691dbb97e33d056b3bcc.jpg",
+    "Personality": "Crunchy"
+  },
+  {
+    "Name": "Chicken",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/9a/2a/22/9a2a22a0d02e4b97da062fe342fb93a4.jpg",
+    "Personality": "Dependable"
+  },
+  {
+    "Name": "Beef",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/ac/cd/3a/accd3a7cc66e7179879a79bb4201ead5.jpg",
+    "Personality": "Hearty"
+  },
+  {
+    "Name": "Canned Sardines",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/1200x/3a/2e/ee/3a2eee4608743ce8d446534f1b02def5.jpg",
+    "Personality": "Eccentric"
+  },
+  {
+    "Name": "Sausage",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/6e/94/c1/6e94c1973b89232fa1504276e1567d39.jpg",
+    "Personality": "Rowdy"
+  },
+  {
+    "Name": "Nuggets",
+    "Category": "Protein",
+    "Image": "https://i.pinimg.com/736x/bf/4a/59/bf4a59325282b23a832fabc39b7609be.jpg",
+    "Personality": "Childish"
+  },
+  {
+    "Name": "Pickles",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/41/c4/48/41c448c70af2661073e064b0d5a6e1b0.jpg",
+    "Personality": "Briny"
+  },
+  {
+    "Name": "Potato Chips",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/7c/e0/70/7ce07056af04a9acdff78e7145808e01.jpg",
+    "Personality": "Impulsivity"
+  },
+  {
+    "Name": "Popcorn",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/e7/4a/18/e74a18921af77cb82b1072f1c102403d.jpg",
+    "Personality": "Unhinged"
+  },
+  {
+    "Name": "Pretzels",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/0c/b7/10/0cb710fbea047f81640cc276c6d24738.jpg",
+    "Personality": "Trustworthy"
+  },
+  {
+    "Name": "Carrot Sticks",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/5f/cc/ad/5fccadc5a5bce104dc0d1921a2583c32.jpg",
+    "Personality": "Convenient"
+  },
+  {
+    "Name": "Cucumber",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/82/58/42/82584207feec644ea3370c2f14840e34.jpg",
+    "Personality": "Refreshing"
+  },
+  {
+    "Name": "Celery",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/ce/b8/ce/ceb8ce262065795ccbfc5a07fce188e8.jpg",
+    "Personality": "Disciplined"
+  },
+  {
+    "Name": "Tortilla Chips",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/4a/ec/3e/4aec3eaf9c63c1d40f51e5462459fb18.jpg",
+    "Personality": "Perfectionist"
+  },
+  {
+    "Name": "Plantain Chips",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/ae/a6/c9/aea6c982cbdfae0830833a46582f3d47.jpg",
+    "Personality": "Sunny"
+  },
+  {
+    "Name": "Wasabi Peas",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/dc/33/8e/dc338e0981db9945071875de8b6dfb15.jpg",
+    "Personality": "Adventurous"
+  },
+  {
+    "Name": "Takis",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/5f/67/34/5f67344bd2d1dae1fc1230ceabadbf0e.jpg",
+    "Personality": "Extraverted"
+  },
+  {
+    "Name": "Hot Cheetos",
+    "Category": "Crunch",
+    "Image": "https://www.gfsstore.com/wp-content/uploads/2022/06/742832-RAW-6-768x768.jpg",
+    "Personality": "Spicy"
+  },
+  {
+    "Name": "Snap Peas",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/1200x/66/26/41/6626418831d10b02d52d9357c26fead5.jpg",
+    "Personality": "Cheerful"
+  },
+  {
+    "Name": "Rice Crackers",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/22/08/3b/22083b2ee7bc0d1618cc662d01331c81.jpg",
+    "Personality": "Polished"
+  },
+  {
+    "Name": "Pickled Veggies",
+    "Category": "Crunch",
+    "Image": "https://blog.unitedsupermarkets.com/hs-fs/hubfs/image-png-Jul-02-2025-06-48-10-0788-PM.png?width=368&height=414&name=image-png-Jul-02-2025-06-48-10-0788-PM.png",
+    "Personality": "Tangy"
+  },
+  {
+    "Name": "Kimchi",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/7f/0d/af/7f0daf0f14f2830ec5b86233a595d9ad.jpg",
+    "Personality": "Fermented"
+  },
+  {
+    "Name": "Bread Sticks",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/04/ed/f7/04edf714d6d64649c5e491bdd98517c2.jpg",
+    "Personality": "Hospitable"
+  },
+  {
+    "Name": "Apple Slices",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/43/ee/22/43ee22a1dff11c6ceb074c165b52509d.jpg",
+    "Personality": "Wholesome"
+  },
+  {
+    "Name": "Dried Seaweed",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/75/b5/47/75b5471c12138439df9cc27c224c38ef.jpg",
+    "Personality": "Open-Minded"
+  },
+  {
+    "Name": "Freeze Dried Fruit",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/f7/e2/ce/f7e2ceafa097e0e27cf4bdf91fe45fdf.jpg",
+    "Personality": "Whimsical"
+  },
+  {
+    "Name": "Lettuce",
+    "Category": "Crunch",
+    "Image": "https://i.pinimg.com/736x/d6/c8/21/d6c821a65ec4d7547ef67788b3d98998.jpg",
+    "Personality": "Fragile"
+  },
+  {
+    "Name": "Granola",
     "Category": "Sweet",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21002/56959.png/jcr:content/renditions/webp-1280.webp",
-    "Personality": "Sweet, Nostalgic, Cheerful",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/pinks-whites-cookies-056959"
+    "Image": "https://i.pinimg.com/736x/96/a4/94/96a4943fc1add7d68f7bceae7abee9f4.jpg",
+    "Personality": "Outdoorsy"
   },
   {
-    "Name": "Garlic Butter Nut Mix",
-    "Category": "Crunchy",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21003/83372.png/jcr:content/renditions/webp-1280.webp",
-    "Personality": "Nutty, Semisweet",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/garlic-butter-nut-mix-083372"
-  },
-  {
-    "Name": "Organic Roasted Seaweed with Sea Salt",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m21004/65319.png/jcr:content/renditions/webp-640.webp",
-    "Personality": "Oceanic, Salty, Minimalist, Briny",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/organic-roasted-seaweed-with-sea-salt-062405"
-  },
-  {
-    "Name": "Spicy Cheese Crunchies",
-    "Category": "Crunchy",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83669-spicy-cheese-crunchies-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Fiery, Cheesy, Bold",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/spicy-cheese-crunchies-083669"
-  },
-  {
-    "Name": "Just Mango Slices",
-    "Category": "Fresh",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/94329-just-mango-slices-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Sunny, Fruity, Sweet",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/just-mango-slices-094329"
-  },
-  {
-    "Name": "Ranch Flavored Rolled Corn Tortilla Chips",
-    "Category": "Crunchy",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83292-ranch-rolled-tortilla-chips-pdp.jpg/jcr:content/renditions/webp-1280.webp",
-    "Personality": "Bold, Rowdy, Charismatic",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/ranch-flavored-rolled-corn-tortilla-chips-083292"
-  },
-  {
-    "Name": "Olive Tapenade Hummus",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20404/79901.png/jcr:content/renditions/webp-640.webp",
-    "Personality": "Smooth, Earthy, Salty",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/olive-tapenade-hummus-079901"
-  },
-  {
-    "Name": "Salted Caramel Mochi",
+    "Name": "Candy",
     "Category": "Sweet",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20604/83237.png/jcr:content/renditions/webp-640.webp",
-    "Personality": "Soft, Indulgent, Delightful",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/salted-caramel-mochi-083237"
+    "Image": "https://i.pinimg.com/736x/3c/4f/d4/3c4fd4c5c6e4613baba27689f698a11a.jpg",
+    "Personality": "Retro"
   },
   {
-    "Name": "Garlic & Cheese Bread Sticks",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/06640-garlic-cheese-bread-sticks-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Soft, Rustic, Cheesy",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/garlic-cheese-bread-sticks-006640"
-  },
-  {
-    "Name": "Parmesan Cheese",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/09369-parmesan-domestic-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Nutty, Slightly Fruity, Rich, Cheesy",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/parmesan-cheese-009369"
-  },
-  {
-    "Name": "Hot Honey Goat Milk Cheese",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/83506-hot-honey-goat-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Tangy, Bold, Cultured",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/hot-honey-goat-milk-cheese-083506"
-  },
-  {
-    "Name": "Double Cream Brie",
-    "Category": "Savory",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/79003-dbl-cream-brie-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Buttery, Cultured, Velvety",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/double-cream-brie-074953"
-  },
-  {
-    "Name": "Mango Pineapple Pico de Gallo Salsa",
-    "Category": "Fresh",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/products/m20403/82077.png/jcr:content/renditions/webp-640.webp",
-    "Personality": "Fiesty, Playful, Juicy",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/mango-pineapple-pico-de-gallo-salsa-082077"
-  },
-  {
-    "Name": "Organic Chunky Homestyle Guacamole",
-    "Category": "Fresh",
-    "Image": "https://www.traderjoes.com/content/dam/trjo/context-images/71498-organic-chunky-homestyle-guacamole-pdp.jpg/jcr:content/renditions/webp-640.webp",
-    "Personality": "Chuncky, Zesty, Fresh",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/organic-chunky-homestyle-guacamole-071498"
-  },
-  {
-    "Name": "Soft Bite Mini Almond Biscotti",
+    "Name": "Brownie",
     "Category": "Sweet",
-    "Image": "https://www.traderjoes.com/home/products/pdp/soft-bite-mini-almond-biscotti-096743",
-    "Personality": "Velvety, Crunchy, Warm",
-    "Link to item": "https://www.traderjoes.com/home/products/pdp/soft-bite-mini-almond-biscotti-096743"
+    "Image": "https://i.pinimg.com/736x/f3/da/7f/f3da7f7ae070d728c8be15bd993c6521.jpg",
+    "Personality": "Comfort-seeking"
+  },
+  {
+    "Name": "Cupcake",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/1b/c5/29/1bc529a0b30f56e32bf6251949026a2a.jpg",
+    "Personality": "Agreeable"
+  },
+  {
+    "Name": "Nutella",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/1200x/bd/23/8e/bd238edb3b32ad3308be8b2c237d57f6.jpg",
+    "Personality": "Popular"
+  },
+  {
+    "Name": "Jam",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/49/68/5f/49685f11658337b16b6e2e19d3d08c0a.jpg",
+    "Personality": "Energetic"
+  },
+  {
+    "Name": "Peanut Butter Cups",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/1200x/ec/9f/5e/ec9f5ea947027988a31c2601619b9253.jpg",
+    "Personality": "Bold"
+  },
+  {
+    "Name": "Sour Gummies",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/b6/ee/71/b6ee71431d876064cd911a7026772b15.jpg",
+    "Personality": "Outgoing"
+  },
+  {
+    "Name": "Berries",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/1200x/92/51/6e/92516ed0429a5fb5e037b98abc22656f.jpg",
+    "Personality": "Sensitive"
+  },
+  {
+    "Name": "Mango",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/57/ef/2d/57ef2db6563da2ea640b35fad521e2ee.jpg",
+    "Personality": "Charismatic"
+  },
+  {
+    "Name": "Banana",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/5c/e1/47/5ce1472f8f90b508b7411d5a230a7a07.jpg",
+    "Personality": "Gentle"
+  },
+  {
+    "Name": "Pineapple",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/28/99/75/289975369171721bca33ecaf8472f82c.jpg",
+    "Personality": "Energetic"
+  },
+  {
+    "Name": "Frozen Fruit",
+    "Category": "Sweet",
+    "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6zhg8TK6FzVmX13vHjgj7CuulrfKFZGSVQ&s",
+    "Personality": "Cool"
+  },
+  {
+    "Name": "Ice Cream",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/20/d4/75/20d47537a56f7d0d2dd5a3e32370a6df.jpg",
+    "Personality": "Youthful"
+  },
+  {
+    "Name": "Chocolate",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/88/d9/ab/88d9aba4ad8064c973905d1996827aa5.jpg",
+    "Personality": "Romantics"
+  },
+  {
+    "Name": "Cinnamon Rolls",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/62/8c/32/628c324fd7c315acee2d3085fb30c821.jpg",
+    "Personality": "Gooey"
+  },
+  {
+    "Name": "Jello",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/ba/a6/bb/baa6bbe1943be09f8e421713d2053e3c.jpg",
+    "Personality": "Smooth"
+  },
+  {
+    "Name": "Chocolate Almonds",
+    "Category": "Sweet",
+    "Image": "https://nutterie.com/cdn/shop/products/Milk_chocolate_almonds_1200x1200.png?v=1745580596",
+    "Personality": "Decadent"
+  },
+  {
+    "Name": "Grapes",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/1200x/ec/75/ed/ec75edd307adbc859c17b22a689bf918.jpg",
+    "Personality": "Juicy"
+  },
+  {
+    "Name": "Cereal",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/65/8a/18/658a18a367f64b03be3a993b6d339650.jpg",
+    "Personality": "Crispy"
+  },
+  {
+    "Name": "Rice Krispie Treat",
+    "Category": "Sweet",
+    "Image": "https://kellogg-h.assetsadobe.com/is/image/content/dam/kelloggs/kna/us/digital-shelf/rice-krispies-treats/00038000280726_C1C0.jpg",
+    "Personality": "Tender"
+  },
+  {
+    "Name": "Cookies",
+    "Category": "Sweet",
+    "Image": "https://i.pinimg.com/736x/dc/a8/0e/dca80ef3e933021920826b299385e834.jpg",
+    "Personality": "Delightful"
   }
 ]
