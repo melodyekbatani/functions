@@ -5,15 +5,18 @@ let renderItems = (data) => {
 	data.forEach((item) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
 		let itemHtml =`
-		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" class='active'>
+		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" class='item'>
 			
 			<h2>${item['Name']}</h2>
 			<img src="${item['Image']}">
 		</li>
 		`
-		// https://chatgpt.com/c/69d48e7e-b5c0-8332-b3b7-0280e0e87c6e
+		// to get the category and vibes together I originally used chat gpt before talking more to my code tutor, not really sure how much of the help from chat I ended up using https://chatgpt.com/c/69d48e7e-b5c0-8332-b3b7-0280e0e87c6e
+
+		// After reviewing with my tutor, he mentioned the next steps to work on was adding an event listener and mentioned claude could help with this here's the chat tread, toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 
 		containerEl.insertAdjacentHTML('beforeend', itemHtml)
+		containerEl.lastElementChild.addEventListener("click", (e) => e.currentTarget.classList.toggle('active'))
 	})
 }
 // Creating function to set up the distribution of selected items 
@@ -36,16 +39,47 @@ let getPercent = (data) => {
 	for (const prop in data) {
 	Percent[prop] = data[prop]/sum
 	}
-	console.log(Percent)
+	let html = ""
+	for (const prop in Percent) {
+		html += `<p>${prop}: ${Percent[prop] * 100 + '%'}</p>`
+	}
+	return html
 }
+// working with claude to implement the output options https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823 
+let getMDC = (Averages) => {
+let mdc = null 
+let highestCount = 0 
+for (const vibe in Averages) {
+	if (Averages[vibe] > highestCount) {
+		highestCount = Averages[vibe]
+		mdc = vibe
+	}
+}
+return mdc 
+}
+const createPlate = document.getElementById ('create-plate')
+	createPlate.addEventListener ('click', () => {
+		let selected = document.getElementsByClassName ('active')
+		let Averages = getAverages(selected)
+		const mdc = getMDC(Averages)
+		const results = getPercent(Averages)
+		document.querySelector('.output').innerHTML = results
+	})
+
+// After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
+
+
+
+
+
 // Introducing hashmaps - set of keys and values, first thing we do - is say have we seen the keys before(vibes - balanced/unhinged) - keep track of the number of items it has seen 
 // const prop(property) in data - iterating through data, props - whatevers in the data 
 //square brackets are used in Percent[prop] to get the actual key value
 
 
 //next steps reviewed with tutor
-//next step - event listener - toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items 
-//representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() 
+//next step - event listener - toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items DONE
+//representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() DONE
 
 //pick one per category - identifies what the most common category is (find most common category mdc nested - first look at all the categories - bases find any bases that are active that equal the mdc, find all protiens,crunch, sweet in mdc)
 //then use JS random function - if there are no sweets in the mdc then just get one randomly from any of them (not nessissarily in the mdc)
