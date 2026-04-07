@@ -5,7 +5,7 @@ let renderItems = (data) => {
 		let containerEl = document.getElementById('data-list')
 		let itemHtml =`
 		<li>
-			<h2>hi</h2>
+			<h2>${item['Name']}</h2>
 		</li>
 		`
 		containerEl.insertAdjacentHTML('beforeend', itemHtml)
