@@ -20,26 +20,32 @@
 		</hgroup>
 	</header>
 <!-- To layout the basic multi-select drop down, I used this organizing structure from W3 School. For each list item, I'm adding a choose item label and the select tag using the id. I googled: creating drop down menus and typed it into my code https://www.w3schools.com/tags/att_select_multiple.asp#:~:text=For%20windows:%20Hold%20down%20the,button%20to%20select%20multiple%20options -->
+<!---------------MAIN--------------------->
 	<main>
 		<section class="Plate">
 			<h2>Create Your Plate</h2>
-			<ul class="Components" id="data-list">
-				<li class="Crunch">
-					<p>Crunch</p>
-					<label for="Crunch">Select a Chrunchy item</label>
-					<select id="Crunch"></select>
-					<img class="image">
-				</li>
-				<li class="Base">
-					<p>Base</p>
-					<label for="Base">Select a Base</label>
-					<select id="Base"></select>
-					<img class="image">
-				</li>
+
+
+				<ul class="Base">
+					<h3>Base</h3>
+					<p>Select a base</p>
+					<li id="Base">
+						<figure>
+						<img class="image">
+						</figure>
+					</li>
+						
+					</ul>
 				<li class="Protein">
 					<p>Protein</p>
 					<label for="Protein">Select a Protein</label>
 					<select id="Protein"></select>
+					<img class="image">
+				</li>
+				<li class="Crunch">
+					<p>Crunch</p>
+					<label for="Crunch">Select a Chrunchy item</label>
+					<select id="Crunch"></select>
 					<img class="image">
 				</li>
 				<li class="Sweet">

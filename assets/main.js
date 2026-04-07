@@ -2,16 +2,10 @@
 // I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
 let renderItems = (data) => {
 	data.forEach((item) => {
-		let dropdown = document.getElementById(item.Category)
-
-		if (dropdown) {
-			let option = document.createElement('option')
-			option.textContent = item.Name // looping through each name item from the data.json
-			option.dataset.image = item.Image
-			option.dataset.personality = item.Personality
-			// Note - from Working with data section from Project 4 lectures
-			dropdown.appendChild(option) // Wondering if theres a better way to do this. Went through this article to review this to figure out the step by step for the dropdown https://medium.com/@ashleyburnett081/creating-a-dropdown-menu-with-javascript-3e739a652320
-		}
+		let dataList = document.getElementById('data-list')
+		<li>
+			</li>
+		
 	})
 }
 // Here I'm defining the output
