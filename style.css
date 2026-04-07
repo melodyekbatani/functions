@@ -1,0 +1,13 @@
+#data-list {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+img{
+    width:5rem;
+}
+li{
+    list-style: none;
+    flex-direction: column;
+}
+}
