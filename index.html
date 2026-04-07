@@ -19,8 +19,10 @@
 			<p>Girl dinner is a term coined by TikTok creator Olivia Maher, a Castleton University graduate, in a video she posted on May 11, 2023. She posted a video showing herself eating a spread of bread, cheese, pickles, grapes, and other snacks and jokingly called it "girl dinner". The idea quickly went viral, with people across social media using the phrase to describe improvised, snack-style meals cobbled together from whatever they have at home. Historically, these kinds of "scraps-plated" dinners have existed long before the term, but giving them a name, both celebrated and made visible a pattern of casual, low-effort dining.</p>
 		</hgroup>
 	</header>
-<!-- To layout the basic multi-select drop down, I used this organizing structure from W3 School. For each list item, I'm adding a choose item label and the select tag using the id. I googled: creating drop down menus and typed it into my code https://www.w3schools.com/tags/att_select_multiple.asp#:~:text=For%20windows:%20Hold%20down%20the,button%20to%20select%20multiple%20options -->
+<!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
+
 <!---------------MAIN--------------------->
+
 	<main>
 		<section class="Plate">
 			<h2>Create Your Plate</h2>
@@ -33,35 +35,23 @@
 					<ul id="base-list"></ul>
 				</li>
 				
-					<li class="Protein">
+				<li class="Protein">
 					<h3>Protein</h3>
 					<p>Select a Protein</p>
-					<ul id="base-list"></ul>
-						<figure>
-						<img class="image">
-						</figure>
+					<ul id="protein-list"></ul>
 					</li>
-				</li>
 
 				<li class="Crunch">
 					<h3>Crunch</h3>
 					<p>Select a Crunch</p>
-					<li id="Crunch">
-						<figure>
-						<img class="image">
-						</figure>
-					</li>
+					<ul id="crunch-list"></ul>
 				</li>
 
 				<li class="Sweet">
 					<h3>Sweet</h3>
 					<p>Select a Sweet</p>
-					<li id="Sweet">
-						<figure>
-						<img class="image">
-						</figure>
+					<ul id="crunch-list"></ul>
 					</li>
-				</li>
 			</ul>
 		</section>
 
