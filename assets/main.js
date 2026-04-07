@@ -4,7 +4,7 @@
 let renderItems = (data) => {
 	data.forEach((item) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
-		let itemHtml =`
+		let itemHtml = `
 		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" class='item'>
 			
 			<h2>${item['Name']}</h2>
@@ -20,24 +20,24 @@ let renderItems = (data) => {
 	})
 }
 // Creating function to set up the distribution of selected items 
-let getAverages =(data) => {
+let getAverages = (data) => {
 	let Averages = {}
 	for (let item of data) {
 		let key = item.dataset.vibes
-		if (key in Averages) {Averages[key] += 1} 
-		else {Averages[key] = 1;}
+		if (key in Averages) { Averages[key] += 1 }
+		else { Averages[key] = 1; }
 	}
 	return Averages
-	
+
 }
 let getPercent = (data) => {
 	let Percent = {}
-	let sum = 0 
+	let sum = 0
 	for (const prop in data) {
-	sum = sum + data[prop]
+		sum = sum + data[prop]
 	}
 	for (const prop in data) {
-	Percent[prop] = data[prop]/sum
+		Percent[prop] = data[prop] / sum
 	}
 	let html = ""
 	for (const prop in Percent) {
@@ -47,29 +47,48 @@ let getPercent = (data) => {
 }
 // working with claude to implement the output options https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823 
 let getMDC = (Averages) => {
-let mdc = null 
-let highestCount = 0 
-for (const vibe in Averages) {
-	if (Averages[vibe] > highestCount) {
-		highestCount = Averages[vibe]
-		mdc = vibe
+	let mdc = null
+	let highestCount = 0
+	for (const vibe in Averages) {
+		if (Averages[vibe] > highestCount) {
+			highestCount = Averages[vibe]
+			mdc = vibe
+		}
 	}
+	return mdc
 }
-return mdc 
-}
-const createPlate = document.getElementById ('create-plate')
-	createPlate.addEventListener ('click', () => {
-		let selected = document.getElementsByClassName ('active')
-		let Averages = getAverages(selected)
-		const mdc = getMDC(Averages)
-		const results = getPercent(Averages)
-		document.querySelector('.output').innerHTML = results
+const getRandomItem = (arr) =>
+	arr[Math.floor(Math.random() * arr.length)]
+
+const createPlate = document.getElementById('create-plate')
+createPlate.addEventListener('click', () => {
+	let selected = document.getElementsByClassName('active')
+	let Averages = getAverages(selected)
+	const mdc = getMDC(Averages)
+	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
+	// Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
+
+	const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
+	const plate = {}
+	categories.forEach(category => {
+		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
+		plate[category] = getRandomItem(filteredItems)
 	})
 
+	let plateHtml = ''
+	for (const category in plate) {
+		const item = plate[category]
+		if (item) {
+			const name = item.querySelector('h2').textContent
+			const image = item.querySelector('img').src
+			plateHtml += `<p>${category}: ${name}</p><img src="${image}">`
+		}
+	}
+	const results = getPercent(Averages)
+	document.querySelector('.output').innerHTML = results + plateHtml
+}
+)
 // After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
-
-
-
 
 
 // Introducing hashmaps - set of keys and values, first thing we do - is say have we seen the keys before(vibes - balanced/unhinged) - keep track of the number of items it has seen 
@@ -93,6 +112,6 @@ fetch('assets/data.json')
 		// And passes the data to the function, above!
 		renderItems(data)
 		let selected = document.getElementsByClassName('active')
-	let Averages = getAverages(selected);
-	getPercent(Averages)
+		let Averages = getAverages(selected);
+		getPercent(Averages)
 	})
