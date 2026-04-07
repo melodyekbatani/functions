@@ -11,3 +11,6 @@ li{
     flex-direction: column;
 }
 }
+.active {
+    border: 0.1rem solid black ;
+}

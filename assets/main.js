@@ -20,12 +20,38 @@ let renderItems = (data) => {
 let getAverages =(data) => {
 	let Averages = {}
 	for (let item of data) {
+		let key = item.dataset.vibes
 		if (key in Averages) {Averages[key] += 1} 
-		else {Average[key] = 1;}
+		else {Averages[key] = 1;}
 	}
-// Introducing hashmaps - set of keys and values, first thing we do - is say have we seen the keys before(vibes - balanced/unhinged) - keep track of the number of items it has seen 
+	return Averages
+	
 }
+let getPercent = (data) => {
+	let Percent = {}
+	let sum = 0 
+	for (const prop in data) {
+	sum = sum + data[prop]
+	}
+	for (const prop in data) {
+	Percent[prop] = data[prop]/sum
+	}
+	console.log(Percent)
+}
+// Introducing hashmaps - set of keys and values, first thing we do - is say have we seen the keys before(vibes - balanced/unhinged) - keep track of the number of items it has seen 
+// const prop(property) in data - iterating through data, props - whatevers in the data 
+//square brackets are used in Percent[prop] to get the actual key value
 
+
+//next steps reviewed with tutor
+//next step - event listener - toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items 
+//representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() 
+
+//pick one per category - identifies what the most common category is (find most common category mdc nested - first look at all the categories - bases find any bases that are active that equal the mdc, find all protiens,crunch, sweet in mdc)
+//then use JS random function - if there are no sweets in the mdc then just get one randomly from any of them (not nessissarily in the mdc)
+//if the user picks no crunch - drop down to 3 instead of 4 or pick one from none selected "go to the store" maybe not nessissary right now 
+
+//putting together the plate - find mdc - for loop whatever category is the biggest in the list is the category we care about - assuming we've done the html for all the active things then sort through all these then pick randomly from the category - compare many categories at the same time, I have the mdc and then base,protein ect. get the collection of items that are selected. they'll have the data attribute of the html of the category and the vibe - gets rid of all items that aren't in the mdc, data processing the easiest way - might be hard - but set up data into sub arrays and select a random one for each of those (ask for some help)
 
 fetch('assets/data.json')
 	.then(response => response.json())
@@ -33,5 +59,6 @@ fetch('assets/data.json')
 		// And passes the data to the function, above!
 		renderItems(data)
 		let selected = document.getElementsByClassName('active')
-	getAverages(selected);
+	let Averages = getAverages(selected);
+	getPercent(Averages)
 	})
