@@ -2,38 +2,15 @@
 // I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
 let renderItems = (data) => {
 	data.forEach((item) => {
-		let dataList = document.getElementById('data-list')
+		let containerEl = document.getElementById('data-list')
+		let itemHtml =`
 		<li>
-			</li>
-		
-	})
-}
-// Here I'm defining the output
-let output = () => {
-	let results = document.querySelector('.output')
-	results.innerHTML = `<h1>Your Girl Dinner</h1>`
-
-	document.querySelectorAll('select').forEach(select => {
-		let selected = select.querySelector('option:checked') //https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:checked used this to figure out the selected drop down menu js. It is finding the currently selected object from the drop down and store it as selected
-		results.innerHTML += ` 
-		<li>
-			<h2>${selected.value}</h2> 
-			<img src="${selected.dataset.image}"></img>
-			<p><em>${selected.dataset.personality}</em></p>
+			<h2>hi</h2>
 		</li>
 		`
-// Reviewed this with tutor += is the addition assignment operator which performs addition on the two operands and assigns the result. We went over the selected is a class I created then its calling using the project 4 lectures, I added the dataset - personality/image
+		containerEl.insertAdjacentHTML('beforeend', itemHtml)
 	})
 }
-// I was struggling to get the event listener to be clicked by the user, I used ChatGPT to help troubleshoot this. The issue was that the event listener was placed before the the second set of brackets. Needs to go after the output let function is closed https://chatgpt.com/share/69cd5fe1-65c0-832c-9846-165c9b75ddf0
-
-document.querySelector('button').addEventListener('click', output)
-
-// Adding drop downs - using this https://www.w3schools.com/howto/howto_js_dropdown.asp https://medium.com/@kyleducharme/developing-custom-dropdowns-with-vanilla-js-css-in-under-5-minutes-e94a953cee75
-
-
-// Fetch gets your (local) JSON file…
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 fetch('assets/data.json')
 	.then(response => response.json())
 	.then(data => {
