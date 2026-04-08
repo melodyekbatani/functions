@@ -8,18 +8,17 @@
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "funkydori", sans-serif;
 	--font-size-sm: 1rem; 
-	--font-size-md: 3rem; 
+	--font-size-md: 1.5rem; 
 	--font-size-lg: 5rem;
 	--font-size-lx: 10rem;
 
 /* Layout */
 	--space-sm: 0.5rem;
 	--space-md: 3rem;
-	--space-lg: 8rem;
+	--space-lg: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
 
-		overflow-x: hidden;
 
 }
 
@@ -40,17 +39,24 @@ body {
 	}
 }
 button {
-border: 0.1rem solid blue;
+border: 0.1rem solid var(--color-border);
+border-radius: 2rem;
+padding: var(--space-sm);
+background-color: var(--color-subtle);
 }
+
 	header {
 		display: flex;
 		flex-direction: row;
 		gap: var(--space-sm);
 		justify-content: center; 
+		padding-block-start: var(--space-md);
+
 	h1 {
 	   font-family: var(--font-header); 
-	   font-size: var(--font-size-md);
+	   font-size: var(--font-size-lg);
 	   text-align: center;
+	   line-height: 100%;
 }
 	}
 
@@ -64,7 +70,11 @@ border: 0.1rem solid blue;
 	margin: 0; 
 	align-items: left;
 
-
+.category-title {
+	h3 {
+		font-size: var(--font-size-md);
+	}
+}
 
 > li{
 	display: flex;

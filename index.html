@@ -22,7 +22,7 @@
 	<header>
 		<hgroup>
 			<h1>What's in your fridge?</h1>
-			<p>Select all the items you have in your fridge, and we'll tell you the best snack plate combo</p>
+			<p>Select all the items you have in your fridge, and we'll tell you the girl dinner combo</p>
 		</hgroup>
 	</header>
 <!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
@@ -30,37 +30,45 @@
 <!---------------MAIN--------------------->
 
 	<main>
-		<button id="reset-button">clear</button>
 
 		<section class="Plate">
 			<ul id="data-list">
 
 				<li class="Base">
+					<div class="category-title">
 					<h3>Base</h3>
 					<p>Select a base</p>
+					</div>
 					<ul id="base-list"></ul>
 				</li>
 				
 				<li class="Protein">
+					<div class="category-title">
 					<h3>Protein</h3>
 					<p>Select a Protein</p>
+					</div>
 					<ul id="protein-list"></ul>
 					</li>
 
 				<li class="Crunch">
+					<div class="category-title">
 					<h3>Crunch</h3>
 					<p>Select a Crunch</p>
+					</div>
 					<ul id="crunch-list"></ul>
 				</li>
 
 				<li class="Sweet">
+					<div class="category-title">
 					<h3>Sweet</h3>
 					<p>Select a Sweet</p>
+					</div>
 					<ul id="sweet-list"></ul>
 					</li>
 			</ul>
 		</section>
-
+	
+		<button id="reset-button">clear</button>
 		<button id="create-plate">Create plate</button>
 		<button id="share-button">share</button>
 		<section class="output">
