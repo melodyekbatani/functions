@@ -88,6 +88,42 @@ createPlate.addEventListener('click', () => {
 	document.querySelector('.output').innerHTML = results + plateHtml
 }
 )
+document.getElementById('reset-button').addEventListener ('click',() => {
+	document.querySelectorAll('.item.active').forEach (item => {
+		item.classList.remove('active')
+	})
+	document.querySelector ('.output').innerHTML = ''
+})
+
+
+
+
+const output1 = document.getElementById("output1");
+
+// Worked on this with my code tutor, and used https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share as a starting point
+document.getElementById("share").addEventListener("click", async () => {
+
+	for (const category in currentPlate)
+		const item = currentPlate[]
+  if (navigator.canShare({ files })) {
+    try {
+      await navigator.share({
+        files,
+        title: "Images",
+        text: "Beautiful images",
+      });
+      output1.textContent = "Shared!";
+    } catch (error) {
+      output1.textContent = `Error: ${error.message}`;
+    }
+  } else {
+    output1.textContent = `Your system doesn't support sharing these files.`;
+  }
+});
+
+
+
+
 // After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 
 
