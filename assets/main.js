@@ -1,5 +1,6 @@
 // Function to render your items.
 // I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
+let currentPlate ={}
 
 let renderItems = (data) => {
 	data.forEach((item) => {
@@ -73,6 +74,8 @@ createPlate.addEventListener('click', () => {
 	categories.forEach(category => {
 		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
 		plate[category] = getRandomItem(filteredItems)
+	
+	currentPlate = plate
 	})
 
 	let plateHtml = ''
@@ -100,6 +103,28 @@ document.getElementById('reset-button').addEventListener ('click',() => {
 
 const output1 = document.getElementById("output1");
 
+// Worked on this with my code tutor, and used https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share as a starting point, it currently works on mobile but I need to figure out a desktop version
+document.getElementById("share-button").addEventListener("click", async () => {
+	let shareText = "Check out my plate:\n"
+
+	for (const category in currentPlate) {
+		const item = currentPlate[category]
+  		if (item) {
+			const name = item.querySelector('h2').textContent
+			shareText += `${category}: ${name}\n`
+  		}
+	}
+
+    try {
+      await navigator.share({
+        title: "My Plate",
+        text: shareText
+      });
+
+    } catch (error) {
+      console.log('Share failed:', error)
+    }
+})
 
 
 
