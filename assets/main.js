@@ -7,9 +7,9 @@ let renderItems = (data) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
 		let itemHtml = `
 		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" class='item'>
-			
-			<h2>${item['Name']}</h2>
 			<img src="${item['Image']}">
+			<h2>${item['Name']}</h2>
+			
 		</li>
 		`
 		// to get the category and vibes together I originally used chat gpt before talking more to my code tutor, not really sure how much of the help from chat I ended up using https://chatgpt.com/c/69d48e7e-b5c0-8332-b3b7-0280e0e87c6e

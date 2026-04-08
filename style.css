@@ -14,7 +14,7 @@
 
 /* Layout */
 	--space-sm: 0.5rem;
-	--space-md: 2rem;
+	--space-md: 3rem;
 	--space-lg: 8rem;
 	--max-width: 56rem;
 	--radius: 1rem;
@@ -39,41 +39,60 @@ body {
 		kerning: 100%;
 	}
 }
-
+button {
+border: 0.1rem solid blue;
+}
 	header {
 		display: flex;
 		flex-direction: row;
 		gap: var(--space-sm);
-		 justify-content: center; 
+		justify-content: center; 
 	h1 {
 	   font-family: var(--font-header); 
 	   font-size: var(--font-size-md);
 	   text-align: center;
 }
-
 	}
+
+
 #data-list {
 	display:flex;
 	flex-direction: row;
 	justify-content: space-between;
 	list-style: none;
+	padding: 0;
+	margin: 0; 
+	align-items: left;
+
+
 
 > li{
 	display: flex;
 	flex: 1; 
 	list-style: none;
-	flex-direction: row;
+	flex-direction: column;
+	gap: var(--space-md);
+
 > ul {
 	display: flex;
 	flex-direction: column; 
 	list-style: none; 
+	padding: 0;
+	margin: 0; 
+	gap: var(--space-md);
 
 > li {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	
 	img{
-	width:3rem;
+	width: var(--space-md);
+
+}
+h2 {
+	color: var(--color-text);
+	font-size: var(--font-size-sm);
 }
 }
 }
