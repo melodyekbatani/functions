@@ -156,3 +156,29 @@ fetch('assets/data.json')
 		let Averages = getAverages(selected);
 		getPercent(Averages)
 	})
+
+const modals = document.querySelectorAll('.modal');
+const nextButton = document.querySelector('.next-button');
+const backButton = document.querySelector('.back-button');
+
+let currentModal = 0; 
+function switchModals(index){modals.forEach((modal,i)=>{ 
+modal.classList.toggle('current',index===i);
+
+
+
+
+ })
+let buttonName=modals[index].getAttribute('data-button-name');
+nextButton.innerHTML= buttonName==null ?"next":buttonName;
+}
+
+
+nextButton.addEventListener('click',()=>{if (currentModal < modals.length-1) {
+currentModal++;
+switchModals(currentModal)
+}})
+backButton.addEventListener('click',()=>{if (currentModal > 0) {
+currentModal--;
+switchModals(currentModal)
+}})
