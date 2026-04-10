@@ -1,12 +1,13 @@
 :root {
-	--color-background: white; 
-	--color-border: magenta;
-	--color-text: rgb(0, 0, 0);
-	--color-subtle: rgb(255, 168, 255); 
+	--color-main: #f690ae; 
+	--color-border: #98C6FE; 
+	--color-text: #D54E33;
+	--color-buttons: #FFEB6D; 
+	--color-cards:#FFF9EC; 
 
 /* Typography */
 	--font-body: 'Public Sans', sans-serif;
-	--font-header: "funkydori", sans-serif;
+	--font-header: "RL Horizon", serif;
 	--font-size-sm: 1rem; 
 	--font-size-md: 1.5rem; 
 	--font-size-lg: 5rem;
@@ -39,17 +40,22 @@ body {
 	}
 }
 button {
-border: 0.1rem solid var(--color-border);
 border-radius: 2rem;
 padding: var(--space-sm);
-background-color: var(--color-background);
+background-color: var(--color-buttons);
 }
 .modal {
 	display:none; 
-	flex: 1; 
-	list-style: none;
 	flex-direction: column;
+	list-style: none;
 	gap: var(--space-md);
+
+.category-title { 
+	font-family: var(--font-header);
+	display: flex; 
+	flex-direction: column;
+	gap: var(--space-sm); 
+}
 
 }
 .modal.current {
@@ -71,11 +77,13 @@ background-color: var(--color-background);
 }
 	}
 
+/* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 
 #data-list {
 	display:flex;
-	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+	height: 100vh; 
+	background-color: var(--color-background);
 	list-style: none;
 	padding: 0;
 	margin: 0; 

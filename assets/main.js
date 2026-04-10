@@ -170,7 +170,7 @@ modal.classList.toggle('current',index===i);
 
  })
 let buttonName=modals[index].getAttribute('data-button-name');
-nextButton.innerHTML= buttonName==null ?"next":buttonName;
+nextButton.innerHTML= buttonName==null ?"next":buttonName; 
 }
 
 
