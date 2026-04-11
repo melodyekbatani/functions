@@ -52,6 +52,7 @@ background-color: var(--color-buttons);
 	flex-direction: column;
 	list-style: none;
 	gap: var(--space-md);
+	height: 80vh;
 
 .category-title { 
 	font-family: var(--font-header);
@@ -63,6 +64,7 @@ background-color: var(--color-buttons);
 }
 .modal.current {
 	display:flex;
+	height: 80vh;
 }
 
 	header {
