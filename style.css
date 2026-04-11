@@ -9,7 +9,7 @@
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "RL Horizon", serif;
 	--font-size-sm: 1rem; 
-	--font-size-md: 1.5rem; 
+	--font-size-md: 1.25rem; 
 	--font-size-lg: 5rem;
 	--font-size-lx: 10rem;
 
@@ -34,8 +34,10 @@ body {
 	}
 
 	p {
-	line-height: 100%;
-	kerning: 100%;
+	line-height: 130%;
+	kerning: 120%;
+	font-size: var(--font-size-md);
+	font-family: var(--font-body);
 	}
 }
 
@@ -61,16 +63,19 @@ main {
 }
 /* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
 .modal.home {
+	align-items: center;
+	justify-content: center;
 	h3 {
 		font-family: var(--font-header);
 		font-size: var(--font-size-lg);
 		color:var(--color-main); 
 		text-align: center;
-		padding-block-start: 5rem;
 		line-height: 90%;
 	}
 	p {
-		
+		padding-block-start: var(--space-md);
+		text-align: center;
+
 	}
 }
 .modal {
