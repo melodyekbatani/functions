@@ -19,10 +19,11 @@
 	--space-lg: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
-
-
 }
 
+
+
+/* Overall body styling*/
 body {
 	width: 100%;
 	padding: var(--space-sm);
@@ -38,6 +39,14 @@ body {
 		line-height: 100%;
 		kerning: 100%;
 	}
+}
+main { 
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	inline-size: 100%; 
+	max-inline-size: var(--max-width);
+	padding: var(--space-small)
 }
 button {
 border-radius: 2rem;
@@ -67,20 +76,6 @@ background-color: var(--color-buttons);
 	height: 80vh;
 }
 
-	header {
-		display: flex;
-		flex-direction: row;
-		gap: var(--space-sm);
-		justify-content: center; 
-		padding-block-start: var(--space-md);
-
-	h1 {
-	   font-family: var(--font-header); 
-	   font-size: var(--font-size-lg);
-	   text-align: center;
-	   line-height: 100%;
-}
-	}
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 
