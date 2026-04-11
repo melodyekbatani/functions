@@ -31,15 +31,22 @@ body {
 	color: var(--color-text);
 	font-family: var(--font-body);
 
-		a {
-		text-decoration: underline;
+	a {
+	text-decoration: underline;
 	}
 
 	p {
-		line-height: 100%;
-		kerning: 100%;
+	line-height: 100%;
+	kerning: 100%;
 	}
 }
+
+button {
+border-radius: 2rem;
+padding: var(--space-sm);
+background-color: var(--color-buttons);
+}
+
 main { 
 	display: flex; 
 	flex-direction: column;
@@ -48,11 +55,8 @@ main {
 	max-inline-size: var(--max-width);
 	padding: var(--space-small)
 }
-button {
-border-radius: 2rem;
-padding: var(--space-sm);
-background-color: var(--color-buttons);
-}
+
+/* modal styling */
 .modal {
 	padding: var(--space-md);
 	border-radius: var(--radius);
@@ -68,20 +72,22 @@ background-color: var(--color-buttons);
 	display: flex; 
 	flex-direction: column;
 	gap: var(--space-sm); 
-}
 
+	h3{
+		font-size: var(--font-size-md);
+	}
 }
-.modal.current {
+.current {
 	display:flex;
 	height: 80vh;
 }
-
+}
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 
 #data-list {
-	display:flex;
-	justify-content: center;
+	display:grid;
+	grid-template-columns: ;
 	height: 100vh; 
 	background-color: var(--color-background);
 	list-style: none;
