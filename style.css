@@ -21,8 +21,6 @@
 	--radius: 1rem;
 }
 
-
-
 /* Overall body styling*/
 body {
 	width: 100%;
@@ -61,7 +59,20 @@ main {
 	display:flex;
 	flex-direction: column;
 }
-
+/* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
+.modal.home {
+	h3 {
+		font-family: var(--font-header);
+		font-size: var(--font-size-lg);
+		color:var(--color-main); 
+		text-align: center;
+		padding-block-start: 5rem;
+		line-height: 90%;
+	}
+	p {
+		
+	}
+}
 .modal {
 	display:none; 
 	padding: var(--space-md);
@@ -80,12 +91,12 @@ main {
 
 		h3 {
 			font-size: var(--font-size-md);
+			text-align: center;
 		}
 	}
 }
-
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
-
+/* grid works better for this so i can create both rows and columns*/
 #data-list {
 	list-style: none;
 
@@ -94,20 +105,22 @@ main {
 		font-size: var(--font-size-md);
 	}
 }
-/* grid works better for this so i can create both rows and columns*/
 ul {
 	display:grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: var(--space-sm);
+	gap: var(--space-md);
+	margin: -1rem;
 
 	li {
 	align-items: center;
 	
 		img{
 		width: 3rem;
+		mix-blend-mode: multiply;
 		}
 
 		h2 {
+		display: none;
 		color: var(--color-text);
 		font-size: var(--font-size-sm);
 		}
