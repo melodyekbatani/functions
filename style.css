@@ -53,7 +53,7 @@ main {
 	align-items: center;
 	inline-size: 100%; 
 	max-inline-size: var(--max-width);
-	padding: var(--space-small)
+	padding: var(--space-sm)
 }
 
 /* modal styling */
@@ -77,23 +77,15 @@ main {
 		font-size: var(--font-size-md);
 	}
 }
-.current {
-	display:flex;
-	height: 80vh;
 }
+.modal.current {
+	display:flex;
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 
 #data-list {
-	display:grid;
-	grid-template-columns: ;
-	height: 100vh; 
-	background-color: var(--color-background);
 	list-style: none;
-	padding: 0;
-	margin: 0; 
-	align-items: left;
 
 .category-title {
 	h3 {
@@ -101,22 +93,18 @@ main {
 	}
 }
 
-
+/* grid works better for this so i can create both rows and columns*/
 > ul {
-	display: flex;
-	flex-direction: column; 
-	list-style: none; 
-	padding: 0;
-	margin: 0; 
-	gap: var(--space-md);
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-sm);
 
 > li {
-	display: flex;
-	flex-direction: column;
+
 	align-items: center;
 	
 	img{
-	width: var(--space-md);
+	width: 5rem;
 
 }
 h2 {
