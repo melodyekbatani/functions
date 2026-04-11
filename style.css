@@ -15,7 +15,7 @@
 
 /* Layout */
 	--space-sm: 0.5rem;
-	--space-md: 3rem;
+	--space-md: 2rem;
 	--space-lg: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
@@ -50,10 +50,10 @@ button {
 main { 
 	display: flex; 
 	flex-direction: column;
-	align-items: center;
-	inline-size: 100%; 
-	max-inline-size: var(--max-width);
-	padding: var(--space-sm)
+
+	padding: var(--space-sm); 
+	justify-content: center;
+
 }
 
 /* modal styling */
@@ -79,6 +79,7 @@ main {
 	}
 }
 .modal {
+	justify-content: center;
 	display:none; 
 	padding: var(--space-md);
 	border-radius: var(--radius);
@@ -86,7 +87,9 @@ main {
 	background-color: var(--color-cards);
 	list-style: none;
 	gap: var(--space-md);
-	height: 80vh;
+	width: 90%;
+	height: 85vh;
+
 
 	.category-title { 
 		font-family: var(--font-header);
@@ -120,7 +123,8 @@ ul {
 	align-items: center;
 	
 		img{
-		width: 3rem;
+			
+		width: 6rem;
 		mix-blend-mode: multiply;
 		}
 
