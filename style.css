@@ -26,7 +26,7 @@
 body {
 	width: 100%;
 	padding: var(--space-sm);
-	background-color: var(--color-background);
+	background-color: var(--color-main);
 	color: var(--color-text);
 	font-family: var(--font-body);
 
@@ -45,6 +45,9 @@ padding: var(--space-sm);
 background-color: var(--color-buttons);
 }
 .modal {
+	padding: var(--space-md);
+	border-radius: var(--radius);
+	background-color: var(--color-cards);
 	display:none; 
 	flex-direction: column;
 	list-style: none;
