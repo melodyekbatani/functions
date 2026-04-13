@@ -22,13 +22,15 @@
 }
 
 /* Overall body styling*/
+/* asking if I'm able to add my background pattern on top of the color https://claude.ai/share/2377471c-b00f-41b1-a41d-959e301cef03 then used mdn to figure out sizing*/
 body {
 	width: 100%;
 	padding: var(--space-sm);
 	background-color: var(--color-main);
 	color: var(--color-text);
 	font-family: var(--font-body);
-
+	background-image: url("assets/Background.png");
+	background-size: cover;
 	a {
 	text-decoration: underline;
 	}
@@ -137,7 +139,10 @@ ul {
 .active {
 	border: 0.1rem solid black ;
 }
+.navigation { 
+	display: flex;
 
+}
 /* @media (min-width: 768px) {
 	#data-list {
 	display: flex;
