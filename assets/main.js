@@ -126,9 +126,6 @@ document.getElementById("share-button").addEventListener("click", async () => {
     }
 })
 
-
-
-
 // After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 
 
@@ -164,8 +161,6 @@ const backButton = document.querySelector('.back-button');
 let currentModal = 0; 
 function switchModals(index){modals.forEach((modal,i)=>{ 
 modal.classList.toggle('current',index===i);
-
-
 
 
  })

@@ -174,27 +174,6 @@
     "Vibes": "curated"
   },
   {
-    "Name": "Ham",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/00/9b/ef/009bef47cd071da569d05212c92315c8.jpg",
-    "Personality": "Definitive",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Lentils",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/b7/48/3d/b7483d2f5ba166a6ab00f846d61093a9.jpg",
-    "Personality": "Focused",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Chickpeas",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/af/11/87/af1187fe1dc3d212fb0fe3338c5a3584.jpg",
-    "Personality": "Serious",
-    "Vibes": "balanced"
-  },
-  {
     "Name": "Tofu",
     "Category": "Protein",
     "Image": "https://i.pinimg.com/736x/4e/9e/f1/4e9ef18c35bfbe5347f7e4f6e07216f5.jpg",
@@ -230,27 +209,6 @@
     "Vibes": "unhinged"
   },
   {
-    "Name": "Canned Sardines",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/3a/2e/ee/3a2eee4608743ce8d446534f1b02def5.jpg",
-    "Personality": "Eccentric",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Sausage",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/6e/94/c1/6e94c1973b89232fa1504276e1567d39.jpg",
-    "Personality": "Rowdy",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Nuggets",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/bf/4a/59/bf4a59325282b23a832fabc39b7609be.jpg",
-    "Personality": "Childish",
-    "Vibes": "girlcore"
-  },
-  {
     "Name": "Pickles",
     "Category": "Crunch",
     "Image": "https://i.pinimg.com/736x/41/c4/48/41c448c70af2661073e064b0d5a6e1b0.jpg",
@@ -283,13 +241,6 @@
     "Category": "Crunch",
     "Image": "https://i.pinimg.com/736x/5f/cc/ad/5fccadc5a5bce104dc0d1921a2583c32.jpg",
     "Personality": "Convenient",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Cucumber",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/82/58/42/82584207feec644ea3370c2f14840e34.jpg",
-    "Personality": "Refreshing",
     "Vibes": "balanced"
   },
   {
@@ -335,13 +286,6 @@
     "Vibes": "balanced"
   },
   {
-    "Name": "Snap Peas",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/66/26/41/6626418831d10b02d52d9357c26fead5.jpg",
-    "Personality": "Cheerful",
-    "Vibes": "curated"
-  },
-  {
     "Name": "Rice Crackers",
     "Category": "Crunch",
     "Image": "https://i.pinimg.com/736x/22/08/3b/22083b2ee7bc0d1618cc662d01331c81.jpg",
@@ -349,32 +293,11 @@
     "Vibes": "curated"
   },
   {
-    "Name": "Pickled Veggies",
-    "Category": "Crunch",
-    "Image": "https://blog.unitedsupermarkets.com/hs-fs/hubfs/image-png-Jul-02-2025-06-48-10-0788-PM.png?width=368&height=414&name=image-png-Jul-02-2025-06-48-10-0788-PM.png",
-    "Personality": "Tangy",
-    "Vibes": "unhinged"
-  },
-  {
     "Name": "Kimchi",
     "Category": "Crunch",
     "Image": "https://i.pinimg.com/736x/7f/0d/af/7f0daf0f14f2830ec5b86233a595d9ad.jpg",
     "Personality": "Fermented",
     "Vibes": "girlcore"
-  },
-  {
-    "Name": "Bread Sticks",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/04/ed/f7/04edf714d6d64649c5e491bdd98517c2.jpg",
-    "Personality": "Hospitable",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Apple Slices",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/43/ee/22/43ee22a1dff11c6ceb074c165b52509d.jpg",
-    "Personality": "Wholesome",
-    "Vibes": "curated"
   },
   {
     "Name": "Dried Seaweed",
@@ -388,13 +311,6 @@
     "Category": "Crunch",
     "Image": "https://i.pinimg.com/736x/f7/e2/ce/f7e2ceafa097e0e27cf4bdf91fe45fdf.jpg",
     "Personality": "Whimsical",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Lettuce",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/d6/c8/21/d6c821a65ec4d7547ef67788b3d98998.jpg",
-    "Personality": "Fragile",
     "Vibes": "balanced"
   },
   {
@@ -412,25 +328,11 @@
     "Vibes": "unhinged"
   },
   {
-    "Name": "Brownie",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/f3/da/7f/f3da7f7ae070d728c8be15bd993c6521.jpg",
-    "Personality": "Comfort-seeking",
-    "Vibes": "girlcore"
-  },
-  {
     "Name": "Cupcake",
     "Category": "Sweet",
     "Image": "https://i.pinimg.com/736x/1b/c5/29/1bc529a0b30f56e32bf6251949026a2a.jpg",
     "Personality": "Agreeable",
     "Vibes": "girlcore"
-  },
-  {
-    "Name": "Nutella",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/1200x/bd/23/8e/bd238edb3b32ad3308be8b2c237d57f6.jpg",
-    "Personality": "Popular",
-    "Vibes": "curated"
   },
   {
     "Name": "Jam",
@@ -475,27 +377,6 @@
     "Vibes": "balanced"
   },
   {
-    "Name": "Pineapple",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/28/99/75/289975369171721bca33ecaf8472f82c.jpg",
-    "Personality": "Energetic",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Frozen Fruit",
-    "Category": "Sweet",
-    "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6zhg8TK6FzVmX13vHjgj7CuulrfKFZGSVQ&s",
-    "Personality": "Cool",
-    "Vibes": "girlcore"
-  },
-  {
-    "Name": "Ice Cream",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/20/d4/75/20d47537a56f7d0d2dd5a3e32370a6df.jpg",
-    "Personality": "Youthful",
-    "Vibes": "girlcore"
-  },
-  {
     "Name": "Chocolate",
     "Category": "Sweet",
     "Image": "https://i.pinimg.com/736x/88/d9/ab/88d9aba4ad8064c973905d1996827aa5.jpg",
@@ -524,24 +405,10 @@
     "Vibes": "balanced"
   },
   {
-    "Name": "Grapes",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/1200x/ec/75/ed/ec75edd307adbc859c17b22a689bf918.jpg",
-    "Personality": "Juicy",
-    "Vibes": "girlcore"
-  },
-  {
     "Name": "Cereal",
     "Category": "Sweet",
     "Image": "https://i.pinimg.com/736x/65/8a/18/658a18a367f64b03be3a993b6d339650.jpg",
     "Personality": "Crispy",
-    "Vibes": "girlcore"
-  },
-  {
-    "Name": "Rice Krispie Treat",
-    "Category": "Sweet",
-    "Image": "https://kellogg-h.assetsadobe.com/is/image/content/dam/kelloggs/kna/us/digital-shelf/rice-krispies-treats/00038000280726_C1C0.jpg",
-    "Personality": "Tender",
     "Vibes": "girlcore"
   },
   {
