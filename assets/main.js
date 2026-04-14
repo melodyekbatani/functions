@@ -106,8 +106,6 @@ createPlate.addEventListener('click', () => {
 )
 
 
-
-
 const output1 = document.getElementById("output1");
 
 
