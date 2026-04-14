@@ -150,6 +150,16 @@ ul {
 	padding-block-start: var(--space-md);
 
 }
+.modal.output { 
+	background-color: #98C6FE;
+}
+
+/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
+body:has(.Output.modal.current) {
+    background-color: var(--color-text);
+    background-image: none;
+}
+
 /* @media (min-width: 768px) {
 	#data-list {
 	display: flex;
