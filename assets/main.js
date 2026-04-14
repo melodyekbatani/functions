@@ -104,40 +104,13 @@ createPlate.addEventListener('click', () => {
 // 1 equal sign is a command - whatever this varible is change it to this 
 //2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
 )
-document.getElementById('reset-button').addEventListener ('click',() => {
-	document.querySelectorAll('.item.active').forEach (item => {
-		item.classList.remove('active')
-	})
-	document.querySelector ('.output').innerHTML = ''
-})
 
 
 
 
 const output1 = document.getElementById("output1");
 
-// Worked on this with my code tutor, and used https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share as a starting point, it currently works on mobile but I need to figure out a desktop version
-document.getElementById("share-button").addEventListener("click", async () => {
-	let shareText = "Check out my plate:\n"
 
-	for (const category in currentPlate) {
-		const item = currentPlate[category]
-  		if (item) {
-			const name = item.querySelector('h2').textContent
-			shareText += `${category}: ${name}\n`
-  		}
-	}
-
-    try {
-      await navigator.share({
-        title: "My Plate",
-        text: shareText
-      });
-
-    } catch (error) {
-      console.log('Share failed:', error)
-    }
-})
 
 // After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 
@@ -181,11 +154,14 @@ let buttonName=modals[index].getAttribute('data-button-name');
 nextButton.innerHTML= buttonName==null ?"next":buttonName; 
 }
 
-
+//https://claude.ai/share/c86aaf9e-1b17-45f4-aebb-28c750f52d55 help troubleshooting the clear button
 nextButton.addEventListener('click',()=>{if (currentModal < modals.length-1) {
-currentModal++;
+currentModal++; }
+else {
+	currentModal = 0;
+}
 switchModals(currentModal)
-}})
+})
 backButton.addEventListener('click',()=>{if (currentModal > 0) {
 currentModal--;
 switchModals(currentModal)
