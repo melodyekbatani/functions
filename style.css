@@ -122,7 +122,12 @@ ul {
 
 
 	li {
+	display: flex;
 	align-items: center;
+	justify-content: center;
+	/* added an invisable border here so that the items don't jump around inside the li when selected*/
+	border: 0.2rem solid transparent;
+	border-radius: 0.5rem;
 	
 		img{
 		width: 4rem;
@@ -133,14 +138,16 @@ ul {
 		display: none;
 		}
 	}
+		.active {
+		border: 0.2rem solid var(--color-border);
+		border-radius: 0.5rem;
+}
 	}
 }
 
-.active {
-	border: 0.1rem solid black ;
-}
 .navigation { 
 	display: flex;
+	padding-block-start: var(--space-md);
 
 }
 /* @media (min-width: 768px) {
