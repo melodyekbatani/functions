@@ -58,6 +58,7 @@ let getMDC = (Averages) => {
 	}
 	return mdc
 }
+// random x array length (less than 1 and in between 0-1) getting random item from selected items
 const getRandomItem = (arr) =>
 	arr[Math.floor(Math.random() * arr.length)]
 
@@ -68,15 +69,25 @@ createPlate.addEventListener('click', () => {
 	const mdc = getMDC(Averages)
 	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
 	// Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
-
+	//go through mdc items and filter them based on the catergory 
+	//filter is the main function of the block 
+	
 	const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
 	const plate = {}
 	categories.forEach(category => {
 		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
 		plate[category] = getRandomItem(filteredItems)
+
+
+
+	if (plate[category] === undefined) {
+		const nonMdcItems = Array.from(selected).filter(item => item.dataset.category === category)
+		plate[category] = getRandomItem(nonMdcItems)
+		console.log(nonMdcItems)
+	}
 	
 	currentPlate = plate
-	})
+})
 
 	let plateHtml = ''
 	for (const category in plate) {
@@ -90,6 +101,8 @@ createPlate.addEventListener('click', () => {
 	const results = getPercent(Averages)
 	document.querySelector('.output').innerHTML = results + plateHtml
 }
+// 1 equal sign is a command - whatever this varible is change it to this 
+//2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
 )
 document.getElementById('reset-button').addEventListener ('click',() => {
 	document.querySelectorAll('.item.active').forEach (item => {
