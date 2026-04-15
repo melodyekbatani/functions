@@ -107,7 +107,11 @@ let personalities = ''
 for (let item in plate) { 
 	personalities += plate[item]. dataset.personality + ', '
 }
-document.querySelector ('.plate-description').textContent = 'Your plate is '+ personalities
+// I was trying to add you're without it thinking that's a part of a string 
+// https://claude.ai/share/156f3a07-d924-4389-94fb-ce1aa46467d8
+// https://w3schools.tech/tutorial/javascript/javascript_strings_object?
+
+document.querySelector ('.plate-description').textContent = "You're giving "+ personalities
 
 
 	document.querySelector('.output').innerHTML = results + plateHtml
