@@ -90,8 +90,21 @@ main {
 }
 .modal.current {
 	display:flex;
-	flex-direction: column;
+	flex-direction: column; 
+	animation: slide-in 0.2s ease-out;
+
 }
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
+@keyframes slide-in {
+  from {
+    transform: translateX(10%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
 .modal.home {
 	align-items: center;
@@ -178,6 +191,18 @@ ul {
 
 .card-2 {
   transform: rotate(-5deg);
+}
+/* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
+.Plate:has(.Sweet.modal.current) {
+	.card-1 {
+		display: none;
+	}
+}
+
+.Plate:has(.output.modal.current) {
+	.card-1 {
+		display: none;
+	}
 }
 
 .navigation { 
