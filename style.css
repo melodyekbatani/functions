@@ -8,17 +8,19 @@
 /* Typography */
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "rl-horizon", serif;
-	--font-size-sm: 1rem; 
+	--font-size-sm: 1.25rem; 
 	--font-size-md: 1.5rem; 
 	--font-size-lg: 5rem;
 	--font-size-lx: 10rem;
 
 /* Layout */
 	--space-sm: 0.5rem;
-	--space-md: 2rem;
+	--space-md: 1.5rem;
 	--space-lg: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
+	--card-height: 70vh;
+	--card-width: 20rem;
 }
 
 /* Overall body styling*/
@@ -38,7 +40,7 @@ body {
 	p {
 	line-height: 130%;
 	kerning: 120%;
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-sm);
 	font-family: var(--font-body);
 	}
 }
@@ -71,8 +73,8 @@ main {
 	background-color: var(--color-cards);
 	list-style: none;
 	gap: var(--space-sm);
-	height: 80vh;
-	width: 25rem; 
+	height: var(--card-height);
+	width: var(--card-width);
 	grid-column: 1;
 	grid-row: 1;
 
@@ -180,8 +182,8 @@ ul {
 
 .decorative-cards {
   position: absolute;
-  width: 25rem;
-  height: 80vh;
+  height: var(--card-height);
+  width: var(--card-width);
   z-index: -1;
 }
 
