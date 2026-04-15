@@ -56,9 +56,38 @@ main {
 	align-items: center;
 	padding: var(--space-sm); 
 	justify-content: center;
+	height: 100vh;
 }
 
 /* modal styling */
+.modal {
+	justify-content: center;
+	padding: var(--space-md);
+	display:none; 
+	border-radius: var(--radius);
+	border: 0.25rem solid var(--color-border);
+	background-color: var(--color-cards);
+	list-style: none;
+	gap: var(--space-sm);
+	height: 80vh;
+	width: 25rem; 
+	grid-column: 1;
+	grid-row: 1;
+
+
+	.category-title { 
+		font-family: var(--font-header);
+		display: flex; 
+		flex-direction: column;
+		gap: var(--space-sm); 
+		padding-block-start: var(--space-sm);
+
+		h3 {
+			font-size: var(--font-size-md);
+			text-align: center;
+		}
+	}
+}
 .modal.current {
 	display:flex;
 	flex-direction: column;
@@ -80,37 +109,19 @@ main {
 
 	}
 }
-.modal {
-	justify-content: center;
-	display:none; 
-	padding: var(--space-md);
-	border-radius: var(--radius);
-	border: 0.25rem solid var(--color-border);
-	background-color: var(--color-cards);
-	list-style: none;
-	gap: var(--space-sm);
-	height: 80vh;
+
+.Plate { 
+	position: relative; 
 	width: 25rem; 
-	
-
-
-	.category-title { 
-		font-family: var(--font-header);
-		display: flex; 
-		flex-direction: column;
-		gap: var(--space-sm); 
-		padding-block-start: var(--space-sm);
-
-		h3 {
-			font-size: var(--font-size-md);
-			text-align: center;
-		}
-	}
+	height: 80vh; 
 }
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 /* grid works better for this so i can create both rows and columns*/
 #data-list {
 	list-style: none;
+	display: grid;
+	z-index: 1;
+
 
 
 ul {
@@ -129,6 +140,7 @@ ul {
 	border: 0.2rem solid transparent;
 	border-radius: 0.5rem;
 	
+	
 		img{
 		width: 4rem;
 		mix-blend-mode: multiply;
@@ -145,12 +157,36 @@ ul {
 	}
 }
 
+.decorative-cards {
+  position: absolute;
+  width: 25rem;
+  height: 80vh;
+  z-index: -1;
+}
+
+.card-1, .card-2 {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  border: 0.25rem solid var(--color-border);
+  background-color: var(--color-cards);
+  z-index: 0;
+}
+.card-1 {
+  transform: rotate(5deg);
+}
+
+.card-2 {
+  transform: rotate(-5deg);
+}
+
 .navigation { 
 	display: flex;
 	padding-block-start: var(--space-md);
+	gap: var(--space-sm);
 
 }
-.modal.output { 
+.output { 
 	background-color: #98C6FE;
 }
 
