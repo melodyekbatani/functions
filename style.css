@@ -138,6 +138,11 @@ main {
 	position: relative; 
 	width: 25rem; 
 	height: 80vh; 
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 /* grid works better for this so i can create both rows and columns*/
@@ -185,11 +190,12 @@ ul {
   height: var(--card-height);
   width: var(--card-width);
   z-index: -1;
+  margin-block-start: -5rem;
 }
 
 .card-1, .card-2 {
   position: absolute;
-  inset: 0;
+inset: 0;
   border-radius: var(--radius);
   border: 0.25rem solid var(--color-border);
   background-color: var(--color-cards);
@@ -243,9 +249,10 @@ ul {
 
 .navigation { 
 	display: flex;
-	padding-block-start: var(--space-md);
+	padding-block-start: var(--space-lg);
 	gap: var(--space-sm);
 	justify-content: center;
+	align-items: center;
 
 }
 .output { 
