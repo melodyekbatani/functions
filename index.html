@@ -18,12 +18,6 @@
 <!---------------DOM STRUCTURE--------------------->
 <body>
 
-	<header>
-		<hgroup>
-			<h1></h1>
-			<p></p>
-		</hgroup>
-	</header>
 <!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
 
 <!---------------MAIN--------------------->
@@ -31,14 +25,14 @@
 	<main>
 
 		<section class="Plate">
-						<div class="decorative-cards">
+				<div class="decorative-cards">
 				<div class="card-1"></div>
 				<div class="card-2"></div>
 			</div>
 			<ul id="data-list">
-				<li class="home modal current">
+				<li class="home modal current" data-button-name='Get started'>
 					<div class="home-title">
-					<h3>Girl Dinner!</h3>
+					<h1>Girl Dinner!</h1>
 					<p>Generate your ideal dinner plate based on items you have in your fridge. </p>
 					</div>
 				</li>
@@ -70,9 +64,10 @@
 					<h3>Select a Sweet</h3>
 					</div>
 					<ul id="sweet-list"></ul>
-					<button id="create-plate">Create plate</button>
+					
 					</li>
-
+			
+				
 				<li class="Output modal" data-button-name='Start over?'>
 					<div class="category-title">
 					<p>Girl Dinner Vibe</p>
@@ -81,7 +76,6 @@
 					<section class="output"></section>
 				</li>
 			</ul>
-		</section>
 	
 		<ul class="navigation">
 			<li class="back">
@@ -90,7 +84,11 @@
 			<li class="next">
 				<button class="next-button">next</button>
 			</li>
+			<li class="reveal">
+				<button id="create-plate">Create plate</button>
+			</li>
 		</ul>
+		</section>
 
 	</main>
 </body>

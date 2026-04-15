@@ -100,6 +100,9 @@ createPlate.addEventListener('click', () => {
 	}
 	const results = getPercent(Averages)
 	document.querySelector('.output').innerHTML = results + plateHtml
+
+	currentModal = 5;
+	switchModals(currentModal);
 }
 // 1 equal sign is a command - whatever this varible is change it to this 
 //2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
@@ -143,6 +146,7 @@ const nextButton = document.querySelector('.next-button');
 const backButton = document.querySelector('.back-button');
 
 let currentModal = 0; 
+switchModals(currentModal); // Reviewed this with tutor - it runs the function when the user first opens the page and updates the UI based on the current step starting on modal 0 which is the homepage
 function switchModals(index){modals.forEach((modal,i)=>{ 
 modal.classList.toggle('current',index===i);
 
@@ -151,7 +155,6 @@ modal.classList.toggle('current',index===i);
 let buttonName=modals[index].getAttribute('data-button-name');
 nextButton.innerHTML= buttonName==null ?"next":buttonName; 
 }
-
 //https://claude.ai/share/c86aaf9e-1b17-45f4-aebb-28c750f52d55 help troubleshooting the clear button
 nextButton.addEventListener('click',()=>{if (currentModal < modals.length-1) {
 currentModal++; }

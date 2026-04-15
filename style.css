@@ -59,6 +59,8 @@ main {
 	height: 100vh;
 }
 
+
+
 /* modal styling */
 .modal {
 	justify-content: center;
@@ -88,14 +90,16 @@ main {
 		}
 	}
 }
+
 .modal.current {
 	display:flex;
 	flex-direction: column; 
 	animation: slide-in 0.2s ease-out;
 
+	
 	&:last-child { 
 /* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
-		animation: none; 
+	animation: none; 
 	}
 }
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
@@ -113,9 +117,10 @@ main {
 .modal.home {
 	align-items: center;
 	justify-content: center;
-	h3 {
+	h1 {
 		font-family: var(--font-header);
 		font-size: var(--font-size-lg);
+		font-weight: 500;
 		color:var(--color-main); 
 		text-align: center;
 		line-height: 90%;
@@ -157,7 +162,6 @@ ul {
 	border: 0.2rem solid transparent;
 	border-radius: 0.5rem;
 	
-	
 		img{
 		width: 4rem;
 		mix-blend-mode: multiply;
@@ -197,7 +201,30 @@ ul {
   transform: rotate(-5deg);
 }
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
+
+.Plate:has(.home.modal.current) {
+	.back-button {
+		display:none; 
+	}
+}
 .Plate:has(.Sweet.modal.current) {
+	.next-button {
+		display:none; 
+	}
+
+	.card-1 {
+		display: none;
+	}
+}
+
+.Plate:has(.reveal.modal.current) {
+	.next-button {
+		display:none; 
+	}
+	.reveal-button {
+		display:block;
+	}
+
 	.card-1 {
 		display: none;
 	}
@@ -216,10 +243,24 @@ ul {
 	display: flex;
 	padding-block-start: var(--space-md);
 	gap: var(--space-sm);
+	justify-content: center;
 
 }
 .output { 
-	background-color: #98C6FE;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	img {
+		mix-blend-mode: multiply;
+	}
+
+	p:first-of-type{
+display: block;
+position: absolute;
+text-align: center;
+	}
+	p {
+		display: none;
+	}
 }
 
 /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
@@ -227,6 +268,14 @@ body:has(.Output.modal.current) {
     background-color: var(--color-text);
     background-image: none;
 }
+
+#create-plate {
+  display: none;
+}
+.Plate:has(.Sweet.modal.current) #create-plate {
+  display: block;
+}
+
 
 /* @media (min-width: 768px) {
 	#data-list {
