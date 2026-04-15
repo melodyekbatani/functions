@@ -10,8 +10,9 @@
 	--font-header: "rl-horizon", serif;
 	--font-size-sm: 1.25rem; 
 	--font-size-md: 1.5rem; 
+	--font-size-md-desktop: 2rem;
 	--font-size-lg: 5rem;
-	--font-size-lx: 10rem;
+	--font-size-lx: 7rem;
 
 /* Layout */
 	--space-sm: 0.5rem;
@@ -21,6 +22,8 @@
 	--radius: 1rem;
 	--card-height: 70vh;
 	--card-width: 20rem;
+	--card-width-desktop: 60rem;
+	--button-padding: 1rem;
 }
 
 /* Overall body styling*/
@@ -47,8 +50,9 @@ body {
 
 button {
 	border-radius: 2rem;
-	padding: var(--space-sm);
+	padding: var(--button-padding);
 	background-color: var(--color-buttons);
+	font-size: var(--font-size-md);
 
 }
 
@@ -286,33 +290,34 @@ body:has(.Output.modal.current) {
 }
 
 
-/* @media (min-width: 768px) {
-	#data-list {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	list-style: none;
-
-	>li {
-		display: flex;
-		flex: 1;
-		list-style: none;
-		flex-direction: column;
-
-		>ul {
-			display: flex;
-			flex-direction: row;
-			list-style: none;
-
-			>li {
-				display: flex;
-				flex-direction: column;
-
-				img {
-					width: 3rem;
-				}
-			}
-		}
+@media (min-width: 768px) {
+.modal {
+	width: var(--card-width-desktop);
+}
+.modal.home {
+	
+	h1 {
+		font-family: var(--font-header);
+		font-size: var(--font-size-lx);
+	}
+	p {
+		font-size: var(--font-size-md-desktop);
+		width: 35ch;
 	}
 }
-} */
+
+.decorative-cards {
+  width: var(--card-width-desktop);
+}
+}
+#data-list {
+ul {
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--space-sm);
+li {
+	img { 
+		width: 5rem;
+	}
+}
+}
+}
