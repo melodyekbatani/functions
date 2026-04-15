@@ -93,6 +93,10 @@ main {
 	flex-direction: column; 
 	animation: slide-in 0.2s ease-out;
 
+	&:last-child { 
+/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
+		animation: none; 
+	}
 }
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
 @keyframes slide-in {
@@ -199,8 +203,11 @@ ul {
 	}
 }
 
-.Plate:has(.output.modal.current) {
+.Plate:has(.Output.modal.current) {
 	.card-1 {
+		display: none;
+	}
+	.card-2 { 
 		display: none;
 	}
 }
