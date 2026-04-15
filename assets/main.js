@@ -6,7 +6,7 @@ let renderItems = (data) => {
 	data.forEach((item) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
 		let itemHtml = `
-		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" class='item'>
+		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" data-personality="${item['Personality']}" class='item'>
 			<img src="${item['Image']}">
 			<h2>${item['Name']}</h2>
 			
@@ -99,8 +99,19 @@ createPlate.addEventListener('click', () => {
 		}
 	}
 	const results = getPercent(Averages)
-	document.querySelector('.output').innerHTML = results + plateHtml
 
+//simple for loop for declaring the personality type 
+
+let personalities = ''
+
+for (let item in plate) { 
+	personalities += plate[item]. dataset.personality + ', '
+}
+document.querySelector ('.plate-description').textContent = 'Your plate is '+ personalities
+
+
+	document.querySelector('.output').innerHTML = results + plateHtml
+//counting the numbers of modals before the create plate button activates - reviewed this with a tutor - its a hacky way to combine the 2 buttons i created
 	currentModal = 5;
 	switchModals(currentModal);
 }
