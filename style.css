@@ -6,6 +6,7 @@
 	--color-cards:#FFF9EC; 
 	--color-output: #D7E9FF;
 
+
 /* Typography */
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "rl-horizon", serif;
@@ -27,6 +28,9 @@
 	--button: 2rem;
 
 }
+
+.next-button:disabled
+
 
 /* Overall body styling*/
 /* asking if I'm able to add my background pattern on top of the color https://claude.ai/share/2377471c-b00f-41b1-a41d-959e301cef03 then used mdn to figure out sizing*/
@@ -142,7 +146,9 @@ main {
 
 	}
 }
-
+.plate-description { 
+	color: purple; 
+}
 .Plate { 
 	position: relative; 
 	width: 25rem; 

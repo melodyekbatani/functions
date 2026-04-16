@@ -1,14 +1,21 @@
 // Function to render your items.
 // I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
+//variables are defined and can access everything below
 let currentPlate ={}
+//This foodItem is for storing all items for resetetting the selection
+let foodItem = []; 
+//Global value - all categories of food
+const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
+let currentModal = 0; 
 
+
+//Every time you select a food item, the toggleNextButton function will perform a querySelector and check if li[data-category="Base”].active exists If querySelector  li[data-category="Base”] returns null or undefined, then disable the next button, but if it returns an HTML element, then enable the next button
 let renderItems = (data) => {
 	data.forEach((item) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
 		let itemHtml = `
 		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" data-personality="${item['Personality']}" class='item'>
 			<img src="${item['Image']}">
-			<h2>${item['Name']}</h2>
 			
 		</li>
 		`
@@ -17,11 +24,15 @@ let renderItems = (data) => {
 		// After reviewing with my tutor, he mentioned the next steps to work on was adding an event listener and mentioned claude could help with this here's the chat tread, toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 
 		containerEl.insertAdjacentHTML('beforeend', itemHtml)
-		containerEl.lastElementChild.addEventListener("click", (e) => e.currentTarget.classList.toggle('active'))
+		containerEl.lastElementChild.addEventListener("click", (e) => {e.currentTarget.classList.toggle('active')
+		toggleNextButton(currentModal-1)
+		}) 
+		foodItem.push (containerEl.lastElementChild)
+		//push - add it to the array 
 	})
 }
-// Creating function to set up the distribution of selected items 
-let getAverages = (data) => {
+// Creating function to set up the distribution of selected items, counts how many times each vibe appears in an item. Arrow function like a traditional function, creates the average variable - then loops through data one by one for the dataset vibes and finds the vibe of each item. if statement is checking if its seen the vibe before if it hasnt seen it would {} - empty object if the item 1 is calm: 1, chaotic: 1 - if it exist it adds one andd if it doesnt exist it name a new one
+function getAverages (data) {
 	let Averages = {}
 	for (let item of data) {
 		let key = item.dataset.vibes
@@ -29,9 +40,10 @@ let getAverages = (data) => {
 		else { Averages[key] = 1; }
 	}
 	return Averages
-
 }
-let getPercent = (data) => {
+
+//for loop is going through ever property in the data and loops through each key, so for example happy: 2,sad: 1, angry: 1 - sum adds it all up. Percent takes each and divides it by the total 
+function getPercent (data) {
 	let Percent = {}
 	let sum = 0
 	for (const prop in data) {
@@ -42,12 +54,12 @@ let getPercent = (data) => {
 	}
 	let html = ""
 	for (const prop in Percent) {
-		html += `<p>${prop}: ${Percent[prop] * 100 + '%'}</p>`
+		html += `<p>${prop}</p>`
 	}
 	return html
 }
 // working with claude to implement the output options https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823 
-let getMDC = (Averages) => {
+function getMDC (Averages) {
 	let mdc = null
 	let highestCount = 0
 	for (const vibe in Averages) {
@@ -58,6 +70,7 @@ let getMDC = (Averages) => {
 	}
 	return mdc
 }
+
 // random x array length (less than 1 and in between 0-1) getting random item from selected items
 const getRandomItem = (arr) =>
 	arr[Math.floor(Math.random() * arr.length)]
@@ -68,11 +81,13 @@ createPlate.addEventListener('click', () => {
 	let Averages = getAverages(selected)
 	const mdc = getMDC(Averages)
 	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
+
+
 	// Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
 	//go through mdc items and filter them based on the catergory 
 	//filter is the main function of the block 
 	
-	const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
+	
 	const plate = {}
 	categories.forEach(category => {
 		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
@@ -93,7 +108,6 @@ createPlate.addEventListener('click', () => {
 	for (const category in plate) {
 		const item = plate[category]
 		if (item) {
-			const name = item.querySelector('h2').textContent
 			const image = item.querySelector('img').src
 			plateHtml += `<p>${category}: ${name}</p><img src="${image}">`
 		}
@@ -102,11 +116,30 @@ createPlate.addEventListener('click', () => {
 
 //simple for loop for declaring the personality type 
 
+
+//create a variable called item and starts at 0 as long as the item is less then the length of the plate array the for loop will stop
+//Object.values - converts the object into an array - takes every object value and puts it into an array so you can access it in a for loop
+//Index - variable and accumulates by a value of 1, once it hits 4 it will stop.
 let personalities = ''
 
-for (let item in plate) { 
-	personalities += plate[item]. dataset.personality + ', '
+const platePersonalities = Object.values(plate);
+for (let index=0; index <platePersonalities.length; index+=1) { 
+    //personalities += plate[item]. dataset.personality + ', '
+
+const item = platePersonalities[index];
+console.log(personalities[item]);
+    //if the item is equal to the last plate (lenght is 4) then give it a period - but if any other item (1,2,3) give it a comma
+    if (index===platePersonalities.length-1)
+    {
+    personalities += item. dataset.personality + '.';
+    }
+    else {
+    personalities += item. dataset.personality + ', ';
+    }
 }
+
+
+
 // I was trying to add you're without it thinking that's a part of a string 
 // https://claude.ai/share/156f3a07-d924-4389-94fb-ce1aa46467d8
 // https://w3schools.tech/tutorial/javascript/javascript_strings_object?
@@ -118,33 +151,15 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 //counting the numbers of modals before the create plate button activates - reviewed this with a tutor - its a hacky way to combine the 2 buttons i created
 	currentModal = 5;
 	switchModals(currentModal);
+	foodItem.forEach((item)=>{item.classList.toggle('active',false)})
 }
 // 1 equal sign is a command - whatever this varible is change it to this 
 //2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
+
+
 )
 
 
-const output1 = document.getElementById("output1");
-
-
-
-// After reviewing with my tutor, he mentioned representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
-
-
-// Introducing hashmaps - set of keys and values, first thing we do - is say have we seen the keys before(vibes - balanced/unhinged) - keep track of the number of items it has seen 
-// const prop(property) in data - iterating through data, props - whatevers in the data 
-//square brackets are used in Percent[prop] to get the actual key value
-
-
-//next steps reviewed with tutor
-//next step - event listener - toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items DONE
-//representing the percentages for the user to see - create the html for the percentages the user sees - defining html structure where those numbers fit in- substituing in using the $() DONE
-
-//pick one per category - identifies what the most common category is (find most common category mdc nested - first look at all the categories - bases find any bases that are active that equal the mdc, find all protiens,crunch, sweet in mdc)
-//then use JS random function - if there are no sweets in the mdc then just get one randomly from any of them (not nessissarily in the mdc)
-//if the user picks no crunch - drop down to 3 instead of 4 or pick one from none selected "go to the store" maybe not nessissary right now 
-
-//putting together the plate - find mdc - for loop whatever category is the biggest in the list is the category we care about - assuming we've done the html for all the active things then sort through all these then pick randomly from the category - compare many categories at the same time, I have the mdc and then base,protein ect. get the collection of items that are selected. they'll have the data attribute of the html of the category and the vibe - gets rid of all items that aren't in the mdc, data processing the easiest way - might be hard - but set up data into sub arrays and select a random one for each of those (ask for some help)
 
 fetch('assets/data.json')
 	.then(response => response.json())
@@ -156,29 +171,64 @@ fetch('assets/data.json')
 		getPercent(Averages)
 	})
 
+//Accessing the button in the html first before starting the function (defining the variables)
 const modals = document.querySelectorAll('.modal');
 const nextButton = document.querySelector('.next-button');
 const backButton = document.querySelector('.back-button');
 
-let currentModal = 0; 
+
+function toggleNextButton (currentCategory){
+
+	//2 lines in an if statement mean or find an html has an active class or if its -1 (home page) or 4(last button)
+	//if its any other page you can disable it
+if (document.querySelector("li[data-category='"+categories[currentCategory]+"'].active")||currentCategory===-1||currentCategory===4) { 
+nextButton.disabled=false
+}
+else {
+nextButton.disabled=true
+}
+}
+
+
 switchModals(currentModal); // Reviewed this with tutor - it runs the function when the user first opens the page and updates the UI based on the current step starting on modal 0 which is the homepage
 function switchModals(index){modals.forEach((modal,i)=>{ 
-modal.classList.toggle('current',index===i);
+//modal.classList.toggle('current',index===i);
 
 
+toggleNextButton (currentModal-1)
+//Activating/deactivating modals
+if (index===i)
+{
+modal.classList.add('current');
+}
+else {
+modal.classList.remove('current');
+}
+
+
+//Creating the button names 
  })
 let buttonName=modals[index].getAttribute('data-button-name');
-nextButton.innerHTML= buttonName==null ?"next":buttonName; 
+
+if (buttonName==null)
+{
+nextButton.innerHTML= "next";
 }
+else {
+nextButton.innerHTML= buttonName; 
+}
+}
+
+
 //https://claude.ai/share/c86aaf9e-1b17-45f4-aebb-28c750f52d55 help troubleshooting the clear button
 nextButton.addEventListener('click',()=>{if (currentModal < modals.length-1) {
-currentModal++; }
+currentModal+=1; }
 else {
 	currentModal = 0;
 }
 switchModals(currentModal)
 })
 backButton.addEventListener('click',()=>{if (currentModal > 0) {
-currentModal--;
+currentModal-=1;
 switchModals(currentModal)
 }})
