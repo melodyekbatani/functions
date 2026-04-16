@@ -3,99 +3,101 @@
 <html lang="en">
 
 <head>
-	    <title>Girl Dinner Generator</title> 
-        <link href="/Icons/Favicon.ico" rel="icon" sizes="any">
-        <link href="/Icons/Favicon.svg" rel="icon" type="image/svg+xml">
-        <link href="/Icons/Touch.png"  rel="apple-touch-icon">
-        <meta property="description" content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Girl Dinner Generator</title>
+	<link href="/Icons/Favicon.ico" rel="icon" sizes="any">
+	<link href="/Icons/Favicon.svg" rel="icon" type="image/svg+xml">
+	<link href="/Icons/Touch.png" rel="apple-touch-icon">
+	<meta property="description"
+		content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Functions</title>
-	<link href="reset.css" rel="stylesheet"> 
+	<link href="reset.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 	<script defer src="./assets/main.js"></script>
 
-<!---------------FONTS - RL Horizon and Public Sans ----------------------->
-	<link href="https://api.fontshare.com/v2/css?f[]=public-sans@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900,901&f[]=melodrama@300,400,500,600,700&display=swap" rel="stylesheet">
+	<!---------------FONTS - RL Horizon and Public Sans ----------------------->
+	<link href="https://api.fontshare.com/v2/css?f[]=public-sans@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900,901&f[]=melodrama@300,400,500,600,700&display=swap"
+	rel="stylesheet">
 	<link rel="stylesheet" href="https://use.typekit.net/pde1ukj.css">
 </head>
 
 
 <!---------------DOM STRUCTURE--------------------->
+
 <body>
 
-<!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
+	<!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
 
-<!---------------MAIN--------------------->
+	<!---------------MAIN--------------------->
 
 	<main>
-
 		<section class="Plate">
-				<div class="decorative-cards">
+			<div class="decorative-cards">
 				<div class="card-1"></div>
 				<div class="card-2"></div>
 			</div>
 			<ul id="data-list">
 				<li class="home modal current" data-button-name='Get started'>
 					<div class="home-title">
-					<h1>Girl Dinner!</h1>
-					<p>Generate your ideal dinner plate based on items you have in your fridge and we'll tell you your personality. </p>
+						<h1>Girl Dinner!</h1>
+						<p>Generate your ideal dinner plate based on items you have in your fridge and we'll tell you
+						your personality. </p>
 					</div>
 				</li>
 
 
 				<li class="Base modal" data-button-name='Choose Protein'>
 					<div class="category-title">
-					<h3>Select a base</h3>
+						<h3>Select a base</h3>
 					</div>
 					<ul id="base-list"></ul>
 				</li>
-				
+
 				<li class="Protein modal" data-button-name='Choose Crunch'>
 					<div class="category-title">
-					<h3>Select a protein</h3>
+						<h3>Select a protein</h3>
 					</div>
 					<ul id="protein-list"></ul>
-					</li>
+				</li>
 
 				<li class="Crunch modal" data-button-name='Choose Sweet'>
 					<div class="category-title">
-					<h3>Select a crunch</h3>
+						<h3>Select a crunch</h3>
 					</div>
 					<ul id="crunch-list"></ul>
 				</li>
 
 				<li class="Sweet modal" data-button-name='Create plate'>
 					<div class="category-title">
-					<h3>Select a sweet</h3>
+						<h3>Select a sweet</h3>
 					</div>
 					<ul id="sweet-list"></ul>
-					
-					</li>
-			
-				
+
+				</li>
+
+
 				<li class="Output modal" data-button-name='Start over?'>
 					<div class="category-title">
-					<h1>Your vibe is</h1>
-					<p id="vibe-name"></p>
-					
+						<h1>Your vibe is</h1>
+						<p id="vibe-name"></p>
 					</div>
 					<section class="output"></section>
 					<p class="plate-description"></p>
 				</li>
 			</ul>
-	
-		<ul class="navigation">
-			<li class="back">
-				<button class="back-button">Back</button>
-			</li>
-			<li class="next">
-				<button class="next-button">next</button>
-			</li>
-			<li class="reveal">
-				<button id="create-plate">Create plate</button>
-			</li>
-		</ul>
+
+			<ul class="navigation">
+				<li class="back">
+					<button class="back-button">Back</button>
+				</li>
+				<li class="next">
+					<button class="next-button">next</button>
+				</li>
+				<li class="reveal">
+					<button id="create-plate">Create plate</button>
+				</li>
+			</ul>
 		</section>
 
 	</main>
