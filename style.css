@@ -5,6 +5,8 @@
 	--color-buttons: #FFEB6D; 
 	--color-cards:#FFF9EC; 
 	--color-output: #D7E9FF;
+	--color-disabled: rgb(220, 220, 220); 
+	--color-disabled-text: rgb(155, 155, 155); 
 
 
 /* Typography */
@@ -29,7 +31,11 @@
 
 }
 
-.next-button:disabled
+.next-button:disabled {
+	background-color: var(--color-disabled);
+		color: var(--color-disabled-text);
+
+}
 
 
 /* Overall body styling*/

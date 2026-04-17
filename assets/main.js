@@ -1,37 +1,39 @@
-// Function to render your items.
-// I started by customizing the Json file from Eric's lecture then reviewed this with the tutor and customized the basic format to fit within the 4 dropdowns I created in the HTML file. I'm setting up the dropdown menu then calling each child in this first part
-//variables are defined and can access everything below
+// I begin by creating and setting global values, defining these variables at the beginning of the file which means they can be access below. A few key variables I used are currentPlate, foodItem for storing all items and resetting the selection when the user hits restart as well as the categories that are used throughout but specifically within the toggleNext button 
 let currentPlate ={}
-//This foodItem is for storing all items for resetetting the selection
 let foodItem = []; 
-//Global value - all categories of food
 const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
 let currentModal = 0; 
 
 
-//Every time you select a food item, the toggleNextButton function will perform a querySelector and check if li[data-category="Base”].active exists If querySelector  li[data-category="Base”] returns null or undefined, then disable the next button, but if it returns an HTML element, then enable the next button
+// To figure this out I first referenced the JSON lecture from Eric’s Loom video and then customized that approach for my project. When I started building the generator I needed a way to pull in my JSON data and display it on the page. I built the renderItems function to loop through each food item and drop it into the right category list. For each item I store the personality and vibe as data attributes so I can grab them later when calculating the results. Some additional resources I used to understand this better are https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals, https://www.geeksforgeeks.org/javascript/how-to-creating-html-list-from-javascript-array/ 
 let renderItems = (data) => {
 	data.forEach((item) => {
 		let containerEl = document.getElementById(`${item['Category'].toLowerCase()}-list`)
 		let itemHtml = `
 		<li data-category="${item['Category']}" data-vibes="${item['Vibes']}" data-personality="${item['Personality']}" class='item'>
 			<img src="${item['Image']}">
-			
 		</li>
 		`
-		// to get the category and vibes together I originally used chat gpt before talking more to my code tutor, not really sure how much of the help from chat I ended up using https://chatgpt.com/c/69d48e7e-b5c0-8332-b3b7-0280e0e87c6e
 
-		// After reviewing with my tutor, he mentioned the next steps to work on was adding an event listener and mentioned claude could help with this here's the chat tread, toggle on and off something is selected(active or inactive) - each item has an event listen on it in the render items https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
+// When the food items are clicked, it toggles an active state (styled with css) on that element indicating to the user the item has been selected. the This is the original LLM use that I shared, since learning this wasn't the correct way to prompt I went in revised the code so that I could understand it better and make the logic my own https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823. To further understand this, I also reviewed this mdn link: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener. for reference, e = event, that on a click event, the code targets the element and toggles the active styling.
 
 		containerEl.insertAdjacentHTML('beforeend', itemHtml)
-		containerEl.lastElementChild.addEventListener("click", (e) => {e.currentTarget.classList.toggle('active')
-		toggleNextButton(currentModal-1)
-		}) 
-		foodItem.push (containerEl.lastElementChild)
-		//push - add it to the array 
+		containerEl.lastElementChild.addEventListener("click", (e) => {e.currentTarget.classList.
+		toggle('active')
+
+//I created this to clearly indicate to a user that they must select at least one item before moving to the next modal. Every time a user select a food item, the toggleNextButton function runs, doing a querySelector and checking if li[data-category="Base”] active exists. If querySelector li[data-category="Base”] returns nothing selected, then it disable the next button, but if it returns an HTML element that has been selected, then enable the next button. It's important to note the sweets "create plate button" isn't in the same modals as the other buttons so I need to add the disabled/enable state to that directly.
+
+			if (currentModal <= 4) {
+				toggleNextButton(currentModal - 1)
+			}
+		})
+
+//This is something I learnt from the UC code tutor and from this youtube video https://www.youtube.com/watch?v=P4rQyW0hWTk. The goal of this function is to reset selected items. At the top, I created an empty array called foodItem. Each time a new li is created,containerEl grabs it and push adds it to the array. This loops through every item in the selected array and removes the active class.
+		foodItem.push(containerEl.lastElementChild)
 	})
 }
-// Creating function to set up the distribution of selected items, counts how many times each vibe appears in an item. Arrow function like a traditional function, creates the average variable - then loops through data one by one for the dataset vibes and finds the vibe of each item. if statement is checking if its seen the vibe before if it hasnt seen it would {} - empty object if the item 1 is calm: 1, chaotic: 1 - if it exist it adds one andd if it doesnt exist it name a new one
+
+// Creating function to set up the distribution of selected items, counts how many times each vibe appears in an item. First, jey is created to store the vibe value of each item. Then creates the average variable, then loops through data for the dataset vibes and finds the word for each item. if statement is checking if its seen the vibe before. if it hasn't seen the vibe before it creates a new entry and sets it to 1, if it has seen it before it adds 1 to the existing count. Reviewed this with code tutor and reviewed this video to understand it better https://www.youtube.com/watch?v=bRfkYI8Y0PM
 function getAverages (data) {
 	let Averages = {}
 	for (let item of data) {
@@ -41,8 +43,7 @@ function getAverages (data) {
 	}
 	return Averages
 }
-
-//for loop is going through ever property in the data and loops through each key, so for example happy: 2,sad: 1, angry: 1 - sum adds it all up. Percent takes each and divides it by the total 
+//This function takes the average and converts each vibe count into a percent. for loop is going through ever property in the data and loops through each key, so for example chaotic: 2, girlcore: 1, balanced: 1 - sum adds it all up. Percent takes each and divides it by the total to create the most dominant category. The sum variable loops through each property and counts to add up the total count of the vibes. Then I loop through again and divide each vibe by the total to get percentage. Then add it to the HTML so it can show the vibe name. 
 function getPercent (data) {
 	let Percent = {}
 	let sum = 0
@@ -151,6 +152,8 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 //counting the numbers of modals before the create plate button activates - reviewed this with a tutor - its a hacky way to combine the 2 buttons i created
 	currentModal = 5;
 	switchModals(currentModal);
+
+	
 	foodItem.forEach((item)=>{item.classList.toggle('active',false)})
 }
 // 1 equal sign is a command - whatever this varible is change it to this 
