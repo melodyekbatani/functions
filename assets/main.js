@@ -85,6 +85,7 @@ createPlate.addEventListener('click', () => {
 	let selected = document.getElementsByClassName('active')
 	let Averages = getAverages(selected)
 	const mdc = getMDC(Averages)
+	
 	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
 
 
