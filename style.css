@@ -38,16 +38,34 @@
 }
 
 /* Overall body styling*/
-/* */
+
 body {
 	overflow-y: hidden;
 	width: 100%;
 	padding: var(--space-sm);
 	background-color: var(--color-main);
 	color: var(--color-text);
-	background-image: url("assets/Background.png");
-	background-size: cover;
+
 	
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+	
+background:
+  repeating-linear-gradient(
+    0deg,
+    var(--color-text) 0px,
+    var(--color-text) var(--space-sm),
+    transparent var(--space-sm),
+    transparent var(--space-md)
+  ),
+  repeating-linear-gradient(
+    90deg,
+    #9198e5 0px,
+    #9198e5 2px,
+    transparent 2px,
+    transparent 25px
+  ),
+  var(--color-main);
+
 	
 	a {
 	text-decoration: underline;
