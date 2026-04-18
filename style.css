@@ -25,9 +25,10 @@
 	--space-md: 1.5rem;
 	--space-ml: 2rem;
 	--space-lg: 4rem;
-	--space-xl: 5rem;
+	--space-xl: 6rem;
 	--max-width: 56rem;
 	--radius: 1rem;
+	--image-size: 5rem;
 	--card-height: 70vh;
 	--card-width: 17rem;
 	--card-width-desktop: 60rem;
@@ -244,8 +245,8 @@ button {
 			/* added an invisable border here so that the items don't jump around inside the li when selected*/
 			border: 0.2rem solid transparent;
 			border-radius: var(--border-size);
-			width: var(--space-xl);
-			height: var(--space-xl);
+			width: var(--image-size);
+			height: var(--image-size);
 
 			img {
 				width: 100%;
@@ -296,9 +297,6 @@ button {
 
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
-
-
-
 .Plate:has(.home.modal.current) {
 	.back-button {
 		display:none; 
@@ -342,7 +340,104 @@ button {
 
 /* === OUTPUT === */
 
+body:has(.Output.modal.current) {
+	background-color: var(--color-text);
+}
 
+.Output.modal {
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-md);
+
+	/* "Girl Dinner Vibe" label */
+	.vibe-label {
+		font-size: var(--font-size-ml);
+		font-family: var(--font-body);
+		color: var(--color-main);
+	}
+
+	/* Unhinged,girlcore ect. */
+
+	.output {
+		p {
+			color: var(--color-main);
+			font-size: var(--font-size-lg);
+			font-family: var(--font-header);
+		}
+
+		p:first-of-type {
+			text-transform: capitalize;
+			padding-block-end: 3rem;
+			display: block;
+			position: absolute;
+			text-align: center;
+			z-index: 1;
+			background-color: transparent;
+			margin-block-start: calc(var(--space-xl) * -1);
+		}
+
+		p {
+			display: none;
+		}
+	}
+
+	.category-title {
+		align-items: center;
+		padding-block-start: 0;
+
+		h1 {
+			font-family: var(--font-header);
+			font-size: var(--font-size-lg);
+			text-align: center;
+			color: var(--color-cards);
+			line-height: 90%;
+		}
+
+		.vibe-label {
+			font-family: var(--font-header);
+			font-size: var(--font-size-md);
+			color: var(--color-main);
+			text-align: center;
+		}
+	}
+}
+
+.output {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: var(--space-sm);
+	gap: var(--space-sm);
+	border: var(--border-size) solid var(--color-border);
+	border-radius: var(--radius);
+	width: var(--card-width);
+	margin-block-start: var(--space-lg);
+	background-color: var(--color-main);
+
+	img {
+		aspect-ratio: 1;
+		border-radius: var(--radius);
+		border: var(--border-size) solid var(--color-border);
+		overflow: hidden;
+		background-color: #98C6FE;
+	}
+}
+.plate-description {
+	color: purple;
+}
+/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
+
+#create-plate {
+	display: none;
+}
+
+.Plate:has(.Sweet.modal.current) #create-plate {
+	display: block;
+}
 /* === RESPONSIVE === */
 
 @media (min-width: 768px) {
