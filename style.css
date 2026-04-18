@@ -190,29 +190,29 @@ button {
 	display: grid;
 	z-index: 1;
 
+	ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-md);
+		padding-block-end: var(--space-md);
 
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			/* added an invisable border here so that the items don't jump around inside the li when selected*/
+			border: 0.2rem solid transparent;
+			border-radius: 0.5rem;
+			width: var(--space-lg);
+			height: var(--space-lg);
 
-ul {
-	display:grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: var(--space-md);
-	padding-block-end: var(--space-md);
-
-
-
-	li {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/* added an invisable border here so that the items don't jump around inside the li when selected*/
-	border: 0.2rem solid transparent;
-	border-radius: 0.5rem;
-	
-		img{
-		width: 3.5rem;
-		mix-blend-mode: multiply;
-		}
-
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				mix-blend-mode: multiply;
+			}
+		
 		h2 {
 		display: none;
 		}
