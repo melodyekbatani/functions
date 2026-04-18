@@ -1,3 +1,5 @@
+
+/* === TOKENS === */
 :root {
 	--color-main: #f690ae; 
 	--color-border: #98C6FE; 
@@ -5,8 +7,8 @@
 	--color-buttons: #FFEB6D; 
 	--color-cards:#FFF9EC; 
 	--color-output: #D7E9FF;
-	--color-disabled: rgb(220, 220, 220); 
-	--color-disabled-text: rgb(155, 155, 155); 
+	--color-disabled:#fff5b5; 
+	--color-disabled-text: #fd8f79; 
 
 
 /* Typography */
@@ -28,43 +30,35 @@
 	--card-width: 20rem;
 	--card-width-desktop: 60rem;
 	--button: 2rem;
-
 }
 
-.next-button:disabled {
-	background-color: var(--color-disabled);
-		color: var(--color-disabled-text);
 
+
+/* === BASE STYLES === */
+
+html, body {
+  height: 100%;
 }
-
-/* Overall body styling*/
 
 body {
 	overflow-y: hidden;
 	width: 100%;
 	padding: var(--space-sm);
-	background-color: var(--color-main);
 	color: var(--color-text);
-
+	min-height: 100dvh;
 	
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-	
-background:
-  repeating-linear-gradient(
-    0deg,
-    var(--color-text) 0px,
-    var(--color-text) var(--space-sm),
-    transparent var(--space-sm),
-    transparent var(--space-md)
-  ),
-  repeating-linear-gradient(
-    90deg,
-    #9198e5 0px,
-    #9198e5 2px,
-    transparent 2px,
-    transparent 25px
-  ),
-  var(--color-main);
+	background:
+	repeating-linear-gradient(0deg,
+		var(--color-text) 0,
+		var(--color-text) var(--space-sm),
+		transparent var(--space-sm),
+		transparent var(--space-lg)),
+	repeating-linear-gradient(90deg,
+		var(--color-text) 0,
+		var(--color-text) var(--space-sm),
+		transparent var(--space-sm),
+		transparent var(--space-lg)),
+	var(--color-main);
 
 	
 	a {
@@ -78,6 +72,24 @@ background:
 	font-family: var(--font-header);
 	}
 }
+main { 
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	padding: var(--space-sm); 
+	justify-content: center;
+	height: 100dvh;
+}
+
+/* === NAVIGATION/BUTTONS === */
+
+.navigation { 
+	display: flex;
+	padding-block-start: var(--space-lg);
+	gap: var(--space-sm);
+	justify-content: center;
+	align-items: center;
+}
 
 button {
 	border-radius: var(--button);
@@ -87,18 +99,15 @@ button {
 	font-family: var(--font-header);
 }
 
-main { 
-	display: flex; 
-	flex-direction: column;
-	align-items: center;
-	padding: var(--space-sm); 
-	justify-content: center;
-	height: 100vh;
+.next-button:disabled {
+	background-color: var(--color-disabled);
+	color: var(--color-disabled-text);
 }
+/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 
 
+/* === CARD / MODAL === */
 
-/* modal styling */
 .modal {
 	justify-content: center;
 	padding: var(--space-md);
@@ -113,7 +122,6 @@ main {
 	grid-column: 1;
 	grid-row: 1;
 
-
 	.category-title { 
 		font-family: var(--font-header);
 		display: flex; 
@@ -124,51 +132,48 @@ main {
 		h3 {
 			font-size: var(--font-size-md);
 			text-align: center;
-			
+		}
+	}
+
+	/* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
+	&.home {
+		align-items: center;
+		justify-content: center;
+
+		h1 {
+			font-family: var(--font-header);
+			font-size: var(--font-size-lg);
+			font-weight: 500;
+			color:var(--color-main); 
+			text-align: center;
+			line-height: 90%;
+		}
+
+		p {
+			padding-block-start: var(--space-md);
+			text-align: center;
+		}
+	}
+
+	&.current {
+		display:flex;
+		flex-direction: column; 
+		animation: slide-in 0.2s ease-out;
+
+		/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
+		&:last-child { 
+			animation: none; 
 		}
 	}
 }
 
-.modal.current {
-	display:flex;
-	flex-direction: column; 
-	animation: slide-in 0.2s ease-out;
-
-	
-	&:last-child { 
-/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
-	animation: none; 
-	}
-}
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
 @keyframes slide-in {
-  from {
-    transform: translateX(10%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
+	from { transform: translateX(10%); }
+	to { transform: translateX(0); }
 }
 
-/* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
-.modal.home {
-	align-items: center;
-	justify-content: center;
-	h1 {
-		font-family: var(--font-header);
-		font-size: var(--font-size-lg);
-		font-weight: 500;
-		color:var(--color-main); 
-		text-align: center;
-		line-height: 90%;
-	}
-	p {
-		padding-block-start: var(--space-md);
-		text-align: center;
 
-	}
-}
 .plate-description { 
 	color: purple; 
 }
@@ -248,6 +253,9 @@ inset: 0;
 }
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
+
+
+
 .Plate:has(.home.modal.current) {
 	.back-button {
 		display:none; 
@@ -285,14 +293,9 @@ inset: 0;
 	}
 }
 
-.navigation { 
-	display: flex;
-	padding-block-start: var(--space-lg);
-	gap: var(--space-sm);
-	justify-content: center;
-	align-items: center;
 
-}
+/* === OUTPUT === */
+
 body:has(.Output.modal.current) {
     background-color: var(--color-text);
     background-image: none;
@@ -356,6 +359,7 @@ text-align: center;
   display: block;
 }
 
+/* === RESPONSIVE === */
 
 @media (min-width: 768px) {
 .modal {
@@ -389,3 +393,6 @@ li {
 }
 }
 }
+
+
+/*Organizing css https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
