@@ -17,18 +17,19 @@
 	--font-size-sm: 1rem; 
 	--font-size-md: 1.25rem; 
 	--font-size-ml: 2rem;
-	--font-size-lg: 4.5rem;
+	--font-size-lg: 4rem;
 	--font-size-xl: 7rem;
 
 /* Layout */
 	--space-sm: 0.5rem;
 	--space-md: 1.5rem;
+	--space-ml: 2rem;
 	--space-lg: 4rem;
 	--space-xl: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
 	--card-height: 70vh;
-	--card-width: 20rem;
+	--card-width: 17rem;
 	--card-width-desktop: 60rem;
 	--button: 2rem;
 	--border-size: 0.3rem;
@@ -42,11 +43,11 @@ html, body {
 }
 
 body {
-	overflow-y: hidden;
+	overflow: hidden;
 	width: 100%;
 	padding: var(--space-sm);
 	color: var(--color-text);
-	min-height: 100dvh;
+	height: 100dvh;
 
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
@@ -89,7 +90,7 @@ main {
 
 .navigation { 
 	display: flex;
-	padding-block-start: var(--space-lg);
+	padding-block-start: var(--space-ml);
 	gap: var(--space-sm);
 	justify-content: center;
 	align-items: center;
@@ -147,7 +148,7 @@ button {
 		display: flex; 
 		flex-direction: column;
 		gap: var(--space-sm); 
-		padding-block-end: var(--space-md);
+		padding-block: var(--space-md);
 
 		h3 {
 			font-family: var(--font-header);
@@ -160,17 +161,12 @@ button {
 	/* === HOME PAGE === */
 
 	&.home {
-		align-items: center;
-		justify-content: center;
-
 		.home-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
 		h1 {
-			
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
 			font-weight: 700;
@@ -181,7 +177,7 @@ button {
 
 		h2 {
 			font-family: var(--font-body);
-			font-size: var(--font-size-md);
+			font-size: var(--font-size-sm);
 			text-align: center;
 			padding-block-start: var(--space-md);
 			font-weight: 500;
@@ -192,7 +188,7 @@ button {
 		justify-content: center;
         align-self: center;
         margin-block-start: var(--space-xl);
-    }
+		}
 	
 	}
 
@@ -217,8 +213,8 @@ button {
 /* === IMAGE/GRID === */
 .Plate { 
 	position: relative; 
-	width: 25rem; 
-	height: 80vh; 
+	width: var(--card-width);
+	height: var(--card-height);
 	display: grid;
 	place-items: center;
 	grid-template-rows: 1fr auto;
@@ -227,10 +223,10 @@ button {
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 /* grid works better for this so i can create both rows and columns*/
 #data-list {
-	 z-index: 1;
+	z-index: 1;
   grid-column: 1;
   grid-row: 1;
-
+ margin-block-start: calc(var(--space-md) * -1);
 	ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -271,6 +267,7 @@ button {
   grid-column: 1;
   grid-row: 1;
   z-index: 0;
+   margin-block-start: calc(var(--space-md) * -1);
 }
 
 .card-1, .card-2, .card-3{
@@ -303,8 +300,9 @@ button {
 		display:none; 
 	}
 	.navigation {
-       margin-block-start: calc(var(--space-xl) * -5);
-	   z-index: 10;
+       position: absolute;
+        inset-block-end: var(--space-lg);
+        z-index: 10;
     }
 }
 .Plate:has(.Crunch.modal.current) {
