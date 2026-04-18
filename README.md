@@ -6,7 +6,7 @@ This project was created for Typography & Interaction in the Parsons MPS Communi
 Using this framework, I developed a playful interface that generates a “girl dinner” based on items a user has in their fridge. The user selects ingredients from each of the four categories and as a result, the site selects the most ideal girl dinner pairings and provides the plate’s personality type. 
 
 ## Live Link
-[https://melodyekbatani.github.io/spread/](https://melodyekbatani.github.io/functions)
+[https://melodyekbatani.github.io/functions/](https://melodyekbatani.github.io/functions)
 
 ## Tech Stack 
 HTML
