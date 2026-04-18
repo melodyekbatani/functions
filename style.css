@@ -16,26 +16,27 @@
 	--font-header: "rl-horizon", serif;
 	--font-size-sm: 1rem; 
 	--font-size-md: 1.25rem; 
-	--font-size-md-desktop: 2rem;
-	--font-size-lg: 5rem;
-	--font-size-lx: 7rem;
+	--font-size-ml: 2rem;
+	--font-size-lg: 4.5rem;
+	--font-size-xl: 7rem;
 
 /* Layout */
 	--space-sm: 0.5rem;
 	--space-md: 1.5rem;
 	--space-lg: 4rem;
+	--space-xl: 4rem;
 	--max-width: 56rem;
 	--radius: 1rem;
 	--card-height: 70vh;
 	--card-width: 20rem;
 	--card-width-desktop: 60rem;
 	--button: 2rem;
+	--border-size: 0.3rem;
 }
 
 
 
 /* === BASE STYLES === */
-
 html, body {
   height: 100%;
 }
@@ -46,7 +47,10 @@ body {
 	padding: var(--space-sm);
 	color: var(--color-text);
 	min-height: 100dvh;
-	
+
+/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+
 	background:
 	repeating-linear-gradient(0deg,
 		var(--color-text) 0,
@@ -101,12 +105,25 @@ button {
 	font-family: var(--font-body);
 }
 
+.back-button {
+    aspect-ratio: 1;
+    width: 2.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
 .next-button:disabled {
 	background-color: var(--color-disabled);
 	color: var(--color-disabled-text);
 }
-/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+
 
 
 
@@ -117,7 +134,7 @@ button {
 	padding: var(--space-md);
 	display:none; 
 	border-radius: var(--radius);
-	border: 0.25rem solid var(--color-border);
+	border: var(--border-size) solid var(--color-border);
 	background-color: var(--color-cards);
 	list-style: none;
 	gap: var(--space-sm);
@@ -127,41 +144,55 @@ button {
 	grid-row: 1;
 
 	.category-title { 
-		font-family: var(--font-header);
 		display: flex; 
 		flex-direction: column;
 		gap: var(--space-sm); 
-		padding-block-start: var(--space-sm);
+		padding-block-end: var(--space-md);
 
 		h3 {
-			font-size: var(--font-size-md);
+			font-family: var(--font-header);
+			font-size: var(--font-size-ml);
+			font-weight: 600;
 			text-align: center;
 		}
 	}
 	
+	/* === HOME PAGE === */
+
 	&.home {
 		align-items: center;
 		justify-content: center;
 
+		.home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 		h1 {
+			
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
-			font-weight: 500;
+			font-weight: 700;
 			color:var(--color-main); 
 			text-align: center;
 			line-height: 90%;
 		}
+
 		h2 {
 			font-family: var(--font-body);
-			font-size: var(--font-size-sm);
+			font-size: var(--font-size-md);
 			text-align: center;
 			padding-block-start: var(--space-md);
 			font-weight: 500;
 			line-height: 135%;
-			
-
 		}
 
+.next-button {
+		justify-content: center;
+        align-self: center;
+        margin-block-start: var(--space-xl);
+    }
 	
 	}
 
@@ -212,7 +243,7 @@ button {
 			justify-content: center;
 			/* added an invisable border here so that the items don't jump around inside the li when selected*/
 			border: 0.2rem solid transparent;
-			border-radius: 0.5rem;
+			border-radius: var(--border-size);
 			width: var(--space-lg);
 			height: var(--space-lg);
 
@@ -242,21 +273,26 @@ button {
   z-index: 0;
 }
 
-.card-1, .card-2 {
+.card-1, .card-2, .card-3{
   position: absolute;
-inset: 0;
+	inset: 0;
   border-radius: var(--radius);
-  border: 0.25rem solid var(--color-border);
+  border: var(--border-size) solid var(--color-border);
   background-color: var(--color-cards);
   z-index: 0;
 }
 .card-1 {
-  transform: rotate(5deg);
+  transform: rotate(12deg);
 }
 
 .card-2 {
-  transform: rotate(-5deg);
+  transform: rotate(8deg);
 }
+
+.card-3 {
+  transform: rotate(4deg);
+}
+
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 
@@ -265,6 +301,15 @@ inset: 0;
 .Plate:has(.home.modal.current) {
 	.back-button {
 		display:none; 
+	}
+	.navigation {
+       margin-block-start: calc(var(--space-xl) * -5);
+	   z-index: 10;
+    }
+}
+.Plate:has(.Crunch.modal.current) {
+	.card-1 {
+		display: none;
 	}
 }
 .Plate:has(.Sweet.modal.current) {
@@ -275,17 +320,7 @@ inset: 0;
 	.card-1 {
 		display: none;
 	}
-}
-
-.Plate:has(.reveal.modal.current) {
-	.next-button {
-		display:none; 
-	}
-	.reveal-button {
-		display:block;
-	}
-
-	.card-1 {
+	.card-2 {
 		display: none;
 	}
 }
@@ -295,6 +330,9 @@ inset: 0;
 		display: none;
 	}
 	.card-2 { 
+		display: none;
+	}
+	.card-3 {
 		display: none;
 	}
 }
@@ -312,7 +350,7 @@ body:has(.Output.modal.current) {
 	.category-title {
 	h1 {
 		font-family: var(--font-header);
-		font-size: var(--font-size-md-desktop);
+		font-size: var(--font-size-ml);
 		text-align: center;
 		color: var(--color-cards);
 	}
@@ -335,12 +373,12 @@ body:has(.Output.modal.current) {
 	padding: var(--space-sm);
 	gap: var(--space-sm);
 	background-color: var(--color-output);
-	border: 0.25rem solid var(--color-border);
+	border: var(--border-size) solid var(--color-border);
 	border-radius: var(--radius);
 
 	img {
 		border-radius: var(--radius);
-		border: 0.25rem solid var(--color-border);
+		border: var(--border-size) solid var(--color-border);
 		mix-blend-mode: multiply;
 		overflow: hidden;
 
@@ -381,10 +419,10 @@ text-align: center;
 	
 	h1 {
 		font-family: var(--font-header);
-		font-size: var(--font-size-lx);
+		font-size: var(--font-size-xl);
 	}
 	p {
-		font-size: var(--font-size-md-desktop);
+		font-size: var(--font-size-ml);
 		width: 35ch;
 	}
 }
