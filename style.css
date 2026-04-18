@@ -89,6 +89,8 @@ main {
 	gap: var(--space-sm);
 	justify-content: center;
 	align-items: center;
+	grid-column: 1;
+	grid-row: 2;
 }
 
 button {
@@ -96,7 +98,7 @@ button {
 	padding: var(--space-sm);
 	background-color: var(--color-buttons);
 	font-size: var(--font-size-md);
-	font-family: var(--font-header);
+	font-family: var(--font-body);
 }
 
 .next-button:disabled {
@@ -151,17 +153,16 @@ button {
 		}
 		h2 {
 			font-family: var(--font-body);
-			font-family: var(--font-header);
-			font-size: var(--font-size-md);
-
-		}
-
-		p {
-			font-family: var(--font-body);
 			font-size: var(--font-size-sm);
-			padding-block-start: var(--space-md);
 			text-align: center;
+			padding-block-start: var(--space-md);
+			font-weight: 500;
+			line-height: 135%;
+			
+
 		}
+
+	
 	}
 
 	&.current {
@@ -182,13 +183,22 @@ button {
 	to { transform: translateX(0); }
 }
 
+/* === IMAGE/GRID === */
+.Plate { 
+	position: relative; 
+	width: 25rem; 
+	height: 80vh; 
+	display: grid;
+	place-items: center;
+	grid-template-rows: 1fr auto;
+}
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 /* grid works better for this so i can create both rows and columns*/
 #data-list {
-	list-style: none;
-	display: grid;
-	z-index: 1;
+	 z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
 
 	ul {
 		display: grid;
@@ -213,23 +223,23 @@ button {
 				mix-blend-mode: multiply;
 			}
 		
-		h2 {
-		display: none;
+			h2 { display: none; }
+
+			&.active {
+				border-color: var(--color-border);
+			}
 		}
-	}
-		.active {
-		border: 0.2rem solid var(--color-border);
-		border-radius: 0.5rem;
-}
 	}
 }
 
+/* === DECORATIVE CARDS BEHIND === */
 .decorative-cards {
-  position: absolute;
+ position: relative;
   height: var(--card-height);
   width: var(--card-width);
-  z-index: -1;
-  margin-block-start: -5rem;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 0;
 }
 
 .card-1, .card-2 {
@@ -350,16 +360,7 @@ text-align: center;
 .plate-description { 
 	color: purple; 
 }
-.Plate { 
-	position: relative; 
-	width: 25rem; 
-	height: 80vh; 
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
 
 /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 
