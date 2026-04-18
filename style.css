@@ -37,9 +37,8 @@
 
 }
 
-
 /* Overall body styling*/
-/* asking if I'm able to add my background pattern on top of the color https://claude.ai/share/2377471c-b00f-41b1-a41d-959e301cef03 then used mdn to figure out sizing*/
+/* */
 body {
 	overflow-y: hidden;
 	width: 100%;
