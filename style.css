@@ -14,8 +14,8 @@
 /* Typography */
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "rl-horizon", serif;
-	--font-size-sm: 1.25rem; 
-	--font-size-md: 1.5rem; 
+	--font-size-sm: 1rem; 
+	--font-size-md: 1.25rem; 
 	--font-size-md-desktop: 2rem;
 	--font-size-lg: 5rem;
 	--font-size-lx: 7rem;
@@ -104,6 +104,8 @@ button {
 	color: var(--color-disabled-text);
 }
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+
 
 
 /* === CARD / MODAL === */
@@ -134,8 +136,7 @@ button {
 			text-align: center;
 		}
 	}
-
-	/* modal styling https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea*/
+	
 	&.home {
 		align-items: center;
 		justify-content: center;
@@ -148,8 +149,16 @@ button {
 			text-align: center;
 			line-height: 90%;
 		}
+		h2 {
+			font-family: var(--font-body);
+			font-family: var(--font-header);
+			font-size: var(--font-size-md);
+
+		}
 
 		p {
+			font-family: var(--font-body);
+			font-size: var(--font-size-sm);
 			padding-block-start: var(--space-md);
 			text-align: center;
 		}
@@ -162,7 +171,7 @@ button {
 
 		/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
 		&:last-child { 
-			animation: none; 
+		animation: none; 
 		}
 	}
 }
@@ -174,19 +183,6 @@ button {
 }
 
 
-.plate-description { 
-	color: purple; 
-}
-.Plate { 
-	position: relative; 
-	width: 25rem; 
-	height: 80vh; 
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 /* grid works better for this so i can create both rows and columns*/
 #data-list {
@@ -348,6 +344,21 @@ text-align: center;
 	p {
 		display: none;
 	}
+}
+
+
+.plate-description { 
+	color: purple; 
+}
+.Plate { 
+	position: relative; 
+	width: 25rem; 
+	height: 80vh; 
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
