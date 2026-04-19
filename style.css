@@ -74,7 +74,6 @@ body {
 
 	p {
 		line-height: 130%;
-
 		font-size: var(--font-size-sm);
 		font-family: var(--font-header);
 	}
@@ -132,8 +131,6 @@ main {
 
 /* === CARD / MODAL === */
 .modal {
-	justify-content: center;
-	padding: var(--space-md);
 	display: none;
 	border-radius: var(--radius);
 	border: var(--border-size) solid var(--color-border);
@@ -142,6 +139,8 @@ main {
 	gap: var(--space-sm);
 	height: var(--card-height);
 	width: var(--card-width);
+	justify-content: center;
+	padding: var(--space-md);
 
 	.category-title {
 		display: flex;
@@ -161,38 +160,31 @@ main {
 
 	&.home {
 		.home-content {
-			margin-block-start: calc(var(--space-lg) * -1);
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			flex: 1;
+			margin-block-start: calc(var(--space-lg) * -1);
+			text-align: center;
 		}
 
 		h1 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
-			font-weight: 700;
+			font-weight: 600;
 			color: var(--color-main);
-			text-align: center;
 			line-height: 90%;
 		}
 
 		h2 {
 			font-family: var(--font-body);
 			font-size: var(--font-size-sm);
-			text-align: center;
 			padding-block-start: var(--space-md);
-			font-weight: 500;
+			font-weight: 600;
 			line-height: 135%;
 		}
-
-		.next-button {
-			justify-content: center;
-			align-self: center;
-
-		}
-
 	}
+
+/* === ANIMATIONS === */
 
 	&.current {
 		display: flex;
@@ -228,7 +220,7 @@ main {
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
-/* grid works better for this so i can create both rows and columns*/
+
 #data-list {
 	z-index: 1;
 	grid-column: 1;
@@ -244,13 +236,13 @@ main {
 
 		li {
 			display: flex;
-			align-items: center;
-			justify-content: center;
 			/* added an invisable border here so that the items don't jump around inside the li when selected*/
-			border: 0.2rem solid transparent;
-			border-radius: var(--border-size);
 			width: var(--image-size);
 			height: var(--image-size);
+			align-items: center;
+			justify-content: center;
+			border: var(--border-size) solid transparent;
+			border-radius: var(--border-size);
 
 			img {
 				width: 100%;
@@ -258,11 +250,7 @@ main {
 				object-fit: contain;
 				mix-blend-mode: multiply;
 			}
-
-			h2 {
-				display: none;
-			}
-
+			
 			&.active {
 				border-color: var(--color-border);
 			}
