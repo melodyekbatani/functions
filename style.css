@@ -239,7 +239,6 @@ main {
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--space-sm);
 		padding-block-end: var(--space-md);
-		margin-inline-start: calc(var(--space-md) * -1);
 
 		li {
 			display: flex;
@@ -385,7 +384,9 @@ body:has(.Output.modal.current) {
 				text-transform: capitalize;
 				padding-block-end: var(--space-lg);
 				position: absolute;
-				margin-block-start: calc(var(--space-xl) * -1);
+				margin-block-start: calc(var(--space-xl) * -1); 
+				inset-inline-start: 50%; /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inset-inline-start */
+				transform: translateX(-50%);
 			}
 		}
 	}
