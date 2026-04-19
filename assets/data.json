@@ -2,421 +2,421 @@
   {
     "Name": "Bagel",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/19/99/a2/1999a294a3c14562365671521292295a.jpg",
+    "Image": "assets/Food-images/Base/Bagel.png",
     "Personality": "classic",
     "Vibes": "girlcore"
   },
   {
-    "Name": "Toast",
+    "Name": "Baguette",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/0e/df/01/0edf01b50223544e6ffb4b40d4874869.jpg",
-    "Personality": "basic",
+    "Image": "assets/Food-images/Base/Baguette.png",
+    "Personality": "cultured",
     "Vibes": "girlcore"
   },
   {
-    "Name": "Crackers",
+    "Name": "French Fries",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/f1/ff/c3/f1ffc3bf2356bdb576225887258713af.jpg",
-    "Personality": "minimalist",
+    "Image": "assets/Food-images/Base/Fries.png",
+    "Personality": "playful",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Waffle",
+    "Category": "Base",
+    "Image": "assets/Food-images/Base/Waffles.png",
+    "Personality": "cozy",
     "Vibes": "girlcore"
   },
   {
     "Name": "Pita",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/dc/6b/8a/dc6b8ab5e598b27925f5624a7798c6c7.jpg",
+    "Image": "assets/Food-images/Base/Pita.png",
     "Personality": "chill",
     "Vibes": "balanced"
   },
   {
-    "Name": "Loaf",
+    "Name": "Dumplings",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/58/1a/6d/581a6d4ac51090a2c8bc7375379cdd0f.jpg",
-    "Personality": "comforting",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Tortilla",
-    "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/26/6f/eb/266feb91787feb09e626f483cecdb71d.jpg",
-    "Personality": "flexible",
+    "Image": "assets/Food-images/Base/Dumplings.png",
+    "Personality": "doughy",
     "Vibes": "balanced"
   },
   {
     "Name": "Rice",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/20/e8/a3/20e8a3831b9ff35bf6d786c751b475e1.jpg",
-    "Personality": "balanced",
-    "Vibes": "unhinged"
+    "Image": "assets/Food-images/Base/Rice.png",
+    "Personality": "dependable",
+    "Vibes": "balanced"
   },
   {
-    "Name": "Pasta",
+    "Name": "Toast",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/b1/23/76/b12376ed3d16606c55c81dfc4a1fc322.jpg",
-    "Personality": "adaptable",
-    "Vibes": "unhinged"
+    "Image": "assets/Food-images/Base/Toast.png",
+    "Personality": "basic",
+    "Vibes": "balanced"
   },
   {
-    "Name": "French Fries",
+    "Name": "Crackers",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/59/35/be/5935beb683d77f2bfea518d07c0d5967.jpg",
-    "Personality": "playful",
-    "Vibes": "girlcore"
-  },
-  {
-    "Name": "English Muffin",
-    "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/12/db/54/12db54eeb043cec78a57213613ba07c9.jpg",
-    "Personality": "brunchy",
+    "Image": "assets/Food-images/Base/Crackers.png",
+    "Personality": "minimalist",
     "Vibes": "curated"
   },
   {
-    "Name": "Crossiant",
+    "Name": "Grilled Cheese",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/f1/b0/4d/f1b04dfc10c473e46d3c64fca90173b2.jpg",
+    "Image": "assets/Food-images/Base/Grilled-cheese.png",
+    "Personality": "sharp",
+    "Vibes": "curated"
+  },
+  {
+    "Name": "Croissant",
+    "Category": "Base",
+    "Image": "assets/Food-images/Base/Croissant.png",
     "Personality": "layered",
     "Vibes": "curated"
   },
   {
-    "Name": "Baguette",
-    "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/31/1d/5c/311d5cc564a310cf15c007f01df29508.jpg",
-    "Personality": "cultured",
-    "Vibes": "unhinged"
-  },
-  {
     "Name": "Leftover Pizza",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/736x/3b/17/2b/3b172bbde5bd5030533b2ae75f14712f.jpg",
-    "Personality": "chaotic",
+    "Image": "assets/Food-images/Base/Pizza.png",
+    "Personality": "feral",
     "Vibes": "unhinged"
   },
   {
     "Name": "Leftover Noodles",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/d3/96/1f/d3961fda1b1f99a2c892b6779793881d.jpg",
+    "Image": "assets/Food-images/Base/Noodles.png",
     "Personality": "improvised",
     "Vibes": "unhinged"
   },
   {
-    "Name": "Leftover Sandwich",
+    "Name": "Pasta",
     "Category": "Base",
-    "Image": "https://i.pinimg.com/1200x/35/af/bd/35afbd9ab4eee964656236058951cf35.jpg",
-    "Personality": "traditional",
-    "Vibes": "balanced"
+    "Image": "assets/Food-images/Base/Pasta.png",
+    "Personality": "adaptable",
+    "Vibes": "unhinged"
+  },
+  {
+    "Name": "Sushi",
+    "Category": "Base",
+    "Image": "assets/Food-images/Base/Sushi.png",
+    "Personality": "chaotic",
+    "Vibes": "unhinged"
   },
   {
     "Name": "Eggs",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/0d/83/c3/0d83c3bbb3c0af825087e5b728633bd3.jpg",
-    "Personality": "emotional stable",
+    "Image": "assets/Food-images/Protein/Eggs.png",
+    "Personality": "emotionally stable",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Canned Tuna",
+    "Category": "Protein",
+    "Image": "assets/Food-images/Protein/Canned-tuna.png",
+    "Personality": "dependable",
     "Vibes": "girlcore"
   },
   {
     "Name": "Cheese",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/b7/a9/d0/b7a9d066963e0188ff0a896de7b74e70.jpg",
+    "Image": "assets/Food-images/Protein/Cheese.png",
     "Personality": "indulgent",
     "Vibes": "balanced"
   },
   {
     "Name": "Hummus",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/c3/75/a2/c375a24d4fdf18d78417a4633695cc3d.jpg",
+    "Image": "assets/Food-images/Protein/Hummus.png",
     "Personality": "grounded",
     "Vibes": "balanced"
   },
   {
     "Name": "Yogurt",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/07/76/9c/07769cf8e98e65e690adaf12076890b2.jpg",
+    "Image": "assets/Food-images/Protein/Yogurt.png",
     "Personality": "balanced",
     "Vibes": "balanced"
   },
   {
-    "Name": "Canned Tuna",
+    "Name": "Brie",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/99/ee/58/99ee5864a0c64001e4f4a7e8c699b41a.jpg",
-    "Personality": "dependable",
-    "Vibes": "girlcore"
+    "Image": "assets/Food-images/Protein/Brie.png",
+    "Personality": "bougie",
+    "Vibes": "curated"
   },
   {
-    "Name": "Peanut Butter",
+    "Name": "Prosciutto",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/43/0e/9c/430e9cf3711035b3ff05e8324a1bef56.jpg",
-    "Personality": "practical",
+    "Image": "assets/Food-images/Protein/Prosciutto.png",
+    "Personality": "dramatic",
     "Vibes": "curated"
   },
   {
     "Name": "Smoked Salmon",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/34/bc/e5/34bce5b6aa9ae16405dd09c3e06106cf.jpg",
+    "Image": "assets/Food-images/Protein/Smoked-salmon.png",
     "Personality": "fancy",
     "Vibes": "unhinged"
   },
   {
     "Name": "Salami",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/75/03/9c/75039c0bea2489edcc48387d7f640e1e.jpg",
+    "Image": "assets/Food-images/Protein/Salami.png",
     "Personality": "extra",
-    "Vibes": "curated"
+    "Vibes": "unhinged"
   },
   {
-    "Name": "Prosciutto",
+    "Name": "Sardines",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/b0/08/d4/b008d4dd1144c33252e765a9d23223d9.jpg",
-    "Personality": "dramatic",
-    "Vibes": "curated"
+    "Image": "assets/Food-images/Protein/Sardines.png",
+    "Personality": "polarizing",
+    "Vibes": "unhinged"
   },
   {
-    "Name": "Turkey",
+    "Name": "String Cheese",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/06/73/ab/0673ab99e213a433bc9ce87f84f15f80.jpg",
+    "Image": "assets/Food-images/Protein/String-cheese.png",
+    "Personality": "nostalgic",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Deli Turkey",
+    "Category": "Protein",
+    "Image": "assets/Food-images/Protein/Turkey.png",
     "Personality": "sensible",
-    "Vibes": "curated"
+    "Vibes": "balanced"
   },
   {
     "Name": "Tofu",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/4e/9e/f1/4e9ef18c35bfbe5347f7e4f6e07216f5.jpg",
-    "Personality": "calm",
+    "Image": "assets/Food-images/Protein/Tofu.png",
+    "Personality": "silky",
     "Vibes": "balanced"
   },
   {
-    "Name": "Falafel",
+    "Name": "Chicken Nuggets",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/d2/59/95/d25995b3a248ba68bd38402641c4ed6b.jpg",
-    "Personality": "playful",
-    "Vibes": "balanced"
+    "Image": "assets/Food-images/Protein/Chicken-nuggets.png",
+    "Personality": "snacky",
+    "Vibes": "girlcore"
   },
   {
     "Name": "Almonds",
     "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/9b/f1/b6/9bf1b639f135691dbb97e33d056b3bcc.jpg",
-    "Personality": "crunchy",
+    "Image": "assets/Food-images/Protein/Almonds.png",
+    "Personality": "restless",
     "Vibes": "balanced"
   },
   {
-    "Name": "Chicken",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/736x/9a/2a/22/9a2a22a0d02e4b97da062fe342fb93a4.jpg",
-    "Personality": "dependable",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Beef",
-    "Category": "Protein",
-    "Image": "https://i.pinimg.com/1200x/ac/cd/3a/accd3a7cc66e7179879a79bb4201ead5.jpg",
-    "Personality": "hearty",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Pickles",
+    "Name": "Edamame",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/41/c4/48/41c448c70af2661073e064b0d5a6e1b0.jpg",
-    "Personality": "briny",
+    "Image": "assets/Food-images/Crunch/Edamane.png",
+    "Personality": "wholesome",
+    "Vibes": "balanced"
+  },
+  {
+    "Name": "Olives",
+    "Category": "Crunch",
+    "Image": "assets/Food-images/Crunch/Olive.png",
+    "Personality": "acquired taste",
     "Vibes": "unhinged"
   },
   {
     "Name": "Potato Chips",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/7c/e0/70/7ce07056af04a9acdff78e7145808e01.jpg",
-    "Personality": "impulsivity",
+    "Image": "assets/Food-images/Crunch/Chips.png",
+    "Personality": "impulsive",
     "Vibes": "girlcore"
   },
   {
     "Name": "Popcorn",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/e7/4a/18/e74a18921af77cb82b1072f1c102403d.jpg",
+    "Image": "assets/Food-images/Crunch/Popcorn.png",
     "Personality": "unhinged",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Kimchi",
+    "Category": "Crunch",
+    "Image": "assets/Food-images/Crunch/Kimchi.png",
+    "Personality": "fermented",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Granola",
+    "Category": "Crunch",
+    "Image": "assets/Food-images/Crunch/Granola.png",
+    "Personality": "outdoorsy",
     "Vibes": "girlcore"
   },
   {
     "Name": "Pretzels",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/0c/b7/10/0cb710fbea047f81640cc276c6d24738.jpg",
+    "Image": "assets/Food-images/Crunch/Pretzels.png",
     "Personality": "trustworthy",
     "Vibes": "balanced"
   },
   {
     "Name": "Carrot Sticks",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/5f/cc/ad/5fccadc5a5bce104dc0d1921a2583c32.jpg",
+    "Image": "assets/Food-images/Crunch/Carrots.png",
     "Personality": "convenient",
     "Vibes": "balanced"
   },
   {
-    "Name": "Celery",
+    "Name": "Cucumber Slices",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/ce/b8/ce/ceb8ce262065795ccbfc5a07fce188e8.jpg",
-    "Personality": "disciplined",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Tortilla Chips",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/4a/ec/3e/4aec3eaf9c63c1d40f51e5462459fb18.jpg",
-    "Personality": "perfectionist",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Plantain Chips",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/ae/a6/c9/aea6c982cbdfae0830833a46582f3d47.jpg",
-    "Personality": "sunny",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Wasabi Peas",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/dc/33/8e/dc338e0981db9945071875de8b6dfb15.jpg",
-    "Personality": "adventurous",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Takis",
-    "Category": "Crunch",
-    "Image": "https://i.pinimg.com/1200x/5f/67/34/5f67344bd2d1dae1fc1230ceabadbf0e.jpg",
-    "Personality": "extraverted",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Hot Cheetos",
-    "Category": "Crunch",
-    "Image": "https://www.gfsstore.com/wp-content/uploads/2022/06/742832-RAW-6-768x768.jpg",
-    "Personality": "spicy",
+    "Image": "assets/Food-images/Crunch/Cucumbers.png",
+    "Personality": "refreshing",
     "Vibes": "balanced"
   },
   {
     "Name": "Rice Crackers",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/22/08/3b/22083b2ee7bc0d1618cc662d01331c81.jpg",
+    "Image": "assets/Food-images/Crunch/Rice-crackers.png",
     "Personality": "polished",
     "Vibes": "curated"
   },
   {
-    "Name": "Kimchi",
+    "Name": "Pickles",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/7f/0d/af/7f0daf0f14f2830ec5b86233a595d9ad.jpg",
-    "Personality": "fermented",
-    "Vibes": "girlcore"
+    "Image": "assets/Food-images/Crunch/Pickles.png",
+    "Personality": "briny",
+    "Vibes": "unhinged"
+  },
+  {
+    "Name": "Takis",
+    "Category": "Crunch",
+    "Image": "assets/Food-images/Crunch/Takis.png",
+    "Personality": "extraverted",
+    "Vibes": "unhinged"
+  },
+  {
+    "Name": "Wasabi Peas",
+    "Category": "Crunch",
+    "Image": "assets/Food-images/Crunch/Wasabi-peas.png",
+    "Personality": "adventurous",
+    "Vibes": "unhinged"
   },
   {
     "Name": "Dried Seaweed",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/75/b5/47/75b5471c12138439df9cc27c224c38ef.jpg",
+    "Image": "assets/Food-images/Crunch/Seaweed.png",
     "Personality": "open-minded",
     "Vibes": "unhinged"
   },
   {
-    "Name": "Freeze Dried Fruit",
+    "Name": "Diet Coke",
     "Category": "Crunch",
-    "Image": "https://i.pinimg.com/736x/f7/e2/ce/f7e2ceafa097e0e27cf4bdf91fe45fdf.jpg",
-    "Personality": "whimsical",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Granola",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/96/a4/94/96a4943fc1add7d68f7bceae7abee9f4.jpg",
-    "Personality": "outdoorsy",
+    "Image": "assets/Food-images/Crunch/Diet-coke.png",
+    "Personality": "iconic",
     "Vibes": "girlcore"
   },
   {
-    "Name": "Candy",
+    "Name": "Grapes",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/3c/4f/d4/3c4fd4c5c6e4613baba27689f698a11a.jpg",
-    "Personality": "retro",
-    "Vibes": "unhinged"
+    "Image": "assets/Food-images/Sweet/Grapes.png",
+    "Personality": "elegant",
+    "Vibes": "curated"
   },
   {
     "Name": "Cupcake",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/1b/c5/29/1bc529a0b30f56e32bf6251949026a2a.jpg",
+    "Image": "assets/Food-images/Sweet/Cupcakes.png",
     "Personality": "agreeable",
     "Vibes": "girlcore"
   },
   {
-    "Name": "Jam",
+    "Name": "Cereal",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/49/68/5f/49685f11658337b16b6e2e19d3d08c0a.jpg",
-    "Personality": "energetic",
+    "Image": "assets/Food-images/Sweet/Cereal.png",
+    "Personality": "crispy",
     "Vibes": "girlcore"
   },
   {
-    "Name": "Peanut Butter Cups",
+    "Name": "Fruit Roll Up",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/1200x/ec/9f/5e/ec9f5ea947027988a31c2601619b9253.jpg",
-    "Personality": "bold",
-    "Vibes": "unhinged"
-  },
-  {
-    "Name": "Sour Gummies",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/b6/ee/71/b6ee71431d876064cd911a7026772b15.jpg",
-    "Personality": "outgoing",
-    "Vibes": "balanced"
+    "Image": "assets/Food-images/Sweet/Fruit-rollup.png",
+    "Personality": "childish",
+    "Vibes": "girlcore"
   },
   {
     "Name": "Berries",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/1200x/92/51/6e/92516ed0429a5fb5e037b98abc22656f.jpg",
+    "Image": "assets/Food-images/Sweet/Berries.png",
     "Personality": "sensitive",
     "Vibes": "balanced"
   },
   {
     "Name": "Mango",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/57/ef/2d/57ef2db6563da2ea640b35fad521e2ee.jpg",
+    "Image": "assets/Food-images/Sweet/Mango.png",
     "Personality": "charismatic",
     "Vibes": "balanced"
   },
   {
-    "Name": "Banana",
+    "Name": "Sour Gummies",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/5c/e1/47/5ce1472f8f90b508b7411d5a230a7a07.jpg",
-    "Personality": "gentle",
+    "Image": "assets/Food-images/Sweet/Gummies.png",
+    "Personality": "outgoing",
     "Vibes": "balanced"
   },
   {
-    "Name": "Chocolate",
+    "Name": "Nutella",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/88/d9/ab/88d9aba4ad8064c973905d1996827aa5.jpg",
-    "Personality": "romantics",
+    "Image": "assets/Food-images/Sweet/Nutella.png",
+    "Personality": "irresistible",
+    "Vibes": "curated"
+  },
+  {
+    "Name": "Peanut Butter",
+    "Category": "Sweet",
+    "Image": "assets/Food-images/Sweet/Peanut-butter.png",
+    "Personality": "bold",
     "Vibes": "unhinged"
   },
   {
     "Name": "Cinnamon Rolls",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/62/8c/32/628c324fd7c315acee2d3085fb30c821.jpg",
+    "Image": "assets/Food-images/Sweet/Cinnamon.png",
     "Personality": "gooey",
     "Vibes": "unhinged"
   },
   {
-    "Name": "Jello",
+    "Name": "Ice Cream",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/ba/a6/bb/baa6bbe1943be09f8e421713d2053e3c.jpg",
-    "Personality": "smooth",
-    "Vibes": "curated"
-  },
-  {
-    "Name": "Chocolate Almonds",
-    "Category": "Sweet",
-    "Image": "https://nutterie.com/cdn/shop/products/Milk_chocolate_almonds_1200x1200.png?v=1745580596",
-    "Personality": "decadent",
-    "Vibes": "balanced"
-  },
-  {
-    "Name": "Cereal",
-    "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/65/8a/18/658a18a367f64b03be3a993b6d339650.jpg",
-    "Personality": "crispy",
-    "Vibes": "girlcore"
+    "Image": "assets/Food-images/Sweet/Ice-cream.png",
+    "Personality": "emotionally necessary",
+    "Vibes": "unhinged"
   },
   {
     "Name": "Cookies",
     "Category": "Sweet",
-    "Image": "https://i.pinimg.com/736x/dc/a8/0e/dca80ef3e933021920826b299385e834.jpg",
-    "Personality": "delightful",
+    "Image": "assets/Food-images/Sweet/Cookie.png",
+    "Personality": "childish",
+    "Vibes": "girlcore"
+  },
+  {
+    "Name": "Oreos",
+    "Category": "Sweet",
+    "Image": "assets/Food-images/Sweet/Oreo.png",
+    "Personality": "consistent",
     "Vibes": "balanced"
+  },
+  {
+    "Name": "Twinkies",
+    "Category": "Sweet",
+    "Image": "assets/Food-images/Sweet/Twinkie.png",
+    "Personality": "unserious",
+    "Vibes": "unhinged"
+  },
+  {
+    "Name": "Popsicle",
+    "Category": "Sweet",
+    "Image": "assets/Food-images/Sweet/Popsicle.png",
+    "Personality": "cool",
+    "Vibes": "girlcore"
   }
 ]
