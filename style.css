@@ -1,26 +1,25 @@
-
 /* === DESIGN SYSTEM === */
 :root {
-	--color-main: #f690ae; 
-	--color-border: #98C6FE; 
+	--color-main: #f690ae;
+	--color-border: #98C6FE;
 	--color-text: #D54E33;
-	--color-buttons: #FFEB6D; 
-	--color-cards:#FFF9EC; 
+	--color-buttons: #FFEB6D;
+	--color-cards: #FFF9EC;
 	--color-output: #D7E9FF;
-	--color-disabled:#fff5b5; 
-	--color-disabled-text: #fd8f79; 
+	--color-disabled: #fff5b5;
+	--color-disabled-text: #fd8f79;
 
 
-/* Typography */
+	/* Typography */
 	--font-body: 'Public Sans', sans-serif;
 	--font-header: "rl-horizon", serif;
-	--font-size-sm: 1rem; 
-	--font-size-md: 1.25rem; 
+	--font-size-sm: 1rem;
+	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
 	--font-size-lg: 4rem;
 	--font-size-xl: 7rem;
 
-/* Layout */
+	/* Layout */
 	--space-sm: 0.5rem;
 	--space-md: 1.5rem;
 	--space-ml: 2rem;
@@ -39,8 +38,9 @@
 
 
 /* === BASE STYLES === */
-html, body {
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
 
 body {
@@ -50,46 +50,48 @@ body {
 	color: var(--color-text);
 	height: 100dvh;
 
-/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+	/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+	/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
 	background:
-	repeating-linear-gradient(0deg,
-		var(--color-text) 0,
-		var(--color-text) var(--space-sm),
-		transparent var(--space-sm),
-		transparent var(--space-lg)),
-	repeating-linear-gradient(90deg,
-		var(--color-text) 0,
-		var(--color-text) var(--space-sm),
-		transparent var(--space-sm),
-		transparent var(--space-lg)),
-	var(--color-main);
+		repeating-linear-gradient(0deg,
+			var(--color-text) 0,
+			var(--color-text) var(--space-sm),
+			transparent var(--space-sm),
+			transparent var(--space-lg)),
 
-	
+		repeating-linear-gradient(90deg,
+			var(--color-text) 0,
+			var(--color-text) var(--space-sm),
+			transparent var(--space-sm),
+			transparent var(--space-lg)),
+			var(--color-main);
+
+
 	a {
-	text-decoration: underline;
+		text-decoration: underline;
 	}
 
 	p {
-	line-height: 130%;
-	kerning: 120%;
-	font-size: var(--font-size-sm);
-	font-family: var(--font-header);
+		line-height: 130%;
+
+		font-size: var(--font-size-sm);
+		font-family: var(--font-header);
 	}
 }
-main { 
-	display: flex; 
+
+main {
+	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: var(--space-sm); 
+	padding: var(--space-sm);
 	justify-content: center;
 	height: 100dvh;
 }
 
 /* === NAVIGATION/BUTTONS === */
 
-.navigation { 
+.navigation {
 	display: flex;
 	padding-block-start: var(--space-ml);
 	gap: var(--space-sm);
@@ -98,44 +100,41 @@ main {
 	grid-column: 1;
 	grid-row: 2;
 	position: absolute;
-    margin-block-start: var(--space-ml);
-       
+	margin-block-start: var(--space-ml);
+
+	button {
+		border-radius: var(--button);
+		padding: var(--space-sm);
+		background-color: var(--color-buttons);
+		font-size: var(--font-size-md);
+		font-family: var(--font-body);
+
+		&:disabled {
+			background-color: var(--color-disabled);
+			color: var(--color-disabled-text);
+		}
+	}
+
+	.back-button {
+		aspect-ratio: 1;
+		width: 2.5rem;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+	}
 }
-
-button {
-	border-radius: var(--button);
-	padding: var(--space-sm);
-	background-color: var(--color-buttons);
-	font-size: var(--font-size-md);
-	font-family: var(--font-body);
-}
-
-.back-button {
-    aspect-ratio: 1;
-    width: 2.5rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-        width: 1.25rem;
-        height: 1.25rem;
-    }
-}
-
-.next-button:disabled {
-	background-color: var(--color-disabled);
-	color: var(--color-disabled-text);
-}
-
-
 
 /* === CARD / MODAL === */
 .modal {
 	justify-content: center;
 	padding: var(--space-md);
-	display:none; 
+	display: none;
 	border-radius: var(--radius);
 	border: var(--border-size) solid var(--color-border);
 	background-color: var(--color-cards);
@@ -144,10 +143,10 @@ button {
 	height: var(--card-height);
 	width: var(--card-width);
 
-	.category-title { 
-		display: flex; 
+	.category-title {
+		display: flex;
 		flex-direction: column;
-		gap: var(--space-sm); 
+		gap: var(--space-sm);
 		padding-block-start: var(--space-md);
 
 		h3 {
@@ -157,23 +156,23 @@ button {
 			text-align: center;
 		}
 	}
-	
+
 	/* === HOME PAGE === */
 
 	&.home {
 		.home-content {
-		margin-block-start: calc(var(--space-lg) * -1);
-        display: flex;
-        flex-direction: column;
-		justify-content: center;
-            flex: 1;
-    }
+			margin-block-start: calc(var(--space-lg) * -1);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex: 1;
+		}
 
 		h1 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
 			font-weight: 700;
-			color:var(--color-main); 
+			color: var(--color-main);
 			text-align: center;
 			line-height: 90%;
 		}
@@ -187,35 +186,40 @@ button {
 			line-height: 135%;
 		}
 
-.next-button {
-		justify-content: center;
-        align-self: center;
-       
+		.next-button {
+			justify-content: center;
+			align-self: center;
+
 		}
-	
+
 	}
 
 	&.current {
-		display:flex;
-		flex-direction: column; 
+		display: flex;
+		flex-direction: column;
 		animation: slide-in 0.2s ease-out;
 
 		/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
-		&:last-child { 
-		animation: none; 
+		&:last-child {
+			animation: none;
 		}
 	}
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
 @keyframes slide-in {
-	from { transform: translateX(10%); }
-	to { transform: translateX(0); }
+	from {
+		transform: translateX(10%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
 }
 
 /* === IMAGE/GRID === */
-.Plate { 
-	position: relative; 
+.Plate {
+	position: relative;
 	width: var(--card-width);
 	height: var(--card-height);
 	display: grid;
@@ -227,16 +231,16 @@ button {
 /* grid works better for this so i can create both rows and columns*/
 #data-list {
 	z-index: 1;
-  grid-column: 1;
-  grid-row: 1;
- margin-block-start: calc(var(--space-lg) * -1);
+	grid-column: 1;
+	grid-row: 1;
+	margin-block-start: calc(var(--space-lg) * -1);
 
 	ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--space-sm);
 		padding-block-end: var(--space-md);
-		 margin-inline-start: calc(var(--space-md) * -1);
+		margin-inline-start: calc(var(--space-md) * -1);
 
 		li {
 			display: flex;
@@ -254,8 +258,10 @@ button {
 				object-fit: contain;
 				mix-blend-mode: multiply;
 			}
-		
-			h2 { display: none; }
+
+			h2 {
+				display: none;
+			}
 
 			&.active {
 				border-color: var(--color-border);
@@ -266,60 +272,67 @@ button {
 
 /* === DECORATIVE CARDS BEHIND === */
 .decorative-cards {
- position: relative;
-  height: var(--card-height);
-  width: var(--card-width);
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 0;
-   margin-block-start: calc(var(--space-lg) * -1);
+	position: relative;
+	height: var(--card-height);
+	width: var(--card-width);
+	grid-column: 1;
+	grid-row: 1;
+	z-index: 0;
+	margin-block-start: calc(var(--space-lg) * -1);
 }
 
-.card-1, .card-2, .card-3{
-  position: absolute;
+.card-1,
+.card-2,
+.card-3 {
+	position: absolute;
 	inset: 0;
-  border-radius: var(--radius);
-  border: var(--border-size) solid var(--color-border);
-  background-color: var(--color-cards);
-  z-index: 0;
+	border-radius: var(--radius);
+	border: var(--border-size) solid var(--color-border);
+	background-color: var(--color-cards);
+	z-index: 0;
 }
+
 .card-1 {
-  transform: rotate(12deg);
+	transform: rotate(12deg);
 }
 
 .card-2 {
-  transform: rotate(8deg);
+	transform: rotate(8deg);
 }
 
 .card-3 {
-  transform: rotate(4deg);
+	transform: rotate(4deg);
 }
 
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(.home.modal.current) {
 	.back-button {
-		display:none; 
+		display: none;
 	}
+
 	.navigation {
-        inset-block-end: var(--space-lg);
-        z-index: 10;
+		inset-block-end: var(--space-lg);
+		z-index: 10;
 		min-height: 5rem;
-    }
+	}
 }
+
 .Plate:has(.Crunch.modal.current) {
 	.card-1 {
 		display: none;
 	}
 }
+
 .Plate:has(.Sweet.modal.current) {
 	.next-button {
-		display:none; 
+		display: none;
 	}
 
 	.card-1 {
 		display: none;
 	}
+
 	.card-2 {
 		display: none;
 	}
@@ -329,9 +342,11 @@ button {
 	.card-1 {
 		display: none;
 	}
-	.card-2 { 
+
+	.card-2 {
 		display: none;
 	}
+
 	.card-3 {
 		display: none;
 	}
@@ -425,11 +440,13 @@ body:has(.Output.modal.current) {
 		overflow: hidden;
 	}
 }
+
 .plate-description {
 	color: var(--color-cards);
 	font-family: var(--font-body);
 	text-align: center;
 }
+
 /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 
 #create-plate {
@@ -439,45 +456,49 @@ body:has(.Output.modal.current) {
 .Plate:has(.Sweet.modal.current) #create-plate {
 	display: block;
 }
+
 /* === RESPONSIVE === */
 
 @media (min-width: 768px) {
-.modal {
-	width: var(--card-width-desktop);
-}
-.modal.home {
-	.home-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex: 1;
+	.modal {
+		width: var(--card-width-desktop);
 	}
-	
-	h1 {
-		font-family: var(--font-header);
-		font-size: var(--font-size-xl);
-	}
-	p {
-		font-size: var(--font-size-ml);
-		width: 35ch;
-	}
-}
 
-.decorative-cards {
-  width: var(--card-width-desktop);
-}
+	.modal.home {
+		.home-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex: 1;
+		}
 
-#data-list {
-ul {
-	grid-template-columns: repeat(5, 1fr);
-	gap: var(--space-sm);
-li {
-	img { 
-		width: 5rem;
+		h1 {
+			font-family: var(--font-header);
+			font-size: var(--font-size-xl);
+		}
+
+		p {
+			font-size: var(--font-size-ml);
+			width: 35ch;
+		}
 	}
-}
-}
-}
+
+	.decorative-cards {
+		width: var(--card-width-desktop);
+	}
+
+	#data-list {
+		ul {
+			grid-template-columns: repeat(5, 1fr);
+			gap: var(--space-sm);
+
+			li {
+				img {
+					width: 5rem;
+				}
+			}
+		}
+	}
 }
 
 /*Organizing css https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
