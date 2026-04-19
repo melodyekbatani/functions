@@ -5,7 +5,6 @@
 	--color-text: #D54E33;
 	--color-buttons: #FFEB6D;
 	--color-cards: #FFF9EC;
-	--color-output: #D7E9FF;
 	--color-disabled: #fff5b5;
 	--color-disabled-text: #fd8f79;
 
@@ -18,6 +17,7 @@
 	--font-size-ml: 2rem;
 	--font-size-lg: 4rem;
 	--font-size-xl: 7rem;
+	--font-weight-bold: 600; 
 
 	/* Layout */
 	--space-sm: 0.5rem;
@@ -25,7 +25,6 @@
 	--space-ml: 2rem;
 	--space-lg: 4rem;
 	--space-xl: 6rem;
-	--max-width: 56rem;
 	--radius: 1rem;
 	--image-size: 5rem;
 	--card-height: 70vh;
@@ -160,7 +159,7 @@ main {
 		h3 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-md);
-			font-weight: 600;
+			font-weight: var(--font-weight-bold);
 			text-align: center;
 		}
 	}
@@ -179,7 +178,7 @@ main {
 		h1 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
-			font-weight: 600;
+			font-weight: var(--font-weight-bold);
 			color: var(--color-main);
 			line-height: 90%;
 		}
@@ -188,7 +187,7 @@ main {
 			font-family: var(--font-body);
 			font-size: var(--font-size-sm);
 			padding-block-start: var(--space-md);
-			font-weight: 600;
+			font-weight: var(--font-weight-bold);
 			line-height: 135%;
 		}
 	}
@@ -428,14 +427,10 @@ body:has(.Output.modal.current) {
 
 	.modal.home {
 		.home-content {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
 			flex: 1;
 		}
 
 		h1 {
-			font-family: var(--font-header);
 			font-size: var(--font-size-xl);
 		}
 
@@ -452,7 +447,6 @@ body:has(.Output.modal.current) {
 	#data-list {
 		ul {
 			grid-template-columns: repeat(5, 1fr);
-			gap: var(--space-sm);
 
 			li {
 				img {
@@ -463,4 +457,4 @@ body:has(.Output.modal.current) {
 	}
 }
 
-/*Organizing css https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
+/*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
