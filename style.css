@@ -29,7 +29,7 @@
 	--radius: 1rem;
 	--image-size: 5rem;
 	--card-height: 70vh;
-	--card-width: 17rem;
+	--card-width: 20rem;
 	--card-width-desktop: 60rem;
 	--button: 2rem;
 	--border-size: 0.3rem;
@@ -65,7 +65,7 @@ body {
 			var(--color-text) var(--space-sm),
 			transparent var(--space-sm),
 			transparent var(--space-lg)),
-			var(--color-main);
+		var(--color-main);
 
 
 	a {
@@ -129,6 +129,15 @@ main {
 	}
 }
 
+/* create plate buttons on sweet screen */
+#create-plate {
+	display: none;
+}
+
+.Plate:has(.Sweet.modal.current) #create-plate {
+	display: block;
+}
+
 /* === CARD / MODAL === */
 .modal {
 	display: none;
@@ -184,7 +193,7 @@ main {
 		}
 	}
 
-/* === ANIMATIONS === */
+	/* === ANIMATIONS === */
 
 	&.current {
 		display: flex;
@@ -268,23 +277,36 @@ main {
 	margin-block-start: calc(var(--space-lg) * -1);
 }
 
-.card-1, .card-2, .card-3 {
+.card-1,
+.card-2,
+.card-3 {
 	position: absolute;
-	inset: 0; /* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
+	inset: 0;
+	/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
 	border-radius: var(--radius);
 	border: var(--border-size) solid var(--color-border);
 	background-color: var(--color-cards);
 	z-index: 0;
 }
 
-.card-1 { transform: rotate(12deg); }
-.card-2 { transform: rotate(8deg); }
-.card-3 { transform: rotate(4deg);}
+.card-1 {
+	transform: rotate(12deg);
+}
+
+.card-2 {
+	transform: rotate(8deg);
+}
+
+.card-3 {
+	transform: rotate(4deg);
+}
 
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(.home.modal.current) {
-	.back-button { display: none; }
+	.back-button {
+		display: none;
+	}
 
 	.navigation {
 		inset-block-end: var(--space-lg);
@@ -293,17 +315,28 @@ main {
 	}
 }
 
-.Plate:has(.Crunch.modal.current) { 
-	.card-1 { display: none;}
+.Plate:has(.Crunch.modal.current) {
+	.card-1 {
+		display: none;
+	}
 }
 
 .Plate:has(.Sweet.modal.current) {
-	.next-button { display: none;	}
-	.card-1, .card-2 { display: none; }
+	.next-button {
+		display: none;
+	}
+
+	.card-1,
+	.card-2 {
+		display: none;
+	}
 }
 
 .Plate:has(.Output.modal.current) {
-	.card-1, .card-2, .card-3 {
+
+	.card-1,
+	.card-2,
+	.card-3 {
 		display: none;
 	}
 }
@@ -321,35 +354,40 @@ body:has(.Output.modal.current) {
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-md);
+	text-align: center;
+	color: var(--color-main);
 
-	/* "Girl Dinner Vibe" label */
-	.vibe-label {
-		font-size: var(--font-size-ml);
-		font-family: var(--font-body);
-		color: var(--color-main);
-	}
-
-	/* Unhinged,girlcore ect. */
 	.output {
-		p {
-			color: var(--color-main);
-			font-size: var(--font-size-lg);
-			font-family: var(--font-header);
-		}
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		padding: var(--space-sm);
+		gap: var(--space-sm);
+		border: var(--border-size) solid var(--color-border);
+		border-radius: var(--radius);
+		width: var(--card-width);
+		margin-block-start: var(--space-lg);
+		background-color: var(--color-main);
 
-		p:first-of-type {
-			text-transform: capitalize;
-			padding-block-end: var(--space-lg);
-			display: block;
-			position: absolute;
-			text-align: center;
-			z-index: 1;
-			background-color: transparent;
-			margin-block-start: calc(var(--space-xl) * -1);
+		img {
+			aspect-ratio: 1;
+			border-radius: var(--radius);
+			border: var(--border-size) solid var(--color-border);
+			overflow: hidden;
 		}
 
 		p {
 			display: none;
+
+			&:first-of-type {
+				display: block;
+				font-size: var(--font-size-lg);
+				font-family: var(--font-header);
+				text-transform: capitalize;
+				padding-block-end: var(--space-lg);
+				position: absolute;
+				margin-block-start: calc(var(--space-xl) * -1);
+			}
 		}
 	}
 
@@ -360,55 +398,26 @@ body:has(.Output.modal.current) {
 		h1 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-lg);
-			text-align: center;
 			color: var(--color-cards);
 			line-height: 90%;
 		}
 
+		/* "Girl Dinner Vibe" label */
 		.vibe-label {
 			font-family: var(--font-header);
 			font-size: var(--font-size-md);
-			color: var(--color-main);
-			text-align: center;
 		}
 	}
-}
 
-.output {
-	position: relative;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	padding: var(--space-sm);
-	gap: var(--space-sm);
-	border: var(--border-size) solid var(--color-border);
-	border-radius: var(--radius);
-	width: var(--card-width);
-	margin-block-start: var(--space-lg);
-	background-color: var(--color-main);
-
-	img {
-		aspect-ratio: 1;
-		border-radius: var(--radius);
-		border: var(--border-size) solid var(--color-border);
-		overflow: hidden;
+	.plate-description {
+		color: var(--color-cards);
+		font-family: var(--font-body);
 	}
+
+	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
 
-.plate-description {
-	color: var(--color-cards);
-	font-family: var(--font-body);
-	text-align: center;
-}
 
-/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
-
-#create-plate {
-	display: none;
-}
-
-.Plate:has(.Sweet.modal.current) #create-plate {
-	display: block;
-}
 
 /* === RESPONSIVE === */
 
