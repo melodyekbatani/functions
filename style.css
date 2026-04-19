@@ -29,7 +29,7 @@
 	--image-size: 5rem;
 	--card-height: 70vh;
 	--card-width: 20rem;
-	--card-width-desktop: 60rem;
+	--card-width-desktop: 50rem;
 	--button: 2rem;
 	--border-size: 0.3rem;
 }
@@ -422,7 +422,7 @@ body:has(.Output.modal.current) {
 /* === RESPONSIVE === */
 
 @media (min-width: 768px) {
-	.modal {
+	.Plate, .decorative-cards, .modal{
 		width: var(--card-width-desktop);
 	}
 
@@ -441,21 +441,19 @@ body:has(.Output.modal.current) {
 		}
 	}
 
-	.decorative-cards {
-		width: var(--card-width-desktop);
-	}
 
-	#data-list {
-		ul {
-			grid-template-columns: repeat(5, 1fr);
+	#data-list ul {
+    grid-template-columns: repeat(5, 1fr);
 
-			li {
-				img {
-					width: 5rem;
-				}
-			}
-		}
-	}
+    li {
+        width: var(--image-size-desktop);
+        height: var(--image-size-desktop);
+
+        img {
+            width: 70%;
+            height: 70%;
+        }
+    }
 }
 
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
