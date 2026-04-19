@@ -220,7 +220,6 @@ main {
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
-
 #data-list {
 	z-index: 1;
 	grid-column: 1;
@@ -250,7 +249,7 @@ main {
 				object-fit: contain;
 				mix-blend-mode: multiply;
 			}
-			
+
 			&.active {
 				border-color: var(--color-border);
 			}
@@ -269,35 +268,23 @@ main {
 	margin-block-start: calc(var(--space-lg) * -1);
 }
 
-.card-1,
-.card-2,
-.card-3 {
+.card-1, .card-2, .card-3 {
 	position: absolute;
-	inset: 0;
+	inset: 0; /* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
 	border-radius: var(--radius);
 	border: var(--border-size) solid var(--color-border);
 	background-color: var(--color-cards);
 	z-index: 0;
 }
 
-.card-1 {
-	transform: rotate(12deg);
-}
-
-.card-2 {
-	transform: rotate(8deg);
-}
-
-.card-3 {
-	transform: rotate(4deg);
-}
+.card-1 { transform: rotate(12deg); }
+.card-2 { transform: rotate(8deg); }
+.card-3 { transform: rotate(4deg);}
 
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(.home.modal.current) {
-	.back-button {
-		display: none;
-	}
+	.back-button { display: none; }
 
 	.navigation {
 		inset-block-end: var(--space-lg);
@@ -306,43 +293,22 @@ main {
 	}
 }
 
-.Plate:has(.Crunch.modal.current) {
-	.card-1 {
-		display: none;
-	}
+.Plate:has(.Crunch.modal.current) { 
+	.card-1 { display: none;}
 }
 
 .Plate:has(.Sweet.modal.current) {
-	.next-button {
-		display: none;
-	}
-
-	.card-1 {
-		display: none;
-	}
-
-	.card-2 {
-		display: none;
-	}
+	.next-button { display: none;	}
+	.card-1, .card-2 { display: none; }
 }
 
 .Plate:has(.Output.modal.current) {
-	.card-1 {
-		display: none;
-	}
-
-	.card-2 {
-		display: none;
-	}
-
-	.card-3 {
+	.card-1, .card-2, .card-3 {
 		display: none;
 	}
 }
 
-
 /* === OUTPUT === */
-
 body:has(.Output.modal.current) {
 	background-color: var(--color-text);
 }
@@ -364,7 +330,6 @@ body:has(.Output.modal.current) {
 	}
 
 	/* Unhinged,girlcore ect. */
-
 	.output {
 		p {
 			color: var(--color-main);
