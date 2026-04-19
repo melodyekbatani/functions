@@ -26,10 +26,9 @@
 	--space-lg: 4rem;
 	--space-xl: 6rem;
 	--radius: 1rem;
-	--image-size: 5rem;
+	--image-size: clamp(5rem, 10vw, 8rem);
 	--card-height: 70vh;
-	--card-width: 20rem;
-	--card-width-desktop: 50rem;
+	--card-width: clamp(15rem, 80vw, 60rem);
 	--button: 2rem;
 	--border-size: 0.3rem;
 }
@@ -249,6 +248,8 @@ main {
 			justify-content: center;
 			border: var(--border-size) solid transparent;
 			border-radius: var(--border-size);
+			justify-content: center;
+			width: 100%;
 
 			img {
 				width: 100%;
@@ -423,7 +424,7 @@ body:has(.Output.modal.current) {
 
 @media (min-width: 768px) {
 	.Plate, .decorative-cards, .modal{
-		width: var(--card-width-desktop);
+		width: var(--card-width);
 	}
 
 	.modal.home {
@@ -445,15 +446,8 @@ body:has(.Output.modal.current) {
 	#data-list ul {
     grid-template-columns: repeat(5, 1fr);
 
-    li {
-        width: var(--image-size-desktop);
-        height: var(--image-size-desktop);
 
-        img {
-            width: 70%;
-            height: 70%;
-        }
-    }
+}
 }
 
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
