@@ -1,5 +1,5 @@
 
-/* === TOKENS === */
+/* === DESIGN SYSTEM === */
 :root {
 	--color-main: #f690ae; 
 	--color-border: #98C6FE; 
@@ -371,7 +371,7 @@ body:has(.Output.modal.current) {
 
 		p:first-of-type {
 			text-transform: capitalize;
-			padding-block-end: 3rem;
+			padding-block-end: var(--space-lg);
 			display: block;
 			position: absolute;
 			text-align: center;
@@ -423,11 +423,12 @@ body:has(.Output.modal.current) {
 		border-radius: var(--radius);
 		border: var(--border-size) solid var(--color-border);
 		overflow: hidden;
-		background-color: #98C6FE;
 	}
 }
 .plate-description {
-	color: purple;
+	color: var(--color-cards);
+	font-family: var(--font-body);
+	text-align: center;
 }
 /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 
