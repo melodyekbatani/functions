@@ -334,6 +334,15 @@ main {
 		display: none;
 	}
 }
+/* === STEPS === */
+.steps {
+
+	.active {
+		color: blue; 
+	}
+}
+
+
 
 /* === OUTPUT === */
 body:has(.Output.modal.current) {

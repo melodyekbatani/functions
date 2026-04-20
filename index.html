@@ -7,8 +7,9 @@
 	<link href="/Icons/Favicon.ico" rel="icon" sizes="any">
 	<link href="/Icons/Favicon.svg" rel="icon" type="image/svg+xml">
 	<link href="/Icons/apple-touch-icon.png" rel="apple-touch-icon">
-	<meta property="description" content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
-	
+	<meta property="description"
+		content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -17,8 +18,9 @@
 	<script defer src="./assets/main.js"></script>
 
 	<!---------------FONTS - RL Horizon and Public Sans ----------------------->
-	<link href="https://api.fontshare.com/v2/css?f[]=public-sans@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900,901&f[]=melodrama@300,400,500,600,700&display=swap"
-	rel="stylesheet">
+	<link
+		href="https://api.fontshare.com/v2/css?f[]=public-sans@100,101,200,201,300,301,400,401,500,501,600,601,700,701,800,801,900,901&f[]=melodrama@300,400,500,600,700&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="https://use.typekit.net/pde1ukj.css">
 </head>
 
@@ -42,12 +44,20 @@
 				<li class="home modal current" data-button-name='Get started'>
 					<div class="home-content">
 						<h1>Girl Dinner</h1>
-						<h2>Build your plate from what's in your fridge or pantry, and we'll assemble your girl dinner and reveal your vibe</h2>
+						<h2>Build your plate from what's in your fridge or pantry, and we'll assemble your girl dinner
+							and reveal your vibe</h2>
 					</div>
 				</li>
 
 
 				<li class="Base modal" data-button-name='Choose Protein'>
+					<!-- https://claude.ai/share/d32e56c6-827e-41ff-81bf-b60a109ba97b -->
+					<div class="steps">
+						<span class="active">1</span>
+						<span class="step">2</span>
+						<span class="step">3</span>
+						<span class="step">4</span>
+					</div>
 					<div class="category-title">
 						<h3>Select bases</h3>
 					</div>
@@ -55,6 +65,12 @@
 				</li>
 
 				<li class="Protein modal" data-button-name='Choose Crunch'>
+					<div class="steps">
+						<span class="step">1</span>
+						<span class="active">2</span>
+						<span class="step">3</span>
+						<span class="step">4</span>
+					</div>
 					<div class="category-title">
 						<h3>Select mains</h3>
 					</div>
@@ -79,16 +95,16 @@
 
 				<li class="Output modal" data-button-name='Start over?'>
 					<section class="results">
-					<div class="category-title">
-						<h1 class="vibe-label">Girl Dinner Vibe</h1>
-						<p id="vibe-name"></p>
-					</div>
+						<div class="category-title">
+							<h1 class="vibe-label">Girl Dinner Vibe</h1>
+							<p id="vibe-name"></p>
+						</div>
 					</section>
 
 					<div class="output-plate">
-					<div class="background-color">
-					<section class="output"></section>
-					</div>
+						<div class="background-color">
+							<section class="output"></section>
+						</div>
 					</div>
 					<p class="plate-description"></p>
 				</li>
@@ -96,9 +112,12 @@
 
 			<ul class="navigation">
 				<li class="back">
-					<button class="back-button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.61805 8.59253C4.17259 8.59253 3.94951 9.1311 4.26449 9.44608L8.29841 13.48C8.6909 13.8725 8.68808 14.5097 8.29213 14.8987C7.90111 15.2829 7.27352 15.2801 6.88591 14.8925L0.293044 8.29964C-0.0974807 7.90911 -0.09748 7.27595 0.293044 6.88542L6.88591 0.292556C7.27352 -0.0950567 7.9011 -0.0978325 8.29213 0.286335C8.68808 0.67534 8.6909 1.31256 8.29841 1.70506L4.26449 5.73898C3.94951 6.05396 4.17259 6.59253 4.61804 6.59253H14.5859C15.1382 6.59253 15.5859 7.04024 15.5859 7.59253C15.5859 8.14481 15.1382 8.59253 14.5859 8.59253H4.61805Z" fill="#D54E33"/>
-</svg></button>
+					<button class="back-button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.61805 8.59253C4.17259 8.59253 3.94951 9.1311 4.26449 9.44608L8.29841 13.48C8.6909 13.8725 8.68808 14.5097 8.29213 14.8987C7.90111 15.2829 7.27352 15.2801 6.88591 14.8925L0.293044 8.29964C-0.0974807 7.90911 -0.09748 7.27595 0.293044 6.88542L6.88591 0.292556C7.27352 -0.0950567 7.9011 -0.0978325 8.29213 0.286335C8.68808 0.67534 8.6909 1.31256 8.29841 1.70506L4.26449 5.73898C3.94951 6.05396 4.17259 6.59253 4.61804 6.59253H14.5859C15.1382 6.59253 15.5859 7.04024 15.5859 7.59253C15.5859 8.14481 15.1382 8.59253 14.5859 8.59253H4.61805Z"
+								fill="#D54E33" />
+						</svg></button>
 				</li>
 				<li class="next">
 					<button class="next-button">next</button>
