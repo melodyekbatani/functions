@@ -247,15 +247,16 @@ main {
 			align-items: center;
 			justify-content: center;
 			border: var(--border-size) solid transparent;
-			border-radius: var(--border-size);
+			border-radius: var(--radius);
 			justify-content: center;
-			width: 100%;
+			overflow: hidden;
+			aspect-ratio: 1;
+
 
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: contain;
-				mix-blend-mode: multiply;
 			}
 
 			&.active {
@@ -306,33 +307,27 @@ main {
 	.back-button {
 		display: none;
 	}
-
 	.navigation {
 		inset-block-end: var(--space-lg);
 		z-index: 10;
 		min-height: 5rem;
 	}
 }
-
 .Plate:has(.Crunch.modal.current) {
 	.card-1 {
 		display: none;
 	}
 }
-
 .Plate:has(.Sweet.modal.current) {
 	.next-button {
 		display: none;
 	}
-
 	.card-1,
 	.card-2 {
 		display: none;
 	}
 }
-
 .Plate:has(.Output.modal.current) {
-
 	.card-1,
 	.card-2,
 	.card-3 {
@@ -344,7 +339,6 @@ main {
 body:has(.Output.modal.current) {
 	background-color: var(--color-text);
 }
-
 .Output.modal {
 	background-color: transparent;
 	border: none;
@@ -358,19 +352,23 @@ body:has(.Output.modal.current) {
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		padding: var(--space-sm);
-		gap: var(--space-sm);
+		padding: var(--space-md);
+		gap: var(--space-md);
 		border: var(--border-size) solid var(--color-border);
 		border-radius: var(--radius);
 		width: var(--card-width);
 		margin-block-start: var(--space-lg);
 		background-color: var(--color-main);
 
+		li {
+			overflow: hidden;
+		}
 		img {
+			object-fit: cover;
+			display: block;
 			aspect-ratio: 1;
 			border-radius: var(--radius);
-			border: var(--border-size) solid var(--color-border);
-			overflow: hidden;
+			background-color:var(--color-cards);
 		}
 
 		p {
@@ -380,6 +378,7 @@ body:has(.Output.modal.current) {
 				display: block;
 				font-size: var(--font-size-lg);
 				font-family: var(--font-header);
+				color: var(--color-cards);
 				text-transform: capitalize;
 				padding-block-end: var(--space-lg);
 				position: absolute;
@@ -387,7 +386,7 @@ body:has(.Output.modal.current) {
 				inset-inline-start: 50%; /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inset-inline-start */
 				transform: translateX(-50%);
 			}
-		}
+		}		
 	}
 
 	.category-title {
@@ -412,40 +411,67 @@ body:has(.Output.modal.current) {
 		color: var(--color-cards);
 		font-family: var(--font-body);
 	}
-
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
-
-
-
 /* === RESPONSIVE === */
 
 @media (min-width: 768px) {
-	.Plate, .decorative-cards, .modal{
+
+	.Plate, .decorative-cards, .modal {
 		width: var(--card-width);
 	}
 
 	.modal.home {
 		.home-content {
 			flex: 1;
+			justify-self: center;
+			align-items: center;
 		}
-
 		h1 {
 			font-size: var(--font-size-xl);
 		}
-
-		p {
-			font-size: var(--font-size-ml);
-			width: 35ch;
+		h2 {
+			font-size: var(--font-size-md);
+			max-width: 50ch;
 		}
 	}
-
-
+	.modal .category-title {
+		h3 {
+			font-size: var(--font-size-ml);
+		}
+	}
 	#data-list ul {
-    grid-template-columns: repeat(5, 1fr);
-
-
+	grid-template-columns: repeat(5, 1fr);
+	justify-content: space-between;
 }
+.Output.modal {
+	margin-block-start: -5rem;
+
+.output {
+		width: 30rem;
+		padding: var(--space-sm);
+		gap: var(--space-sm);
+	}
+}
+	.Plate:has(.Output.modal.current) .navigation {
+	padding-block-start: var(--space-lg);
+}
+}
+
+@media (min-width: 1200px) {
+/* Learnt that you can add root variables at every breakpoint to adjust sizing https://css-tricks.com/responsive-designs-and-css-custom-properties-defining-variables-and-breakpoints/ */
+	:root {
+	--font-size-sm: 1.25rem;
+	--font-size-md: 1.5rem;
+	--font-size-ml: 2.5rem;
+	--font-size-lg: 5rem;
+	--font-size-xl: 9rem;
+	--image-size: 8rem;
+}
+	.Plate, .decorative-cards, .modal {
+		width: 65vw;
+		height: 65vh;
+	}
 }
 
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
