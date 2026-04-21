@@ -112,7 +112,7 @@ createPlate.addEventListener('click', () => {
 		const item = plate[category]
 		if (item) {
 			const image = item.querySelector('img').src
-			plateHtml += `<p>${category}: ${name}</p><img src="${image}">`
+			plateHtml += `<img src="${image}">`
 		}
 	}
 	const results = getPercent(Averages)
@@ -144,8 +144,8 @@ const item = platePersonalities[index];
 
 document.querySelector ('.plate-description').textContent = "You're giving "+ personalities
 
-
-	document.querySelector('.output').innerHTML = results + plateHtml
+	document.querySelector('#vibe-name').textContent = mdc
+	document.querySelector('.output').innerHTML = plateHtml
 
 	//In this section I'm counting the numbers of modals before the create plate button activates while combining the switch modal active state with the functionality of the next button. This is something I reviewed with a UC tutor. 
 	currentModal = 5;

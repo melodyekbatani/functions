@@ -1,566 +1,565 @@
 /* === DESIGN SYSTEM === */
 :root {
-    --color-main: #ef93ae;
-    --color-border: #98C6FE;
-    --color-text: #D54E33;
-    --color-buttons: #fff6bb;
-    --color-cards: #FFF9EC;
-    --color-disabled: #fff6bb;
-    --color-disabled-text: #ffcfcf;
-    --color-disabled-border: #c4dfff;
+	--color-main: #ef93ae;
+	--color-border: #98C6FE;
+	--color-text: #D54E33;
+	--color-buttons: #fff6bb;
+	--color-cards: #FFF9EC;
+	--color-disabled: #fff6bb;
+	--color-disabled-text: #ffcfcf;
+	--color-disabled-border: #c4dfff;
 
-    /* Typography */
-    --font-body: 'Public Sans', sans-serif;
-    --font-header: "rl-horizon", serif;
-    --font-size-sm: 1rem;
-    --font-size-md: 1.25rem;
-    --font-size-ml: 2rem;
-    --font-size-lg: 4rem;
-    --font-size-xl: 7rem;
-    --font-weight-bold: 600;
+	/* Typography */
+	--font-body: 'Public Sans', sans-serif;
+	--font-header: "rl-horizon", serif;
+	--font-size-sm: 1rem;
+	--font-size-md: 1.25rem;
+	--font-size-ml: 2rem;
+	--font-size-lg: 4rem;
+	--font-size-xl: 5rem;
+	--font-weight-bold: 600;
 
-    /* Layout */
-    --space-sm: 0.5rem;
-    --space-md: 1.5rem;
-    --space-ml: 2rem;
-    --space-lg: 4rem;
-    --space-xl: 6rem;
-    --radius: 1rem;
-    --image-size: 5rem;
-    --card-height: 70vh;
-    --card-width: 75vw;
-    --button: 3rem;
-    --border-size: 0.3rem;
-    --border-size-sm: 0.15rem;
+	/* Layout */
+	--space-sm: 0.5rem;
+	--space-md: 1.5rem;
+	--space-ml: 2rem;
+	--space-lg: 4rem;
+	--space-xl: 6rem;
+	--radius: 1rem;
+	--image-size: 5rem;
+	--card-height: 70vh;
+	--card-width: 75vw;
+	--button: 3rem;
+	--border-size: 0.3rem;
+	--border-size-sm: 0.15rem;
 }
-
 
 /* === BASE STYLES === */
 body {
-    block-size: 100dvh;
-    overflow: hidden;
-    width: 100%;
-    padding: var(--space-sm);
-    color: var(--color-text);
+	block-size: 100dvh;
+	overflow: hidden;
+	width: 100%;
+	padding: var(--space-sm);
+	color: var(--color-text);
 
+	background-color: var(--color-main);
+	/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+	/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
-    background-color: var(--color-main);
-    /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-    /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+	a {
+		text-decoration: underline;
+	}
 
-
-
-    a {
-        text-decoration: underline;
-    }
-
-    p {
-        line-height: 130%;
-        font-size: var(--font-size-sm);
-        font-family: var(--font-header);
-    }
+	p {
+		line-height: 130%;
+		font-size: var(--font-size-sm);
+		font-family: var(--font-header);
+	}
 }
 
 main {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    padding: var(--space-sm);
-    height: 100dvh;
-    background-position: center;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-md);
+	padding: var(--space-sm);
+	height: 100dvh;
+	background-position: center;
 }
 
 /* === STEPS === */
 .steps {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    padding-block-start: 0;
-    border-radius: var(--button);
-    font-family: var(--font-body);
-    font-size: var(--font-size-md);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-md);
+	padding-block-start: 0;
+	border-radius: var(--button);
+	font-family: var(--font-body);
+	font-size: var(--font-size-md);
 
-    .step {
-        border-radius: 50%;
-        display: flex;
-        width: var(--space-sm);
-        height: var(--space-sm);
-        background-color: var(--color-disabled-text);
-    }
+	.step {
+		border-radius: 50%;
+		display: flex;
+		width: var(--space-sm);
+		height: var(--space-sm);
+		background-color: var(--color-disabled-text);
+	}
 
-    .step-active {
-        display: flex;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        width: var(--space-sm);
-        height: var(--space-sm);
-        background-color: var(--color-text);
-        color: var(--color-text);
-    }
+	.step-active {
+		display: flex;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		width: var(--space-sm);
+		height: var(--space-sm);
+		background-color: var(--color-text);
+		color: var(--color-text);
+	}
 }
-
 
 /* === NAVIGATION/BUTTONS === */
 .navigation {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    padding-block-start: var(--button);
-    justify-content: center;
-    align-items: center;
-    grid-column: 1;
-    grid-row: 2;
-    margin-block-start: var(--space-sm);
-    inset-inline-start: 0;
+	width: 100%;
+	display: flex;
+	position: absolute;
+	padding-block-start: var(--button);
+	justify-content: center;
+	align-items: center;
+	grid-column: 1;
+	grid-row: 2;
+	margin-block-start: var(--space-sm);
+	inset-inline-start: 0;
 
 
-    button {
-        color: var(--color-text);
-        border-radius: var(--space-sm);
-        height: var(--button);
-        width: calc(var(--button) * 3);
-        text-align: center;
-        background-color: var(--color-buttons);
-        font-size: var(--font-size-sm);
-        font-weight: 600;
-        border: var(--border-size-sm) solid var(--color-border);
-        font-family: var(--font-body);
+	button {
+		color: var(--color-text);
+		border-radius: var(--space-sm);
+		height: var(--button);
+		width: calc(var(--button) * 3);
+		text-align: center;
+		background-color: var(--color-buttons);
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		border: var(--border-size-sm) solid var(--color-border);
+		font-family: var(--font-body);
 
-        &:disabled {
-            background-color: var(--color-disabled);
-            color: var(--color-disabled-text);
-            border: var(--border-size-sm) solid var(--color-disabled-border);
-        }
-    }
+		&:disabled {
+			background-color: var(--color-disabled);
+			color: var(--color-disabled-text);
+			border: var(--border-size-sm) solid var(--color-disabled-border);
+		}
+	}
 
-    .back-button {
-        aspect-ratio: 1;
-        width: var(--button);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	.back-button {
+		aspect-ratio: 1;
+		width: var(--button);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		margin-inline-end: var(--space-sm);
 
-        svg {
-            width: var(--space-md);
-            height: var(--space-md);
-        }
-    }
+		svg {
+			width: var(--space-md);
+			height: var(--space-md);
+		}
+	}
 }
 
 /* create plate buttons on sweet screen */
 #create-plate {
-    display: none;
+	display: none;
 }
+
 /* Tried visibility hidden - to fix spacing here https://stackoverflow.com/questions/20663712/css-display-none-not-working */
 .Plate:has(.Sweet.modal.current) {
-    .next-button {
-        display: none;
-        width: 0;
-        padding: 0;
-        border: none;
-    }
-    #create-plate {
-        visibility: visible;
+	.next-button {
+		display: none;
+		width: 0;
+		padding: 0;
+		border: none;
+	}
+
+	#create-plate {
+		visibility: visible;
 		display: block;
-    }
+	}
 }
 
 .Plate:has(.home.modal.current) {
-    .back-button {
-        display: none;
-    }
+	.back-button {
+		display: none;
+	}
 
-
-    .navigation {
-        margin-block-start: calc(var(--space-xl) * -1);
-        inset-block-end: var(--space-lg);
-        z-index: 100;
-    }
+	.navigation {
+		margin-block-start: calc(var(--space-xl) * -1);
+		inset-block-end: var(--space-lg);
+		z-index: 100;
+	}
 }
 
 /* === CARD / MODAL === */
 .modal {
-    display: none;
-    border-radius: var(--radius);
-    border: var(--border-size) solid var(--color-border);
-    background-color: var(--color-cards);
-    list-style: none;
-    gap: var(--space-sm);
-    height: var(--card-height);
-    width: var(--card-width);
-    justify-content: space-between;
-    padding: var(--space-md);
+	display: none;
+	border-radius: var(--radius);
+	border: var(--border-size) solid var(--color-border);
+	background-color: var(--color-cards);
+	list-style: none;
+	gap: var(--space-sm);
+	height: var(--card-height);
+	width: var(--card-width);
+	justify-content: space-between;
+	padding: var(--space-md);
 
-    .category-title {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-sm);
+	.category-title {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
 
-        h3 {
-            font-family: var(--font-header);
-            font-size: var(--font-size-ml);
-            font-weight: var(--font-weight-bold);
-            text-align: center;
-        }
-    }
+		h3 {
+			font-family: var(--font-header);
+			font-size: var(--font-size-ml);
+			font-weight: var(--font-weight-bold);
+			text-align: center;
+		}
+	}
 
- /* === HOME PAGE === */
- 
- 
-&.home {
-	justify-content: center;
-        .home-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
+	/* === HOME PAGE === */
+	&.home {
+		justify-content: center;
 
-        h1 {
-            font-family: var(--font-header);
-            font-size: var(--image-size);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-main);
-            line-height: 90%;
-            -webkit-text-stroke: var(--border-size-sm) var(--color-text);
+		.home-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
 
-            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
-        }
+		h1 {
+			margin-inline: auto;
+			font-family: var(--font-header);
+			font-size: var(--font-size-xl);
+			font-weight: var(--font-weight-bold);
+			color: var(--color-main);
+			line-height: 90%;
+			-webkit-text-stroke: var(--border-size-sm) var(--color-text);
 
-        h2 {
-            font-family: var(--font-body);
-            font-size: var(--font-size-sm);
-            padding-block-start: var(--space-md);
-            font-weight: var(--font-weight-bold);
-            text-wrap: balance;
-        }
-    }
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
+		}
 
-    /* === ANIMATIONS === */
-    &.current {
-        display: flex;
-        flex-direction: column;
-        animation: slide-in 0.2s ease-out;
+		h2 {
+			font-family: var(--font-body);
+			font-size: var(--font-size-sm);
+			padding-block-start: var(--space-md);
+			font-weight: var(--font-weight-bold);
+			text-wrap: balance;
+		}
+	}
 
-        /* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
-        &:last-child {
-            animation: none;
-        }
-    }
+	/* === ANIMATIONS === */
+	&.current {
+		display: flex;
+		flex-direction: column;
+		animation: slide-in 0.2s ease-out;
+
+		/* animation none https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation */
+		&:last-child {
+			animation: none;
+		}
+	}
+}
+
+body:has(.home.modal.current) {
+	background-color: var(--color-text);
+
+	main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-text) 0,
+				var(--color-text) var(--space-ml),
+				transparent 2vh,
+				transparent 8vh),
+			var(--color-main);
+	}
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
 @keyframes slide-in {
-    from {
-        transform: translateX(10%);
-    }
+	from {
+		transform: translateX(10%);
+	}
 
-    to {
-        transform: translateX(0);
-    }
+	to {
+		transform: translateX(0);
+	}
 }
 
 /* === IMAGE/GRID === */
 .Plate {
-    position: relative;
-    width: var(--card-width);
-    height: var(--card-height);
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-rows: 1fr auto;
-    margin-block-end: var(--space-lg);
+	position: relative;
+	width: var(--card-width);
+	height: var(--card-height);
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template-rows: 1fr auto;
+	margin-block-end: var(--space-lg);
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 #data-list {
-    position: absolute;
-    z-index: 1;
+	position: absolute;
+	z-index: 1;
 
-    ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-sm);
-        padding-block-end: var(--space-md);
-        justify-items: center;
-        align-items: center;
+	ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-sm);
+		padding-block-end: var(--space-md);
+		justify-items: center;
+		align-items: center;
 
-        li {
-            display: flex;
-            /* added an invisable border here so that the items don't jump around inside the li when selected*/
-            width: var(--image-size);
-            height: var(--image-size);
-            align-items: center;
-            justify-content: center;
-            border: var(--border-size) solid transparent;
-            border-radius: var(--radius);
-            overflow: hidden;
-            aspect-ratio: 1;
+		li {
+			display: flex;
+			/* added an invisable border here so that the items don't jump around inside the li when selected*/
+			width: var(--image-size);
+			height: var(--image-size);
+			align-items: center;
+			justify-content: center;
+			border: var(--border-size) solid transparent;
+			border-radius: var(--radius);
+			overflow: hidden;
+			aspect-ratio: 1;
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
 
-            &.active {
-                border-color: var(--color-border);
-            }
-        }
-    }
+			&.active {
+				border-color: var(--color-border);
+			}
+		}
+	}
 }
 
 /* === DECORATIVE CARDS BEHIND === */
 .decorative-cards {
-    position: relative;
-    height: var(--card-height);
-    width: var(--card-width);
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 0;
+	position: relative;
+	height: var(--card-height);
+	width: var(--card-width);
+	grid-column: 1;
+	grid-row: 1;
+	z-index: 0;
 }
 
 .card-1,
 .card-2,
 .card-3 {
-    position: absolute;
-    inset: 0;
-    /* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
-    border-radius: var(--radius);
-    border: var(--border-size) solid var(--color-border);
-    background-color: var(--color-cards);
-    z-index: 0;
+	position: absolute;
+	inset: 0;
+	/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
+	border-radius: var(--radius);
+	border: var(--border-size) solid var(--color-border);
+	background-color: var(--color-cards);
+	z-index: 0;
 }
 
 .card-1 {
-    transform: rotate(12deg);
+	transform: rotate(12deg);
 }
 
 .card-2 {
-    transform: rotate(8deg);
+	transform: rotate(8deg);
 }
 
 .card-3 {
-    transform: rotate(4deg);
+	transform: rotate(4deg);
 }
 
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 
 .Plate:has(.Crunch.modal.current) {
-    .card-1 {
-        display: none;
-    }
+	.card-1 {
+		display: none;
+	}
 }
 
 .Plate:has(.Sweet.modal.current) {
-    .card-1,
-    .card-2 {
-        display: none;
-    }
+
+	.card-1,
+	.card-2 {
+		display: none;
+	}
 }
 
 .Plate:has(.Output.modal.current) {
 
-    .card-1,
-    .card-2,
-    .card-3 {
-        display: none;
-    }
+	.card-1,
+	.card-2,
+	.card-3 {
+		display: none;
+	}
 }
 
 
 /* === OUTPUT === */
 body:has(.Output.modal.current) {
-    background-color: var(--color-text);
+	background-color: var(--color-text);
 
-main { 
-        background:
-        repeating-linear-gradient(0deg,
-            var(--color-text) 0,
-            var(--color-text) 1vh,
-            transparent 1vh,
-            transparent 10vh),
-
-        repeating-linear-gradient(90deg,
-            var(--color-text) 0,
-            var(--color-text) var(--space-sm),
-            transparent 1vh,
-            transparent 10vh),
-            var(--color-main);
-    }
+	main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-text) 0,
+				var(--color-text) var(--space-ml),
+				transparent 2vh,
+				transparent 8vh),
+			var(--color-main);
+	}
 }
 
 .Output.modal {
-    
-    background-color: transparent;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    text-align: center;
-    color: var(--color-main);
+	background-color: var(--color-cards);
+	border: none;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-md);
+	text-align: center;
+	color: var(--color-main);
+	border: var(--border-size) solid var(--color-border);
+
+	#vibe-name {
+		text-transform: capitalize;
+		font-family: var(--font-header);
+		font-size: var(--font-size-lg);
+		font-weight: var(--font-weight-bold);
+		color: var(--color-main);
+		line-height: 90%;
+		-webkit-text-stroke: var(--border-size-sm) var(--color-text);
+	}
+
+	.output {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-sm);
+		border: var(--border-size) solid var(--color-disabled-text);
+		border-radius: var(--radius);
+		width: 80%;
+		margin-inline: auto;
+		padding: var(--space-sm);
+		background-color: var(--color-main);
 
 
-    .output {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: var(--space-md);
-        gap: var(--space-sm);
-        border: var(--border-size) solid var(--color-border);
-        border-radius: var(--radius);
-        width: var(--card-width);
-        margin-block-start: var(--space-lg);
-        background-color: var(--color-main);
+		li {
+			overflow: hidden;
+		}
 
-        li {
-            overflow: hidden;
-        }
+		img {
+			display: block;
+			aspect-ratio: 1;
+			border: var(--border-size) solid var(--color-disabled-text);
+			border-radius: var(--radius);
+			background-color: var(--color-buttons);
+			width: 100%;
+			max-block-size: 30vh;
+			object-fit: contain;
+		}
 
-        img {
-            object-fit: cover;
-            display: block;
-            aspect-ratio: 1;
-            border-radius: var(--radius);
-            background-color: var(--color-cards);
-        }
+		p {
+			display: none;
+		}
+	}
 
-        p {
-            display: none;
+	.category-title {
+		align-items: center;
+		padding-block-start: 0;
 
-            &:first-of-type {
-                display: block;
-                font-size: var(--font-size-lg);
-                font-family: var(--font-header);
-                color: var(--color-cards);
-                text-transform: capitalize;
-                padding-block-end: var(--space-lg);
-                position: absolute;
-                margin-block-start: calc(var(--space-xl) * -1);
-                inset-inline-start: 50%;
-                /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inset-inline-start */
-                transform: translateX(-50%);
-            }
-        }
-    }
 
-    .category-title {
-        align-items: center;
-        padding-block-start: 0;
+		/* "Girl Dinner Vibe" label */
+		.vibe-label {
+			padding-block-end: var(--space-sm);
+			font-family: var(--font-header);
+			font-size: var(--font-size-md);
+			color: var(--color-text);
+			font-weight: var(--font-weight-bold);
+		}
+	}
 
-        h1 {
-            font-family: var(--font-header);
-            font-size: var(--font-size-lg);
-            color: var(--color-cards);
-            line-height: 90%;
-        }
+	.plate-description {
+		color: var(--color-text);
+		font-family: var(--font-body);
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-bold);
 
-        /* "Girl Dinner Vibe" label */
-        .vibe-label {
-            font-family: var(--font-header);
-            font-size: var(--font-size-md);
-        }
-    }
+	}
 
-    .plate-description {
-        color: var(--color-cards);
-        font-family: var(--font-body);
-    }
-
-    /* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
+	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
+
 
 /* === RESPONSIVE DESIGN === */
-@media (380px <=width <=420px) {
+/* changing sizing for older/smaller phones */
+@media (300px <=width <=420px) {
 
-    :root {
-        --image-size: 4rem;
+	:root {
+		--image-size: 4rem;
+		--font-size-lg: 3rem;
+		--space-lg: 3rem;
+	}
 
-        .navigation {
-            margin-block-start: var(--space-lg);
-        }
-    }
+	.navigation {
+		margin-block-start: var(--space-lg);
+	}
 
+	h1 {
+		max-inline-size: 5ch;
+	}
 
+	.Plate {
+		margin-block-end: var(--space-md);
+	}
 }
 
-@media (min-width: 768px) {
-
-    .Plate,
-    .decorative-cards,
-    .modal {
-        width: var(--card-width);
-    }
-
-    .modal.home {
-        .home-content {
-            flex: 1;
-            justify-self: center;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: var(--font-size-xl);
-        }
-
-        h2 {
-            font-size: var(--font-size-md);
-            max-width: 50ch;
-        }
-    }
-
-    .modal .category-title {
-        h3 {
-            font-size: var(--font-size-ml);
-        }
-    }
-
-    #data-list ul {
-        grid-template-columns: repeat(5, 1fr);
-        justify-content: space-between;
-    }
-
-    .Output.modal {
-        margin-block-start: -5rem;
-
-        .output {
-            width: 50%;
-            margin-inline: auto;
-            padding: var(--space-sm);
-            gap: var(--space-sm);
-        }
-    }
-
-    .Plate:has(.Output.modal.current) .navigation {
-        padding-block-start: var(--space-lg);
-    }
-}
-
-@media (min-width: 1200px) {
-
-    /* Learnt that you can add root variables at every breakpoint to adjust sizing https://css-tricks.com/responsive-designs-and-css-custom-properties-defining-variables-and-breakpoints/ */
-    :root {
-        --font-size-sm: 1.25rem;
+@media (width >=700px) {
+	 :root {
+		--font-size-sm: 2rem;
         --font-size-md: 1.5rem;
         --font-size-ml: 2.5rem;
-        --font-size-lg: 5rem;
-        --font-size-xl: 9rem;
+        --font-size-lg: 8rem;
+        --font-size-xl: 10rem;
         --image-size: 8rem;
-    }
+		--button: 5rem;
+		--card-height: 60vh;
+    	--card-width: 75vw;
+	 }
+	 h1 {
+		max-inline-size: 5ch;
+	}
 
-    .Plate,
-    .decorative-cards,
-    .modal {
-        width: 65vw;
-        height: 65vh;
-    }
+
+	#data-list ul {
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-sm);
+		justify-content: space-between;
+	}
+
+	.Output.modal {
+		.output {
+			width: 50%;
+			margin-inline: auto;
+			margin-block: var(--space-sm);
+			padding: var(--space-sm);
+			background-color: var(--color-main);
+		}
+	}
 }
 
+@media (width >=1200px) {
+	.modal.home {
+		h1 {
+			font-size: var(--font-size-xl);
+			max-inline-size: 5ch;
+	}
+
+		}
+		h2 {
+			max-width: 50ch;
+			margin-inline: auto;
+			line-height: 150%;
+		}
+
+
+	#data-list ul {
+		grid-template-columns: repeat(5, 1fr);
+		gap: var(--space-md);
+		justify-content: space-between;
+	}
+
+	}
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
