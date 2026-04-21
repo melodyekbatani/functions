@@ -29,7 +29,7 @@
 	--image-size: clamp(5rem, 10vw, 8rem); /* Learnt this during my last project https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
 	--card-height: clamp(25rem, 60vh, 40rem);
 	--card-width: clamp(15rem, 80vw, 60rem);
-	--button: 2rem;
+	--button: 2.5rem;
 	--border-size: 0.3rem;
 }
 
@@ -63,8 +63,7 @@ body {
 			var(--color-text) var(--space-sm),
 			transparent var(--space-sm),
 			transparent var(--space-lg)),
-		var(--color-main);
-
+			var(--color-main);
 
 	a {
 		text-decoration: underline;
@@ -114,15 +113,15 @@ main {
 
 	.back-button {
 		aspect-ratio: 1;
-		width: 2.5rem;
+		width: var(--button);
 		padding: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		svg {
-			width: 1.25rem;
-			height: 1.25rem;
+			width: var(--space-md);
+			height: var(--space-md);
 		}
 	}
 }
@@ -153,7 +152,8 @@ main {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-sm);
-		padding-block-start: var(--space-md);
+		padding-block: var(--space-md);
+		
 
 		h3 {
 			font-family: var(--font-header);
@@ -238,6 +238,8 @@ main {
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--space-sm);
 		padding-block-end: var(--space-md);
+		justify-items: center;
+		align-items: center;
 
 		li {
 			display: flex;
@@ -333,12 +335,24 @@ main {
 	.card-3 {
 		display: none;
 	}
-}
+} 
 /* === STEPS === */
 .steps {
-
-	.active {
-		color: blue; 
+	position: fixed;
+	inset-block-start: var(--space-xl);
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+	gap: var(--space-lg);
+	background-color: var(--color-cards);
+	padding: var(--space-sm);
+	border-radius: var(--radius);
+	font-family: var(--font-body);
+	font-size: var(--font-size-sm);
+	
+	.step-active {
+		background-color: var(--color-border);
+		border-radius: 50%;
+		color: var(--color-main);
 	}
 }
 
@@ -362,7 +376,7 @@ body:has(.Output.modal.current) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		padding: var(--space-md);
-		gap: var(--space-md);
+		gap: var(--space-sm);
 		border: var(--border-size) solid var(--color-border);
 		border-radius: var(--radius);
 		width: var(--card-width);
