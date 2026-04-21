@@ -1,12 +1,13 @@
 /* === DESIGN SYSTEM === */
 :root {
-	--color-main: #f690ae;
-	--color-border: #98C6FE;
-	--color-text: #D54E33;
-	--color-buttons: #FFEB6D;
-	--color-cards: #FFF9EC;
-	--color-disabled: #fff5b5;
-	--color-disabled-text: #fd8f79;
+	--color-main: #ef93ae;
+    --color-border: #98C6FE;
+    --color-text: #D54E33;
+    --color-buttons:#fff6bb;
+    --color-cards: #FFF9EC;
+    --color-disabled: #fff6bb;
+    --color-disabled-text: #ffcfcf;
+    --color-disabled-border: #c4dfff;
 
 
 	/* Typography */
@@ -31,6 +32,7 @@
 	--card-width: 75vw;
 	--button: 2.5rem;
 	--border-size: 0.3rem;
+	 --border-size-sm: 0.2rem;
 }
 
 /* === BASE STYLES === */
@@ -43,7 +45,7 @@ body {
 	color: var(--color-text);
 
 	
-	background-color: var(--color-text);
+	background-color: var(--color-main);
 	/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 	/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
@@ -70,20 +72,6 @@ main {
 	padding: var(--space-sm);
 	height: 100dvh;
 	background-position: center;
-
-	background:
-		repeating-linear-gradient(0deg,
-			var(--color-text) 0,
-			var(--color-text) 1vh,
-			transparent 1vh,
-			transparent 10vh),
-
-		repeating-linear-gradient(90deg,
-			var(--color-text) 0,
-			var(--color-text) var(--space-sm),
-			transparent 1vh,
-			transparent 10vh),
-			var(--color-main);
 }
 /* === STEPS === */
 .steps {
@@ -117,28 +105,34 @@ main {
 
 /* === NAVIGATION/BUTTONS === */
 .navigation {
+	width: 100%;
 	display: flex;
-	padding-block-start: var(--space-ml);
+	position:absolute;
+	padding-block-start: var(--space-lg);
 	gap: var(--space-sm);
 	justify-content: center;
 	align-items: center;
 	grid-column: 1;
 	grid-row: 2;
-	position: absolute;
-	margin-block-start: var(--space-ml);
+	margin-block-start: var(--space-sm);
+	inset-inline-start: 0;
 
 	button {
-		border-radius: var(--button);
-		padding: var(--space-sm);
-		background-color: var(--color-buttons);
-		font-size: var(--font-size-md);
-		font-family: var(--font-body);
+		color: var(--color-text);
+        border-radius: var(--space-sm);
+        padding: var(--radius);
+        background-color: var(--color-buttons);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        border: var(--border-size-sm) solid var(--color-border);
+        font-family: var(--font-body);
 
-		&:disabled {
-			background-color: var(--color-disabled);
-			color: var(--color-disabled-text);
-		}
-	}
+        &:disabled {
+            background-color: var(--color-disabled);
+            color: var(--color-disabled-text);
+            border: var(--border-size-sm) solid var(--color-disabled-border);
+        }
+    }
 
 	.back-button {
 		aspect-ratio: 1;
@@ -331,8 +325,9 @@ main {
 		display: none;
 	}
 	.navigation {
+		margin-block-start: -5rem;
 		inset-block-end: var(--space-lg);
-		z-index: 10;
+		z-index: 100;
 		min-height: 5rem;
 	}
 }
@@ -361,6 +356,22 @@ main {
 /* === OUTPUT === */
 body:has(.Output.modal.current) {
 	background-color: var(--color-text);
+
+	main { 
+		background:
+		repeating-linear-gradient(0deg,
+			var(--color-text) 0,
+			var(--color-text) 1vh,
+			transparent 1vh,
+			transparent 10vh),
+
+		repeating-linear-gradient(90deg,
+			var(--color-text) 0,
+			var(--color-text) var(--space-sm),
+			transparent 1vh,
+			transparent 10vh),
+			var(--color-main);
+	}
 }
 .Output.modal {
 	background-color: transparent;
@@ -370,6 +381,7 @@ body:has(.Output.modal.current) {
 	gap: var(--space-md);
 	text-align: center;
 	color: var(--color-main);
+	
 
 	.output {
 		position: relative;
