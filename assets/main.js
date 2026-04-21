@@ -60,8 +60,7 @@ function getPercent (data) {
 	}
 	return html
 }
-// Here I'm defining the most dominant category by creating and if statement. starting at 0 because no vibe is chosen, then keeping track of the vibe that's being picked the most times. holds the name of the vibe and returns it back to the user.
-// 
+// Here I'm defining the most dominant category by creating an if statement. Its sayign starting at 0 because no vibe is chosen, then keeping track of the vibe that's being picked the most times, defining the highest count. It holds the name of the vibe and returns it back to the user. 
 
 function getMDC (Averages) {
 	let mdc = null
@@ -89,11 +88,10 @@ createPlate.addEventListener('click', () => {
 	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
 
 
-	// Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
-	//go through mdc items and filter them based on the catergory 
-	//filter is the main function of the block 
-	
-	
+// Note: Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
+
+
+//Next, I'm defining the variable for the plate prioritizing the items in the most dominant category filtering them by the food category they are a part of, saying if there are selected items in the MDC then get a random item within that food category. After selecting random items within the MDC, if there is a category where no items are in the MDC, pick randomly from the selected items so the user always has 4 items on the plate
 	const plate = {}
 	categories.forEach(category => {
 		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
@@ -104,12 +102,11 @@ createPlate.addEventListener('click', () => {
 	if (plate[category] === undefined) {
 		const nonMdcItems = Array.from(selected).filter(item => item.dataset.category === category)
 		plate[category] = getRandomItem(nonMdcItems)
-		console.log(nonMdcItems)
 	}
 	
 	currentPlate = plate
 })
-
+//This function loops declaring the overall personality/vibe type for the user's plate. It through the plate objects and for each category that has an item selected it grabs the item's image and adds it to the html. After it loops it gives the getPercentage function to declare the vibe.The item variable starts at 0 as long as the item is less then the length of the plate array the for loop will stop. Also helpful for this logic: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in and template literal for figuring out the html string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 	let plateHtml = ''
 	for (const category in plate) {
 		const item = plate[category]
@@ -120,12 +117,8 @@ createPlate.addEventListener('click', () => {
 	}
 	const results = getPercent(Averages)
 
-//simple for loop for declaring the personality type 
 
-
-//create a variable called item and starts at 0 as long as the item is less then the length of the plate array the for loop will stop
-//Object.values - converts the object into an array - takes every object value and puts it into an array so you can access it in a for loop
-//Index - variable and accumulates by a value of 1, once it hits 4 it will stop.
+//Here I'm creating the sentence for the individual personality train for each food item on the outcome plate. First defining a variable for peronality type. Object value converts the selected plate object into an array so it can be looped through the index, starting at 0 then going up by 1 each time stopping at 4 (because I have 4 categories). Then I'm definining what that sentance will look like. The if else statement is to make it so the last item gets an 'and' and a period behind it rather then a comma like the first 3. 
 let personalities = ''
 
 const platePersonalities = Object.values(plate);
@@ -133,11 +126,10 @@ for (let index=0; index <platePersonalities.length; index+=1) {
     //personalities += plate[item]. dataset.personality + ', '
 
 const item = platePersonalities[index];
-console.log(personalities[item]);
     //if the item is equal to the last plate (lenght is 4) then give it a period - but if any other item (1,2,3) give it a comma
     if (index===platePersonalities.length-1)
     {
-    personalities += item. dataset.personality + '.';
+    personalities += 'and ' + item. dataset.personality + '.';
     }
     else {
     personalities += item. dataset.personality + ', ';
@@ -146,7 +138,7 @@ console.log(personalities[item]);
 
 
 
-// I was trying to add you're without it thinking that's a part of a string 
+// Here I'm actually creating the html structure for the outcome statement by using document.querySelector and defining what it will say. One thing to note here is that because I'm using the word you're with a ' I need to use " quotation marks so that it doesn't misinterprete the comma in you're.
 // https://claude.ai/share/156f3a07-d924-4389-94fb-ce1aa46467d8
 // https://w3schools.tech/tutorial/javascript/javascript_strings_object?
 
@@ -154,21 +146,18 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 
 
 	document.querySelector('.output').innerHTML = results + plateHtml
-//counting the numbers of modals before the create plate button activates - reviewed this with a tutor - its a hacky way to combine the 2 buttons i created
+
+	//In this section I'm counting the numbers of modals before the create plate button activates while combining the switch modal active state with the functionality of the next button. This is something I reviewed with a UC tutor. 
 	currentModal = 5;
 	switchModals(currentModal);
 
 	
 	foodItem.forEach((item)=>{item.classList.toggle('active',false)})
+	// Note: 1 equal sign is a command - whatever this varible is change it to this. vs 2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
 }
-// 1 equal sign is a command - whatever this varible is change it to this 
-//2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
-
-
 )
-
-
-
+// From Eric's json lecture. Using fetch here to pull in my JSON data. //Accessing the button in the html first before starting the function (defining the variables). Once the data is ready, it gets added to the renderItems to show it on the page. Next it targets the selected items checking if there is an active item in the current category, if there isn't one it disables the next button. 
+// Also here I'm setting up the averages and percentages but it's not really doing anything yet other then getting prepared for when all 4 category items are selected. 
 fetch('assets/data.json')
 	.then(response => response.json())
 	.then(data => {
@@ -179,26 +168,31 @@ fetch('assets/data.json')
 		getPercent(Averages)
 	})
 
-//Accessing the button in the html first before starting the function (defining the variables)
+
+// Defining modals and button variables as conste because they always point to the same html element (even though they are styled differently thoughout)
 const modals = document.querySelectorAll('.modal');
 const nextButton = document.querySelector('.next-button');
 const backButton = document.querySelector('.back-button');
+const createPlateButton = document.getElementById ('create-plate');
 
+//Here I'm making sure the user can't skip a category without picking something first. Every time a food item is clicked, this checks if there's an active item in the current category. If there isn't one it disables the next button. This is done by creatinng an if else statment saying if nothing  is selected disable it, if something is selected render it in it's active state. The -1 and 4 exceptions are for the home screen and the last screen where the user doesn't need to make a selection so the button stays enabled. A few notes here: the 2 vertical lines in an if statement mean OR, checking if there is an selected state on an item OR if its on the first screen OR the last screen, if any of those statements are true button stays active. 
 
 function toggleNextButton (currentCategory){
-
-	//2 lines in an if statement mean or find an html has an active class or if its -1 (home page) or 4(last button)
-	//if its any other page you can disable it
 if (document.querySelector("li[data-category='"+categories[currentCategory]+"'].active")||currentCategory===-1||currentCategory===4) { 
 nextButton.disabled=false
+createPlateButton.disabled=false
+
 }
 else {
 nextButton.disabled=true
+createPlateButton.disabled=true
 }
 }
 
 
-switchModals(currentModal); // Reviewed this with tutor - it runs the function when the user first opens the page and updates the UI based on the current step starting on modal 0 which is the homepage
+/// Reviewed this with tutor, here I'm running switchModals so the right screen shows when the page first loads, starting at 0 which is the homepage. The function loops through every modal and checks if it matches the current step. If it does, it shows it. If it doesn't, it hides it. I'm also running toggleNextButton here so the next button always updates whenever the screen changes. Using a simple add and remove class here: https://www.w3schools.com/jsref/prop_element_classlist.asp with an if else statement. 
+
+switchModals(currentModal); 
 function switchModals(index){modals.forEach((modal,i)=>{ 
 //modal.classList.toggle('current',index===i);
 
@@ -214,8 +208,8 @@ modal.classList.remove('current');
 }
 
 
-//Creating the button names 
- })
+//This function defines the button names that I set in the html. I use the data-button-name attribute from the current modal but also adding an if else statement here saying if it doesn't have a name in the html give it the name "next" https://www.w3schools.com/jsref/met_element_getattribute.asp. 
+})
 let buttonName=modals[index].getAttribute('data-button-name');
 
 if (buttonName==null)
@@ -227,8 +221,9 @@ nextButton.innerHTML= buttonName;
 }
 }
 
+//Finally adding an event listener for the buttons to guide the user through the screens. When next is clicked it says go one forward and when the back button is clicked go back 1 modal. I got help from my code tutor for figuring out the reset on the last screen saying if the user is already on the last screen it resets back to 0 which is the homepage. https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener, addition and subtraction resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment and for arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions 
+//  https://claude.ai/share/c86aaf9e-1b17-45f4-aebb-28c750f52d55 help troubleshooting the clear button
 
-//https://claude.ai/share/c86aaf9e-1b17-45f4-aebb-28c750f52d55 help troubleshooting the clear button
 nextButton.addEventListener('click',()=>{if (currentModal < modals.length-1) {
 currentModal+=1; }
 else {

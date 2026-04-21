@@ -7,11 +7,11 @@
 	<link href="Icons/favicon.ico" rel="icon" sizes="any">
 	<link href="Icons/favicon.svg" rel="icon" type="image/svg+xml">
 	<link href="Icons/apple-touch-icon.png" rel="apple-touch-icon">
+
 	<meta property="description"
-		content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
+	content="A playful tool that builds a “girl dinner” from whatever is in your fridge, calculating the overall plate vibe and revealing what your selections say about you.">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 	<link href="reset.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
@@ -26,35 +26,34 @@
 
 
 <!---------------DOM STRUCTURE--------------------->
-
 <body>
 
-	<!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/aa8cadeb-8827-4e01-920f-39cc22ea7928 to understand this further-->
-
 	<!---------------MAIN--------------------->
-
 	<main>
 		<section class="Plate">
-			<div class="decorative-cards">
-				<div class="card-1"></div>
-				<div class="card-2"></div>
-				<div class="card-3"></div>
-			</div>
+			<figure class="decorative-cards">
+				<span class="card-1"></span>
+				<span class="card-2"></span>
+				<span class="card-3"></span>
+			</figure>
+
+			<!---------------HOME MODAL------------------>
+			<!-- Decided to change from drop down menus since it doesn't allow images, Used https://claude.ai/share/0dc8e673-8b11-4c78-9b8f-b2ce3c6f4e9e to point me to references like:  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/list-style-image and understand how to structure my dom this further-->
 			<ul id="data-list">
 				<li class="home modal current" data-button-name='Get started'>
-					<div class="home-content">
+					<hgroup class="home-content">
 						<h1>Girl Dinner</h1>
 						<h2>Build your plate from what's in your fridge or pantry, and we'll assemble your girl dinner
 							and reveal your vibe</h2>
-					</div>
+					</hgroup>
 				</li>
 
-
+				<!---------------CATEGORY MODALS------------------>
 				<li class="Base modal" data-button-name='Choose Protein'>
 					<!-- https://claude.ai/share/d32e56c6-827e-41ff-81bf-b60a109ba97b -->
-					<div class="category-title">
+					<header class="category-title">
 						<h3>Select bases</h3>
-					</div>
+					</header>
 					<ul id="base-list"></ul>
 					<div class="steps">
 						<span class="step-active"></span>
@@ -65,9 +64,9 @@
 				</li>
 
 				<li class="Protein modal" data-button-name='Choose Crunch'>
-					<div class="category-title">
+					<header class="category-title">
 						<h3>Select mains</h3>
-					</div>
+					</header>
 					<ul id="protein-list"></ul>
 					<div class="steps">
 						<span class="step"></span>
@@ -78,9 +77,9 @@
 				</li>
 
 				<li class="Crunch modal" data-button-name='Choose Sweet'>
-					<div class="category-title">
+					<header class="category-title">
 						<h3>Add some crunch</h3>
-					</div>
+					</header>
 					<ul id="crunch-list"></ul>
 					<div class="steps">
 						<span class="step"></span>
@@ -91,9 +90,9 @@
 				</li>
 
 				<li class="Sweet modal" data-button-name='Create plate'>
-					<div class="category-title">
+					<header class="category-title">
 						<h3>Select sweet treats</h3>
-					</div>
+					</header>
 					<ul id="sweet-list"></ul>
 					<div class="steps">
 						<span class="step"></span>
@@ -103,31 +102,30 @@
 					</div>
 				</li>
 
-
+				<!---------------OUTPUT MODALS------------------>
 				<li class="Output modal" data-button-name='Start over?'>
 					<section class="results">
-						<div class="category-title">
+						<header class="category-title">
 							<h1 class="vibe-label">Girl Dinner Vibe</h1>
 							<p id="vibe-name"></p>
-						</div>
+						</header>
 					</section>
 
-					<div class="output-plate">
-						<div class="background-color">
-							<section class="output"></section>
-						</div>
-					</div>
+					<article class="output-plate">
+						<section class="output"></section>
+					</article>
 					<p class="plate-description"></p>
 				</li>
 			</ul>
 
-			<ul class="navigation">
+			<!---------------NAVIGATION------------------>
+			<nav class="navigation">
+				<ul>
 				<li class="back">
-					<button class="back-button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M4.61805 8.59253C4.17259 8.59253 3.94951 9.1311 4.26449 9.44608L8.29841 13.48C8.6909 13.8725 8.68808 14.5097 8.29213 14.8987C7.90111 15.2829 7.27352 15.2801 6.88591 14.8925L0.293044 8.29964C-0.0974807 7.90911 -0.09748 7.27595 0.293044 6.88542L6.88591 0.292556C7.27352 -0.0950567 7.9011 -0.0978325 8.29213 0.286335C8.68808 0.67534 8.6909 1.31256 8.29841 1.70506L4.26449 5.73898C3.94951 6.05396 4.17259 6.59253 4.61804 6.59253H14.5859C15.1382 6.59253 15.5859 7.04024 15.5859 7.59253C15.5859 8.14481 15.1382 8.59253 14.5859 8.59253H4.61805Z"
-								fill="#D54E33" />
+					<button class="back-button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M4.61805 8.59253C4.17259 8.59253 3.94951 9.1311 4.26449 9.44608L8.29841 13.48C8.6909 13.8725 8.68808 14.5097 8.29213 14.8987C7.90111 15.2829 7.27352 15.2801 6.88591 14.8925L0.293044 8.29964C-0.0974807 7.90911 -0.09748 7.27595 0.293044 6.88542L6.88591 0.292556C7.27352 -0.0950567 7.9011 -0.0978325 8.29213 0.286335C8.68808 0.67534 8.6909 1.31256 8.29841 1.70506L4.26449 5.73898C3.94951 6.05396 4.17259 6.59253 4.61804 6.59253H14.5859C15.1382 6.59253 15.5859 7.04024 15.5859 7.59253C15.5859 8.14481 15.1382 8.59253 14.5859 8.59253H4.61805Z"
+							fill="#D54E33"/>
 						</svg></button>
 				</li>
 				<li class="next">
@@ -138,6 +136,5 @@
 				</li>
 			</ul>
 		</section>
-
 	</main>
 </body>
