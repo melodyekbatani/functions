@@ -494,7 +494,7 @@ body:has(.Output.modal.current) {
 	}
 
 	.navigation {
-		margin-block-start: var(--space-lg);
+		margin-block-start: var(--space-sm);
 	}
 
 	h1 {
@@ -507,24 +507,14 @@ body:has(.Output.modal.current) {
 }
 
 @media (width >=700px) {
-	 :root {
-		--font-size-sm: 2rem;
-        --font-size-md: 1.5rem;
-        --font-size-ml: 2.5rem;
-        --font-size-lg: 8rem;
-        --font-size-xl: 10rem;
-        --image-size: 8rem;
-		--button: 5rem;
-		--card-height: 60vh;
-    	--card-width: 75vw;
-	 }
+
 	 h1 {
 		max-inline-size: 5ch;
 	}
 
 
 	#data-list ul {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		gap: var(--space-sm);
 		justify-content: space-between;
 	}
@@ -562,4 +552,42 @@ body:has(.Output.modal.current) {
 	}
 
 	}
+
+
+
+
+@media (width >=2400px) {
+	 :root {
+		--font-size-sm: 2rem;
+        --font-size-md: 1.5rem;
+        --font-size-ml: 2.5rem;
+        --font-size-lg: 8rem;
+        --font-size-xl: 10rem;
+        --image-size: 8rem;
+		--button: 5rem;
+		--card-height: 60vh;
+    	--card-width: 75vw;
+	 }
+	 h1 {
+		max-inline-size: 5ch;
+	}
+
+
+	#data-list ul {
+		grid-template-columns: repeat(5, 1fr);
+		gap: var(--space-sm);
+		justify-content: space-between;
+	}
+
+	.Output.modal {
+		.output {
+			width: 50%;
+			margin-inline: auto;
+			margin-block: var(--space-sm);
+			padding: var(--space-sm);
+			background-color: var(--color-main);
+		}
+	}
+}
+
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
