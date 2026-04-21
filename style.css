@@ -226,6 +226,7 @@ main {
 			color: var(--color-main);
 			line-height: 90%;
 			-webkit-text-stroke: var(--border-size-sm) var(--color-text);
+			text-align: center;
 
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
 		}
@@ -552,9 +553,8 @@ body:has(.Output.modal.current) {
 		h1 {
 			font-size: var(--font-size-xl);
 			max-inline-size: 5ch;
-	}
-
 		}
+	}
 		h2 {
 			max-width: 50ch;
 			margin-inline: auto;
@@ -567,7 +567,6 @@ body:has(.Output.modal.current) {
 		gap: var(--space-md);
 		justify-content: space-between;
 	}
-
 	}
 
 
