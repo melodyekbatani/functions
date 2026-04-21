@@ -27,7 +27,7 @@
 	--space-xl: 6rem;
 	--radius: 1rem;
 	--image-size: clamp(5rem, 10vw, 8rem); /* Learnt this during my last project https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
-	--card-height: clamp(25rem, 60vh, 40rem);
+	--card-height: clamp(35rem, 60vh, 40rem);
 	--card-width: clamp(15rem, 80vw, 60rem);
 	--button: 2.5rem;
 	--border-size: 0.3rem;
@@ -39,6 +39,7 @@
 html,
 body {
 	height: 100%;
+	block-size: 110vh;
 }
 
 body {
@@ -54,15 +55,15 @@ body {
 	background:
 		repeating-linear-gradient(0deg,
 			var(--color-text) 0,
-			var(--color-text) var(--space-sm),
-			transparent var(--space-sm),
-			transparent var(--space-lg)),
+			var(--color-text) 1vh,
+			transparent 1vh,
+			transparent 10vh),
 
 		repeating-linear-gradient(90deg,
 			var(--color-text) 0,
 			var(--color-text) var(--space-sm),
-			transparent var(--space-sm),
-			transparent var(--space-lg)),
+			transparent 1vh,
+			transparent 10vh),
 			var(--color-main);
 
 	a {
@@ -339,6 +340,7 @@ main {
 /* === STEPS === */
 .steps {
 	position: fixed;
+	display: flex; 
 	inset-block-start: var(--space-xl);
 	inset-inline-start: 50%;
 	transform: translateX(-50%);
@@ -349,6 +351,14 @@ main {
 	font-family: var(--font-body);
 	font-size: var(--font-size-sm);
 	
+	.step {
+		width: var(--button);
+		hieght: var(--button); 
+		border-radius: 50%; 
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+	}
 	.step-active {
 		background-color: var(--color-border);
 		border-radius: 50%;
