@@ -151,6 +151,7 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 	currentModal = 5;
 	switchModals(currentModal);
 
+
 	
 	foodItem.forEach((item)=>{item.classList.toggle('active',false)})
 	// Note: 1 equal sign is a command - whatever this varible is change it to this. vs 2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
