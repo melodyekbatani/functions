@@ -110,14 +110,14 @@ main {
     width: 100%;
     display: flex;
     position: absolute;
-    padding-block-start: var(--space-lg);
-    gap: var(--space-sm);
+    padding-block-start: var(--button);
     justify-content: center;
     align-items: center;
     grid-column: 1;
     grid-row: 2;
     margin-block-start: var(--space-sm);
     inset-inline-start: 0;
+
 
     button {
         color: var(--color-text);
@@ -144,6 +144,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
+		margin-inline-end: var(--space-sm);
 
         svg {
             width: var(--space-md);
@@ -158,12 +159,15 @@ main {
 }
 /* Tried visibility hidden - to fix spacing here https://stackoverflow.com/questions/20663712/css-display-none-not-working */
 .Plate:has(.Sweet.modal.current) {
-     .next-button {
-        visibility: hidden;
+    .next-button {
+        display: none;
+        width: 0;
+        padding: 0;
+        border: none;
     }
     #create-plate {
-        display: block;
-		visibility: show;
+        visibility: visible;
+		display: block;
     }
 }
 
@@ -207,7 +211,10 @@ main {
     }
 
  /* === HOME PAGE === */
-    &.home {
+ 
+ 
+&.home {
+	justify-content: center;
         .home-content {
             display: flex;
             flex-direction: column;
@@ -268,7 +275,7 @@ main {
     justify-items: center;
     align-items: center;
     grid-template-rows: 1fr auto;
-    margin-block-end: var(--space-md);
+    margin-block-end: var(--space-lg);
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
