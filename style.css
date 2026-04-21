@@ -441,6 +441,10 @@ body:has(.Output.modal.current) {
 
 	:root {
 	--image-size: 4rem;
+
+	.navigation {
+    margin-block-start: var(--space-lg);
+	}
 }
 
 
