@@ -26,31 +26,50 @@
 	--space-lg: 4rem;
 	--space-xl: 6rem;
 	--radius: 1rem;
-	--image-size: clamp(5rem, 10vw, 8rem); /* Learnt this during my last project https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
-	--card-height: clamp(35rem, 60vh, 40rem);
-	--card-width: clamp(15rem, 80vw, 60rem);
+	--image-size: 5rem;
+	--card-height: 70vh;
+	--card-width: 75vw;
 	--button: 2.5rem;
 	--border-size: 0.3rem;
 }
 
-
-
 /* === BASE STYLES === */
-html,
-body {
-	height: 100%;
-	block-size: 110vh;
-}
 
 body {
+	block-size: 100dvh;
 	overflow: hidden;
 	width: 100%;
 	padding: var(--space-sm);
 	color: var(--color-text);
-	height: 100dvh;
 
+	
+	background-color: var(--color-text);
 	/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 	/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+
+
+
+	a {
+		text-decoration: underline;
+	}
+
+	p {
+		line-height: 130%;
+		font-size: var(--font-size-sm);
+		font-family: var(--font-header);
+	}
+}
+
+main {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-md);
+	padding: var(--space-sm);
+	height: 100dvh;
+	background-position: center;
 
 	background:
 		repeating-linear-gradient(0deg,
@@ -65,29 +84,38 @@ body {
 			transparent 1vh,
 			transparent 10vh),
 			var(--color-main);
-
-	a {
-		text-decoration: underline;
-	}
-
-	p {
-		line-height: 130%;
-		font-size: var(--font-size-sm);
-		font-family: var(--font-header);
-	}
 }
-
-main {
-	display: flex;
-	flex-direction: column;
+/* === STEPS === */
+.steps {
+	display: flex; 
 	align-items: center;
-	padding: var(--space-sm);
 	justify-content: center;
-	height: 100dvh;
+	gap: var(--space-md);
+	padding-block-start: 0;
+	border-radius: var(--button);
+	font-family: var(--font-body);
+	font-size: var(--font-size-md);
+	
+	.step {
+		border-radius: 50%; 
+		display: flex; 
+		width: var(--space-sm);
+		height: var(--space-sm);
+		background-color: var(--color-disabled-text);
+	}
+	.step-active {
+		display: flex;
+		border-radius: 50%;
+		align-items: center; 
+		justify-content: center; 
+		width: var(--space-sm);
+		height: var(--space-sm);
+		background-color: var(--color-text);
+		color: var(--color-text);
+	}
 }
 
 /* === NAVIGATION/BUTTONS === */
-
 .navigation {
 	display: flex;
 	padding-block-start: var(--space-ml);
@@ -153,25 +181,21 @@ main {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-sm);
-		padding-block: var(--space-md);
-		
 
 		h3 {
 			font-family: var(--font-header);
-			font-size: var(--font-size-md);
+			font-size: var(--font-size-ml);
 			font-weight: var(--font-weight-bold);
 			text-align: center;
 		}
 	}
 
 	/* === HOME PAGE === */
-
 	&.home {
 		.home-content {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			margin-block-start: calc(var(--space-lg) * -1);
 			text-align: center;
 		}
 
@@ -192,8 +216,7 @@ main {
 		}
 	}
 
-	/* === ANIMATIONS === */
-
+/* === ANIMATIONS === */
 	&.current {
 		display: flex;
 		flex-direction: column;
@@ -223,16 +246,16 @@ main {
 	width: var(--card-width);
 	height: var(--card-height);
 	display: grid;
-	place-items: center;
+	justify-items: center;
+	align-items: center;
 	grid-template-rows: 1fr auto;
+	margin-block-end:var(--space-md);
 }
 
 /* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 #data-list {
+	position: absolute;
 	z-index: 1;
-	grid-column: 1;
-	grid-row: 1;
-	margin-block-start: calc(var(--space-lg) * -1);
 
 	ul {
 		display: grid;
@@ -251,10 +274,8 @@ main {
 			justify-content: center;
 			border: var(--border-size) solid transparent;
 			border-radius: var(--radius);
-			justify-content: center;
 			overflow: hidden;
 			aspect-ratio: 1;
-
 
 			img {
 				width: 100%;
@@ -277,7 +298,6 @@ main {
 	grid-column: 1;
 	grid-row: 1;
 	z-index: 0;
-	margin-block-start: calc(var(--space-lg) * -1);
 }
 
 .card-1,
@@ -337,36 +357,6 @@ main {
 		display: none;
 	}
 } 
-/* === STEPS === */
-.steps {
-	position: fixed;
-	display: flex; 
-	inset-block-start: var(--space-xl);
-	inset-inline-start: 50%;
-	transform: translateX(-50%);
-	gap: var(--space-lg);
-	background-color: var(--color-cards);
-	padding: var(--space-sm);
-	border-radius: var(--radius);
-	font-family: var(--font-body);
-	font-size: var(--font-size-sm);
-	
-	.step {
-		width: var(--button);
-		hieght: var(--button); 
-		border-radius: 50%; 
-		display: flex; 
-		align-items: center; 
-		justify-content: center; 
-	}
-	.step-active {
-		background-color: var(--color-border);
-		border-radius: 50%;
-		color: var(--color-main);
-	}
-}
-
-
 
 /* === OUTPUT === */
 body:has(.Output.modal.current) {
@@ -446,8 +436,15 @@ body:has(.Output.modal.current) {
 	}
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
-/* === RESPONSIVE === */
+/* === RESPONSIVE DESIGN === */
+@media (380px <= width <= 420px) {
 
+	:root {
+	--image-size: 4rem;
+}
+
+
+}
 @media (min-width: 768px) {
 
 	.Plate, .decorative-cards, .modal {
@@ -481,7 +478,8 @@ body:has(.Output.modal.current) {
 	margin-block-start: -5rem;
 
 .output {
-		width: 30rem;
+		width: 50%; 
+		margin-inline:auto;
 		padding: var(--space-sm);
 		gap: var(--space-sm);
 	}
