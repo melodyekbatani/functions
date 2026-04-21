@@ -512,6 +512,11 @@ body:has(.Output.modal.current) {
 		max-inline-size: 5ch;
 	}
 
+	.Output.modal {
+    .vibe-label {
+        max-inline-size: none;
+    }
+}
 
 	#data-list ul {
 		grid-template-columns: repeat(5, 1fr);
