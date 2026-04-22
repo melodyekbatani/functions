@@ -4,7 +4,8 @@
 	--color-main: #ef93ae;
 	--color-border: #98C6FE;
 	--color-text: #D54E33;
-	--color-buttons: #fff6bb;
+	--color-buttons: #f8e776;
+	--color-buttons-secondary-disabled: #f4eab6;
 	--color-cards: #FFF9EC;
 	--color-disabled-text: #ffcfcf;
 	--color-disabled-border: #c4dfff;
@@ -140,7 +141,7 @@ main {
 		}
 
 		&:disabled {
-			background-color: var(--color-buttons);
+			background-color: var(--color-buttons-secondary-disabled);
 			color: var(--color-disabled-text);
 			border: var(--border) solid var(--color-disabled-border);
 			cursor: not-allowed;
@@ -148,6 +149,7 @@ main {
 	}
 
 	.back-button {
+		background-color: var(--color-buttons-secondary-disabled);
 		aspect-ratio: 1;
 		inline-size: var(--button);
 		display: flex;
@@ -188,7 +190,7 @@ main {
 	}
 
 	.navigation {
-		margin-block-start: calc(var(--space-xl) * -1);
+		margin-block-start: calc(var(--space-xl) * -0.5);
 		inset-block-end: var(--space-lg);
 		z-index: 100;
 	}
@@ -236,7 +238,7 @@ main {
 		}
 
 		h1 {
-			max-inline-size: 5ch;
+			max-inline-size: 6ch;
 			margin-inline: auto;
 			font-family: var(--font-header);
 			font-size: var(--font-size-xl);
@@ -529,7 +531,7 @@ body:has(.Output.modal.current) {
 	}
 }
 
-@media (width >=900px) and (width < 1100px) {
+@media (width >=901px) and (width < 1100px) {
 	:root {
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
@@ -538,7 +540,7 @@ body:has(.Output.modal.current) {
 	--font-size-xl: 6rem;
 	--image-size: 5rem;
 	--button: 3rem;
-	--card-inline-size: 30rem;
+	--card-inline-size: 25rem;
 	--card-block-size: 40rem;
 	--card-rotate-1: 4.5deg;
 	--card-rotate-2: 3deg;
@@ -558,7 +560,7 @@ body:has(.Output.modal.current) {
 	}
 }
 
-@media (width >=1100px) {
+@media (width >=1101px) {
 	:root {
 		--font-size-sm: 1.25rem;
 		--font-size-md: 1.25rem;
@@ -569,12 +571,22 @@ body:has(.Output.modal.current) {
 		--button: 3.5rem;
 		--card-inline-size: 55rem;
 		--card-block-size: 35rem;
+		--space-xl: 12rem;
 	 }
 
 	.modal.home {
 		h1 {
 			font-size: var(--font-size-xl);
 		}
+		.home-content {
+			transform: translateY(-2rem);
+		}
+		.navigation {
+			padding-block-start: var(--space-xl);
+		margin-block-start: calc(var(--space-xl) * -0.5);
+		inset-block-end: var(--space-sm);
+		z-index: 100;
+	}
 	}
 		h2 {
 			max-inline-size: 50ch;
@@ -591,6 +603,19 @@ body:has(.Output.modal.current) {
 			inline-size: 55%;
 		}
 	}
+	
+}
+
+@media (width >=1600px) {
+	 :root {
+		--image-size: 8rem;
+		--card-inline-size: 60rem;
+		--card-block-size: 40rem;
+		--font-size-sm: 1.5rem;
+		--button: 4rem;
+	 }
+
+}
 
 @media (width >=2400px) {
 	 :root {
