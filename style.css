@@ -493,8 +493,18 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-ml: 1.5rem;
 		--image-size: 3rem;
 		--card-inline-size: 20rem;
-		--card-block-size: 35rem;
+		--card-block-size: 32rem;
 	}
+	body {
+	background:
+		repeating-linear-gradient(0deg,
+			var(--color-text) 0,
+			var(--color-text) var(--space-ml),
+			transparent 2vh,
+			transparent 7vh),
+			var(--color-main);
+			}
+
 .modal {
 	padding: 0;
 }
