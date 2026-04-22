@@ -202,7 +202,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-main) 0,
-				var(--color-main) var(--space-ml),
+				var(--color-main) var(--space-xl),
 				transparent 2vh,
 				transparent 8vh),
 			var(--color-text);
@@ -605,9 +605,6 @@ body:has(.home.modal.current, .Output.modal.current) {
 }
 
 @media (width >=2400px) {
-	:root {
-		--button: 6rem;
-	}
 
 	.Output.modal .output {
 		inline-size: 50%;
