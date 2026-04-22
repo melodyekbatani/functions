@@ -565,6 +565,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-xl: 8rem;
 		--button: 4rem;
 		--space-xl: 12rem;
+		--space-lg: 5rem;
 	 }
 
 	.modal.home {
@@ -591,9 +592,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 	grid-template-columns: repeat(5, var(--image-size));
 	gap: var(--space-md);
 	}
+	body:has(.home.modal.current, .Output.modal.current) {
+	background-color: var(--color-text);
 
-
-	
+	main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-main) 0,
+				var(--color-main) var(--space-lg),
+				transparent 3vh,
+				transparent 13vh),
+			var(--color-text);
+	}
+}
 }
 
 @media (width >=1600px) {
@@ -646,4 +657,4 @@ body:has(.home.modal.current, .Output.modal.current) {
 		padding-block-end: 0;
 	}
 }
-/*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
+/*CSS Organization - https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing, https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
