@@ -29,12 +29,12 @@
 	
 	--radius: 0.5rem;
 	--border: 0.15rem;
-	--border-sm: 0.1rem;
+	--border-sm: 0.15rem;
 	--button: 3rem;
 	--button-wide: calc(var(--button) * 3);
 	--image-size: clamp(4.8rem, 10vw, 5.8rem);
-	--card-inline-size: clamp(20rem, 50vw, 26rem);
-	--card-block-size: clamp(27rem, 70vh, 42rem);
+	--card-inline-size: clamp(20rem, 50svw, 26rem);
+	--card-block-size: clamp(27rem, 70svh, 42rem);
 
 	/* Card Rotation */
 	--card-rotate-1: 9deg;
@@ -49,7 +49,7 @@ body {
 	overflow: hidden;
 	inline-size: 100%;
 	color: var(--color-text);
-	background-color: var(--color-main);
+	background-color: var(--color-text);
 
 	a {
 		text-decoration: underline;
@@ -199,7 +199,7 @@ main {
 .modal {
 	display: none;
 	border-radius: var(--radius);
-	border: var(--border-sm) solid var(--color-border);
+	border: var(--border) solid var(--color-border);
 	background-color: var(--color-cards);
 	list-style: none;
 	gap: var(--space-sm);
@@ -259,6 +259,20 @@ main {
 		}
 	}
 
+body:has(.home.modal.current, .Output.modal.current) {
+	background-color: var(--color-text); 
+
+	main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-main) 0,
+				var(--color-main) var(--space-ml),
+				transparent 2vh,
+				transparent 8vh),
+			var(--color-text);
+	}
+}
+
 	/* === ANIMATIONS === */
 	&.current {
 		display: flex;
@@ -272,18 +286,6 @@ main {
 	}
 }
 
-body {
-background-color: var(--color-text);
-:has(.home.modal.current, .Output.modal.current) {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-text) 0,
-				var(--color-text) var(--space-ml),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-main);
-}
-}
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
@@ -371,7 +373,7 @@ background-color: var(--color-text);
 		inset: 0;
 		/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
 		border-radius: var(--radius);
-		border: var(--border-sm) solid var(--color-border);
+		border: var(--border) solid var(--color-border);
 		background-color: var(--color-cards);
 		z-index: 0;
 	}
@@ -395,7 +397,7 @@ background-color: var(--color-text);
 	gap: var(--space-md);
 	text-align: center;
 	color: var(--color-main);
-	border: var(--border-sm) solid var(--color-border);
+	border: var(--border) solid var(--color-border);
 
 
 	#vibe-name {
@@ -495,7 +497,8 @@ background-color: var(--color-text);
 	}
 	
 	body :has(.home.modal.current, .Output.modal.current) {
-		background:
+		main {
+			background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
 				var(--color-text) var(--space-ml),
@@ -503,8 +506,9 @@ background-color: var(--color-text);
 				transparent 7vh),
 			var(--color-main);
 	}
+}
 	.steps {
-		padding-block-start: var(--space-md);
+		padding-block-start: var(--space-ml);
 	}
 
 	.navigation {
@@ -513,9 +517,11 @@ background-color: var(--color-text);
 
 }
 
-@media (width >= 768px) and (width < 900px) {
+@media (width >= 688px) and (width < 800px) {
 	:root {
 		--button: 3rem;
+		--image-size: clamp(4.8rem, 10vw, 5.8rem);
+		--card-block-size: clamp(22rem, 75svh, 35rem);
 	}
 		.Output.modal {
 		.output {
@@ -524,7 +530,7 @@ background-color: var(--color-text);
 	}
 }
 
-@media (width >=900px) {
+@media (width >=800px) {
 	:root {
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
@@ -535,9 +541,9 @@ background-color: var(--color-text);
 	--card-rotate-1: 4.5deg;
 	--card-rotate-2: 3deg;
 	--card-rotate-3: 1.5deg;
-	--card-inline-size: clamp(50rem, 70vw, 60rem);
-	--card-block-size: clamp(35rem, 50vh, 80rem);
-	--image-size: clamp(7rem, 7vw, 10rem);
+	--card-inline-size: clamp(50rem, 70svw, 60rem);
+	--card-block-size: clamp(35rem, 50svh, 80rem);
+	--image-size: clamp(7rem, 7svw, 10rem);
 	}
 	#data-list ul {
 	grid-template-columns: repeat(5, var(--image-size));
@@ -586,9 +592,6 @@ background-color: var(--color-text);
 	grid-template-columns: repeat(5, var(--image-size));
 	gap: var(--space-md);
 	}
-
-
-	
 }
 
 @media (width >=1600px) {
@@ -596,9 +599,9 @@ background-color: var(--color-text);
 		--font-size-sm: 1.5rem;
 		--font-size-lg: 6.5rem;
 		--button: 4rem;
-		--card-inline-size: clamp(60rem, 65vw, 80rem);
-		--card-block-size: clamp(40rem, 55vh, 90rem);
-		--image-size: clamp(7rem, 6vw, 10rem);
+		--card-inline-size: clamp(60rem, 65svw, 80rem);
+		--card-block-size: clamp(40rem, 55svh, 90rem);
+		--image-size: clamp(7rem, 6svw, 10rem);
 	 }
 #data-list ul {
 		gap: var(--space-lg);
@@ -621,6 +624,23 @@ background-color: var(--color-text);
 	 .Output.modal .output {
 	inline-size: 60%;
 	}
-
 }
+/* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
+
+@media (height <= 1000px) {
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
+
+	--root {
+		--image-size: clamp(2.5rem, 15svh, 3.5rem);
+		--card-block-size: clamp(20rem, 75svh, 30rem);
+	}
+	#data-list ul {
+		row-gap: var(--space-sm);
+		column-gap: var(--space-md);
+	}
+	.modal .category-title h3 {
+		padding-block-end: 0;
+	}
+}
+
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
