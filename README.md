@@ -22,8 +22,9 @@ Girl dinner is a term coined by TikTok creator Olivia Maher, a Castleton Univers
 When this trend first emerged, I noticed I had been unknowingly engaging in the “girl dinner” for years. I believe that a person's taste in food says a lot about their personality, and I wanted to create a relatable current experience around that. The interface transforms ingredient selections into a composed plate and personality reading, exploring how small everyday decisions can generate playful insights about identity and taste.
 
 ## Core Functionality 
-The project walks users through the four essential elements of a Girl Dinner: base, main, side, and of course a sweet treat, one category at a time. In each step, the user selects ingredients from that section. Every item is tagged with a plate vibe and a short descriptive word. The ingredient data is stored externally in a JSON dataset that I designed using a Google Sheets document. 
-Once the user moves through all the modals, the generator looks at the list of selected ingredients and calculates the dominant vibe across them. The final screen reveals the generated plate along with its Girl Dinner personality type and a playful line that begins with “You’re giving…”, which pulls together the descriptive words assigned to each selected food.
+The project walks users through the four essential elements of a Girl Dinner: base, main, side, and of course a sweet treat, one category at a time. In each step, the user selects ingredients from that section. Every item is tagged with a plate vibe and a short descriptive word. The ingredient data is stored in a JSON dataset that I designed using a Google Sheets document. 
+
+Once the user moves through all the modals, the generator looks at the list of selected ingredients and calculates the most dominant vibe across them. The final screen reveals the generated plate along with its Girl Dinner plate vibe and a playful personality statement, pulling together the descriptive words assigned to each selected food.
 
 ## Results
 The project is structured as a sequence of interactive steps that guide the user from interaction to outcomes. Between each modal, I added a slide animation to give the cards more depth and more of a swiping interaction to play into the overall design concept. 
@@ -31,7 +32,7 @@ The project is structured as a sequence of interactive steps that guide the user
 Selecting the items also functions as a toggle with an active and inactive state, so if the user clicks one by mistake, they can go back. At the same time, the design is meant to move the user through the process as a linear path from input to output, creating a clear and digestible user flow locked into the viewport height. 
 
 ## Visual Design
-The visual design leans into the “playfully chaotic and fun nature of the girl dinner, through the use of bright colors, sticker-like food imagery, and background patterns. The website is typeset in SN Pro and RL Horizon, a slab serif font originally designed by Radek Lukasiewicz. You can find more on the RL Horizonhere: https://www.radluka.com/rl-horizon.
+The visual design leans into the “playfully chaotic and fun nature of the girl dinner, through the use of bright colors, sticker-like food imagery, and background patterns. The website is typeset in SN Pro, designed by Tobias Whetton and RL Horizon, a slab serif font originally designed by Radek Lukasiewicz. You can find more on the RL Horizon here: https://www.radluka.com/rl-horizon and SN Pro here: https://supernotes.app/open-source/sn-pro/.
 
 The interaction style is designed to enforce the idea of picking food rather than filling out a form. The plate also acts as a central motif of the design, inspired by the cafeteria plate, reinforcing the idea that the user is building a dinner piece by piece. I also thought about the favicon, metadata, and iconography as an extension of the website, integrating the brand identity and colors. 
 
@@ -42,4 +43,4 @@ I designed the website across 2 key breakpoints, working up from the mobile expe
 The project went through several conceptual and interaction iterations. Early versions used a scroll-based interface inspired by browsing foods at Trader Joe’s. Over time, the concept shifted toward a simpler ingredient selection system based on foods commonly seen in girl dinner videos on TikTok.
 
 ## Next Steps
-If I had more time, I’d push the interaction further. I’d also love to expanded the ingredient dataset and introduce additional personality outcomes to create more varied results. The interaction could also be extended through more fun animations and elements.
+If I had more time, I’d push the interaction further and build more responsiveness throughout the design. I’d also love to expanded the ingredient dataset and introduce additional personality outcomes to create more varied results. The interaction could also be extended through more fun animations and elements.

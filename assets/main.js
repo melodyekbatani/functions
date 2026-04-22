@@ -1,4 +1,4 @@
-// I begin by creating and setting global values. I'm defining these variables at the beginning of the file which means they can be access below. A few key variables I used are currentPlate, foodItem for storing all items and resetting the selection when the user hits restart as well as the categories that are used throughout but specifically within the toggleNext button 
+// I begin by creating and setting global values. I'm defining these variables at the beginning of the script which means they can be access below. A few key variables I used are currentPlate, foodItem for storing all items and resetting the selection when the user hits restart as well as the categories that are used throughout but specifically within the toggleNext button. 
 let currentPlate ={}
 let foodItem = []; 
 const categories = ['Base', 'Protein', 'Crunch', 'Sweet']
@@ -15,7 +15,7 @@ let renderItems = (data) => {
 		</li>
 		`
 
-// When the food items are clicked, it toggles an active state (styled with css) on that element indicating to the user the item has been selected. This is the original LLM use that I shared, since learning this wasn't the correct way to prompt I went in revised the code so that I could understand it better and make the logic my own https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823. To further understand this, I also reviewed this mdn link: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener. for my reference, e = event, so on a click event, the code targets the element and toggles the active styling.
+// When the food items are clicked, it toggles an active state (styled with css) on that element indicating to the user the item has been selected. This is the original LLM use that I shared over slack, since learning this wasn't the correct way to prompt I went in revised the code so that I could understand it better and make the logic my own https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823. To further understand this, I also reviewed this mdn link: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener. Note: for my reference, e = event, so on a click event, the code targets the element and toggles the active styling.
 
 		containerEl.insertAdjacentHTML('beforeend', itemHtml)
 		containerEl.lastElementChild.addEventListener("click", (e) => {e.currentTarget.classList.
@@ -29,11 +29,13 @@ let renderItems = (data) => {
 		})
 
 //This is something I learnt from the UC code tutor and from this youtube video https://www.youtube.com/watch?v=P4rQyW0hWTk. The goal of this function is to reset selected items. At the top, I created an empty array called foodItem. Each time a new li is created,containerEl grabs it and push adds it to the array. This loops through every item in the selected array and removes the active class.
+
 		foodItem.push(containerEl.lastElementChild)
 	})
 }
 
-// Creating function to set up the distribution of selected items, counts how many times each vibe appears in an item. First, jey is created to store the vibe value of each item. Then creates the average variable, then loops through data for the dataset vibes and finds the word for each item. if statement is checking if its seen the vibe before. if it hasn't seen the vibe before it creates a new entry and sets it to 1, if it has seen it before it adds 1 to the existing count. Reviewed this with code tutor and reviewed this video to understand it better https://www.youtube.com/watch?v=bRfkYI8Y0PM
+// Creating function to set up the distribution of selected items, counts how many times each vibe appears in an item. First, key is created to store the vibe value of each item, creating the average variable, then loops through data for the dataset vibes and finds the word for each item. if statement is checking if its seen the vibe before. if it hasn't seen the vibe before it creates a new entry and sets it to 1, if it has seen it before it adds 1 to the existing count. Reviewed this with code tutor and used this video to understand it better https://www.youtube.com/watch?v=bRfkYI8Y0PM, as well as this medium article https://medium.com/@ryan_forrester_/average-of-an-array-in-javascript-how-to-guide-85e97dd1443e 
+
 function getAverages (data) {
 	let Averages = {}
 	for (let item of data) {
@@ -44,7 +46,8 @@ function getAverages (data) {
 	return Averages
 }
 
-//This function takes the average and converts each vibe count into a percent. for loop is going through ever property in the data and loops through each key, so for example chaotic: 2, girlcore: 1, balanced: 1 - sum adds it all up. Percent takes each and divides it by the total to create the most dominant category. The sum variable loops through each property and counts to add up the total count of the vibes. Then I loop through again and divide each vibe by the total to get percentage. Then add it to the HTML so it can show the vibe name. 
+//This function takes the average and converts each vibe count into a percent. For loop is going through ever property in the data and loops through each key, so for example chaotic: 2, girlcore: 1, balanced: 1 - sum adds it all up. Percent takes each and divides it by the total to create the most dominant category. The sum variable loops through each property and counts to add up the total count of the vibes. Then I loop through again and divide each vibe by the total to get percentage. Then add it to the HTML so it can return the vibe name. This was really important in an earlier iteration of the project but I realized later on showing the percent wasn't working design wise and ended up just adding the property to the html . Built this logic with support from UC tutors and these references: https://www.geeksforgeeks.org/javascript/percentage-calculator-using-html-css-and-javascript/ and https://www.youtube.com/watch?v=gUCSSI-DN7Q
+
 function getPercent (data) {
 	let Percent = {}
 	let sum = 0
@@ -60,7 +63,7 @@ function getPercent (data) {
 	}
 	return html
 }
-// Here I'm defining the most dominant category by creating an if statement. Its sayign starting at 0 because no vibe is chosen, then keeping track of the vibe that's being picked the most times, defining the highest count. It holds the name of the vibe and returns it back to the user. 
+// Here I'm defining the most dominant category by creating an if statement. It's sayign starting at 0 because no vibe is chosen, then keeping track of the vibe that's being picked the most times, defining the highest count. Basically saying if average of vibes is the highest count consider it to be the MDC.  It holds the name of the vibe and returns it back to the user. 
 
 function getMDC (Averages) {
 	let mdc = null
@@ -74,10 +77,10 @@ function getMDC (Averages) {
 	return mdc
 }
 
-// This function runs when the button create plate button is clicked is clicked defines a random x array length (less than 1 and in between 0-1) if the user doesn't select an item in the most dominant category.
+// This function runs when the button create plate button is clicked is clicked defines a random x array length (less than 1 and in between 0-1) if the user doesn't select an item in the most dominant category. I thought of this logic once the plate was returning 3/2 items because nothing in the mdc for that section was being picked. Learnt the sythx from code tutors but also found this resource helpful https://www.w3schools.com/js/js_random.asp  
+// Note: Triple === creates a strict equality to check if both values are the same https://claude.ai/share/e6bd033c-c832-483d-9043-52257f5ba6ce 
 const getRandomItem = (arr) =>
 	arr[Math.floor(Math.random() * arr.length)]
-
 
 const createPlate = document.getElementById('create-plate')
 createPlate.addEventListener('click', () => {
@@ -88,15 +91,12 @@ createPlate.addEventListener('click', () => {
 	let mdcItems = Array.from(selected).filter(item => item.dataset.vibes === mdc)
 
 
-// Note: Triple === creates a strict equality to check if both values are the same https://claude.ai/share/80671624-d8b8-4373-b790-a0a73f990823
+//Next, I'm defining the variable for the plate prioritizing the items in the most dominant category filtering them by the food category they are a part of, saying if there are selected items in the MDC then get a random item within that food category. After selecting random items within the MDC, if there is a category where no items are in the MDC, pick randomly from the selected items so the user always has 4 items on the plate. 
 
-
-//Next, I'm defining the variable for the plate prioritizing the items in the most dominant category filtering them by the food category they are a part of, saying if there are selected items in the MDC then get a random item within that food category. After selecting random items within the MDC, if there is a category where no items are in the MDC, pick randomly from the selected items so the user always has 4 items on the plate
 	const plate = {}
 	categories.forEach(category => {
 		const filteredItems = mdcItems.filter(item => item.dataset.category === category)
 		plate[category] = getRandomItem(filteredItems)
-
 
 
 	if (plate[category] === undefined) {
@@ -106,6 +106,7 @@ createPlate.addEventListener('click', () => {
 	
 	currentPlate = plate
 })
+
 //This function loops declaring the overall personality/vibe type for the user's plate. It through the plate objects and for each category that has an item selected it grabs the item's image and adds it to the html. After it loops it gives the getPercentage function to declare the vibe.The item variable starts at 0 as long as the item is less then the length of the plate array the for loop will stop. Also helpful for this logic: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in and template literal for figuring out the html string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 	let plateHtml = ''
 	for (const category in plate) {
@@ -126,7 +127,8 @@ for (let index=0; index <platePersonalities.length; index+=1) {
     //personalities += plate[item]. dataset.personality + ', '
 
 const item = platePersonalities[index];
-    //if the item is equal to the last plate (lenght is 4) then give it a period - but if any other item (1,2,3) give it a comma
+
+//Asked tutor to help me trouble shoot this because I was getting stuck with the synthx. if the item is equal to the last plate (lenght is 4) then give it a period - but if any other item (1,2,3) give it a comma. 
     if (index===platePersonalities.length-1)
     {
     personalities += 'and ' + item. dataset.personality + '.';
@@ -139,13 +141,14 @@ const item = platePersonalities[index];
 
 
 // Here I'm actually creating the html structure for the outcome statement by using document.querySelector and defining what it will say. One thing to note here is that because I'm using the word you're with a ' I need to use " quotation marks so that it doesn't misinterprete the comma in you're.
-// https://claude.ai/share/156f3a07-d924-4389-94fb-ce1aa46467d8
+// and a little bit of help figuring out synthx using claude https://claude.ai/share/156f3a07-d924-4389-94fb-ce1aa46467d8 
 // https://w3schools.tech/tutorial/javascript/javascript_strings_object?
 
 document.querySelector ('.plate-description').textContent = "You're giving "+ personalities
 
 	document.querySelector('#vibe-name').textContent = mdc
 	document.querySelector('.output').innerHTML = plateHtml
+
 	// Update on this, I accidentally went in and command z a bunch of times and messed up all my comments and deleted my earlier bug fixes so this isn't how I solved it but wanted to share the chat in case. Basically, I kept noticing that when I changed my CSS, the vibe name would disappear. At first I thought it might be something in the styling, but after debugging I realized the earlier logic was still working, the vibe result was being returned. So the issue seems to be happening with the rendering the mdc vibe name into the element on the page. https://claude.ai/share/cd1dab8f-ab2e-4b65-b49a-0334ea4a7195. 
 
 	//In this section I'm counting the numbers of modals before the create plate button activates while combining the switch modal active state with the functionality of the next button. This is something I reviewed with a UC tutor. 
@@ -155,7 +158,6 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 
 	
 	foodItem.forEach((item)=>{item.classList.toggle('active',false)})
-	// Note: 1 equal sign is a command - whatever this varible is change it to this. vs 2/3 equal signs is a question (2 checking for semantic similarity, 3 is checking for datatype similarity)
 }
 )
 // From Eric's json lecture. Using fetch here to pull in my JSON data. //Accessing the button in the html first before starting the function (defining the variables). Once the data is ready, it gets added to the renderItems to show it on the page. Next it targets the selected items checking if there is an active item in the current category, if there isn't one it disables the next button. 
@@ -177,7 +179,7 @@ const nextButton = document.querySelector('.next-button');
 const backButton = document.querySelector('.back-button');
 const createPlateButton = document.getElementById ('create-plate');
 
-//Here I'm making sure the user can't skip a category without picking something first. Every time a food item is clicked, this checks if there's an active item in the current category. If there isn't one it disables the next button. This is done by creatinng an if else statment saying if nothing  is selected disable it, if something is selected render it in it's active state. The -1 and 4 exceptions are for the home screen and the last screen where the user doesn't need to make a selection so the button stays enabled. A few notes here: the 2 vertical lines in an if statement mean OR, checking if there is an selected state on an item OR if its on the first screen OR the last screen, if any of those statements are true button stays active. 
+//Here I'm making sure the user can't skip a category without picking something first. Every time a food item is clicked, this checks if there's an active item in the current category. If there isn't one it disables the next button. This is done by creatinng an if else statment saying if nothing  is selected disable it, if something is selected render it in it's active state. The -1 and 4 exceptions are for the home screen and the last screen where the user doesn't need to make a selection so the button stays enabled. A few notes here: the 2 vertical lines in an if statement mean OR, checking if there is an selected state on an item OR if its on the first screen OR the last screen, if any of those statements are true button stays active.
 
 function toggleNextButton (currentCategory){
 if (document.querySelector("li[data-category='"+categories[currentCategory]+"'].active")||currentCategory===-1||currentCategory===4) { 

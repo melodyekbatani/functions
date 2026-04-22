@@ -32,6 +32,8 @@
 	--border-sm: 0.1rem;
 	--button: 3rem;
 	--button-wide: calc(var(--button) * 3);
+
+	/* Learnt how to use clamp in the previous project */
 	--image-size: clamp(4.5rem, 10vw, 5.8rem);
 	--card-inline-size: clamp(20rem, 50vw, 26rem);
 	--card-block-size: clamp(28rem, 70vh, 42rem);
@@ -40,7 +42,6 @@
 	--card-rotate-1: 9deg;
 	--card-rotate-2: 6deg;
 	--card-rotate-3: 3deg;
-
 }
 
 /* === BASE STYLES === */
@@ -130,7 +131,7 @@ main {
 		font-family: var(--font-body);
 		cursor: pointer;
 		transition: opacity 0.15s ease;
-		/* source https://www.w3schools.com/css/css3_transitions.asp and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function. Here's also my source for cursor states: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/cursor. Also found this really cool resource for hover states for later https://prismic.io/blog/css-hover-effects. */
+		/* source https://www.w3schools.com/css/css3_transitions.asp and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function. Here's also my source for cursor states: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/cursor. Also found this really cool resource for hover states for later https://prismic.io/blog/css-hover-effects. And this for learning more about button states https://medium.com/@tylersticka/designing-button-states-843184ddb92e */
 
 		&:hover:not(:disabled) {
 			opacity: 0.8;
@@ -169,7 +170,7 @@ main {
 	display: none;
 }
 
-/* Tried visibility hidden - to fix spacing here https://stackoverflow.com/questions/20663712/css-display-none-not-working */
+/* Tried visibility hidden - to fix spacing here https://stackoverflow.com/questions/20663712/css-display-none-not-working ended up just being a bug*/
 .Plate:has(.Sweet.modal.current) {
 	.next-button {
 		display: none;
@@ -245,7 +246,6 @@ main {
 			line-height: 0.9;
 			-webkit-text-stroke: var(--border-sm) var(--color-text);
 			text-align: center;
-
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
 		}
 
@@ -283,12 +283,11 @@ body:has(.home.modal.current, .Output.modal.current) {
 				var(--color-text) 8vh);
 	}
 }
-
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
+/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea for troubleshooting problems with selecting*/
 
-/* references for slide in animation https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using and this youtube video for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 
+/* references for slide in animation https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using and this youtube video for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I but mainly the mdn link*/
 @keyframes slide-in {
 	from {
 		transform: translateX(10%);
@@ -368,7 +367,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 	.card-3 {
 		position: absolute;
 		inset: 0;
-		/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
+		/* Relative units way to write top:0, bottom: 0, as a reminder https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
 		border-radius: var(--radius);
 		border: var(--border) solid var(--color-border);
 		background-color: var(--color-cards);
@@ -453,7 +452,6 @@ body:has(.home.modal.current, .Output.modal.current) {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-
 
 		/* "Girl Dinner Vibe" label */
 		.vibe-label {
@@ -544,8 +542,8 @@ body:has(.home.modal.current, .Output.modal.current) {
 	}
 }
 
-/* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
-
+/*I was trying to figure out a way to cleanly adapt my design and googled if I can add variables in breakpoints, turns out you can, just not as the media query itself! I thought this was cool and really helped me organize my responsiveness. More info here: https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries#:~:text=52,so%20it%20can't%20work. and https://www.w3schools.com/css/css3_variables_mediaqueries.asp */
+/* I tried this and it was making things worst but would love to figure this out later, basically my dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
 
 
 @media (width >=900px) {
@@ -628,11 +626,11 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 	#data-list ul {
 		gap: var(--space-lg);
-		max-inline-size: 75vw;
+		max-inline-size: 75vw; 
 	}
 
 	.Output.modal .output {
-		inline-size: 60%;
+		inline-size: 60%; /* defining width in a logical way */
 	}
 }
 
@@ -645,10 +643,9 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-xl: 10rem;
 		--button: 6rem;
 	}
-
+	
 	.Output.modal .output {
 		inline-size: 55%;
 	}
 }
-
 /*CSS Organization - https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing, https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
