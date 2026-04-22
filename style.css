@@ -546,24 +546,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 /* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
 
-@media (800px <=height <=1000px) {
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
 
-	:root {
-		--image-size: clamp(2rem, 15svh, 3rem);
-		--card-block-size: clamp(23rem, 75svh, 35rem);
-	}
-
-	#data-list ul {
-		row-gap: var(--space-sm);
-		column-gap: var(--space-md);
-		justify-content: space-between;
-	}
-
-	.modal .category-title h3 {
-		padding-block-end: 0;
-	}
-}
 
 @media (width >=900px) {
 	:root {
