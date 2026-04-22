@@ -568,15 +568,15 @@ body:has(.Output.modal.current) {
 		}
 	}
 .card-1 {
-	transform: rotate(6deg);
+	transform: rotate(4.5deg);
 }
 
 .card-2 {
-	transform: rotate(4deg);
+	transform: rotate(3deg);
 }
 
 .card-3 {
-	transform: rotate(2deg);
+	transform: rotate(1.5deg);
 }
 
 }
