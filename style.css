@@ -34,7 +34,7 @@
 	--button-wide: calc(var(--button) * 3);
 	--image-size: clamp(4.8rem, 10vw, 5.8rem);
 	--card-inline-size: clamp(20rem, 50vw, 26rem);
-	--card-block-size: clamp(25rem, 70vh, 42rem);
+	--card-block-size: clamp(27rem, 70vh, 42rem);
 
 	/* Card Rotation */
 	--card-rotate-1: 9deg;
@@ -488,7 +488,7 @@ background-color: var(--color-text);
 		--font-size-xl: 4.5rem;
 		--font-size-lg: 3rem; 
 		--font-size-ml: 1.75rem;
-		--image-size: 4rem;
+		--image-size: 3.75rem;
 		--card-rotate-1: 4.5deg;
 		--card-rotate-2: 3deg;
 		--card-rotate-3: 1.5deg;
@@ -594,18 +594,18 @@ background-color: var(--color-text);
 @media (width >=1600px) {
 	 :root {
 		--font-size-sm: 1.5rem;
-		--font-size-lg: 7rem;
+		--font-size-lg: 6.5rem;
 		--button: 4rem;
 		--card-inline-size: clamp(60rem, 65vw, 80rem);
 		--card-block-size: clamp(40rem, 55vh, 90rem);
-		--image-size: clamp(9rem, 6vw, 10rem);
+		--image-size: clamp(7rem, 6vw, 10rem);
 	 }
 #data-list ul {
 		gap: var(--space-lg);
 		max-inline-size: 75vw;
 	}
 	 .Output.modal .output {
-	inline-size: 45%;
+	inline-size: 55%;
 	}
 }
 
@@ -619,7 +619,7 @@ background-color: var(--color-text);
 		--button: 6rem;
 	 }
 	 .Output.modal .output {
-	inline-size: 40%;
+	inline-size: 60%;
 	}
 
 }
