@@ -32,9 +32,9 @@
 	--border-sm: 0.1rem;
 	--button: 3rem;
 	--button-wide: calc(var(--button) * 3);
-	--image-size: 4.5rem;
-	--card-inline-size: 20rem;
-	--card-block-size: 40rem;
+	--image-size: clamp(4.8rem, 10vw, 5.8rem);
+	--card-inline-size: clamp(20rem, 50vw, 26rem);
+	--card-block-size: clamp(25rem, 70vh, 42rem);
 
 	/* Card Rotation */
 	--card-rotate-1: 9deg;
@@ -476,12 +476,25 @@ background-color: var(--color-text);
 		--font-size-lg: 2.5rem;
 		--font-size-md: 1rem;
 		--font-size-ml: 1.5rem;
-		--image-size: 3rem;
-		--card-inline-size: 20rem;
-		--card-block-size: 32rem;
 	}
 
-	body {
+.modal {
+		padding: 0;
+	}
+}
+
+@media ( width <=420px) {
+	:root {
+		--font-size-xl: 4.5rem;
+		--font-size-lg: 3rem; 
+		--font-size-ml: 1.75rem;
+		--image-size: 4rem;
+		--card-rotate-1: 4.5deg;
+		--card-rotate-2: 3deg;
+		--card-rotate-3: 1.5deg;
+	}
+	
+	body :has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
@@ -490,19 +503,12 @@ background-color: var(--color-text);
 				transparent 7vh),
 			var(--color-main);
 	}
-.modal {
-		padding: 0;
+	.steps {
+		padding-block-start: var(--space-md);
 	}
-}
 
-@media (390px <=width <=420px) {
-	:root {
-		--font-size-lg: 2rem;
-		--font-size-ml: 1.5rem;
-		--image-size: 4rem;
-		--card-rotate-1: 4.5deg;
-		--card-rotate-2: 3deg;
-		--card-rotate-3: 1.5deg;
+	.navigation {
+		margin-block-start: calc(var(--space-sm) * -0.5);
 	}
 
 }
@@ -518,20 +524,30 @@ background-color: var(--color-text);
 	}
 }
 
-@media (width >=900px) and (width < 1100px) {
+@media (width >=900px) {
 	:root {
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
 	--font-size-lg: 5rem;
 	--font-size-xl: 6rem;
-	--image-size: 5rem;
 	--button: 3rem;
-	--card-inline-size: 25rem;
-	--card-block-size: 40rem;
 	--card-rotate-1: 4.5deg;
 	--card-rotate-2: 3deg;
 	--card-rotate-3: 1.5deg;
+	--card-inline-size: clamp(50rem, 70vw, 60rem);
+	--card-block-size: clamp(35rem, 50vh, 80rem);
+	--image-size: clamp(7rem, 7vw, 10rem);
+	}
+	#data-list ul {
+	grid-template-columns: repeat(5, var(--image-size));
+
+	}
+	.navigation {
+		margin-block-start: var(--space-ml);
+	}
+	 .Output.modal .output {
+	inline-size: 50%;
 	}
 }
 
@@ -542,10 +558,7 @@ background-color: var(--color-text);
 		--font-size-ml: 2.25rem;
 		--font-size-lg: 5rem;
 		--font-size-xl: 8rem;
-		--image-size: 7rem;
 		--button: 3.5rem;
-		--card-inline-size: 55rem;
-		--card-block-size: 35rem;
 		--space-xl: 12rem;
 	 }
 
@@ -574,21 +587,26 @@ background-color: var(--color-text);
 	gap: var(--space-md);
 	}
 
-	.Output.modal .output {
-	inline-size: 55%;
-	}
+
 	
 }
 
 @media (width >=1600px) {
 	 :root {
-		--image-size: 8rem;
-		--card-inline-size: 60rem;
-		--card-block-size: 40rem;
 		--font-size-sm: 1.5rem;
+		--font-size-lg: 7rem;
 		--button: 4rem;
+		--card-inline-size: clamp(60rem, 65vw, 80rem);
+		--card-block-size: clamp(40rem, 55vh, 90rem);
+		--image-size: clamp(9rem, 6vw, 10rem);
 	 }
-
+#data-list ul {
+		gap: var(--space-lg);
+		max-inline-size: 75vw;
+	}
+	 .Output.modal .output {
+	inline-size: 45%;
+	}
 }
 
 @media (width >=2400px) {
@@ -598,16 +616,11 @@ background-color: var(--color-text);
 		--font-size-ml: 2.5rem;
 		--font-size-lg: 8rem;
 		--font-size-xl: 10rem;
-		--image-size: 8rem;
-		--button: 4rem;
-		--card-inline-size: 70rem;
-		--card-block-size: 50rem;
+		--button: 6rem;
 	 }
-
-	#data-list ul {
-		gap: var(--space-lg);
-		max-inline-size: 75vw;
+	 .Output.modal .output {
+	inline-size: 40%;
 	}
-}
 
+}
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
