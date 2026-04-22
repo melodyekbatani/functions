@@ -75,6 +75,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-md);
+	margin-block-start: -1.5rem;
 	padding-block-start: 0;
 	border-radius: var(--button);
 	font-family: var(--font-body);
@@ -477,9 +478,9 @@ body:has(.Output.modal.current) {
 		font-family: var(--font-body);
 		font-size: var(--font-size-md);
 		font-weight: var(--font-weight-bold);
-
+		max-width: 30ch;
+		text-wrap: balanced;
 	}
-
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
 
@@ -487,7 +488,6 @@ body:has(.Output.modal.current) {
 /* === RESPONSIVE DESIGN === */
 /* changing sizing for older/smaller phones */
 @media (300px <=width <=420px) {
-
 	:root {
 		--image-size: 4rem;
 		--font-size-lg: 3rem;
@@ -505,10 +505,29 @@ body:has(.Output.modal.current) {
 	.Plate {
 		margin-block-end: var(--space-md);
 	}
+	.Output.modal {
+    .vibe-label {
+        max-inline-size: none;
+    }
 }
+}
+@media (width >=900px) {
+	:root {
+	--font-size-sm: 1rem;
+	--font-size-md: 1.25rem;
+	--font-size-ml: 2rem;
+	--font-size-lg: 5rem;
+	--font-size-xl: 6rem;
+	--image-size: 6rem;
+	--button: 3.5rem;
+	--card-height: 80vh;
+	--card-width: 75vw;
+	}
 
-@media (width >=700px) {
-
+	body {
+	height: 100%;
+	block-size: 100vh;
+	}
 	 h1 {
 		max-inline-size: 5ch;
 	}
@@ -534,19 +553,30 @@ body:has(.Output.modal.current) {
 			background-color: var(--color-main);
 		}
 	}
+.card-1 {
+	transform: rotate(6deg);
 }
 
-@media (width >=1200px) {
+.card-2 {
+	transform: rotate(4deg);
+}
+
+.card-3 {
+	transform: rotate(2deg);
+}
+
+}
+
+
+@media (width >=1100px) {
 	:root {
-		--font-size-sm: 1rem;
+		--font-size-sm: 1.25rem;
         --font-size-md: 1.25rem;
-        --font-size-ml: 1.5rem;
+        --font-size-ml: 2.25rem;
         --font-size-lg: 5rem;
-        --font-size-xl: 6rem;
-        --image-size: 6rem;
-		--button: 3rem;
-		--card-height: 60vh;
-    	--card-width: 70vw;
+        --font-size-xl: 8rem;
+        --image-size: 8rem;
+		--button: 4rem;
 	 }
 
 	.modal.home {
@@ -580,7 +610,7 @@ body:has(.Output.modal.current) {
         --font-size-lg: 8rem;
         --font-size-xl: 10rem;
         --image-size: 8rem;
-		--button: 5rem;
+		--button: 7rem;
 		--card-height: 60vh;
     	--card-width: 75vw;
 	 }
