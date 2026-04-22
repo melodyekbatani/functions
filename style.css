@@ -13,28 +13,28 @@
 	/* Typography */
 	--font-body: "SN Pro", sans-serif;
 	--font-header: "rl-horizon", serif;
-	--font-size-sm: clamp(0.875rem, 1.5svw, 1.45rem);
-	--font-size-md: clamp(1rem, 1.75svw, 1.5rem);
-	--font-size-ml: clamp(1.5rem, 2.5svw, 2.125rem);
-	--font-size-lg: clamp(2.5rem, 8svw, 8rem);
-	--font-size-xl: clamp(4rem, 6svw, 15rem);
+	--font-size-sm: 1rem;
+	--font-size-md: 1.25rem;
+	--font-size-ml: 2rem;
+	--font-size-lg: 4rem;
+	--font-size-xl: 4.5rem;
 	--font-weight-bold: 600;
 
 	/* Layout */
-	--space-sm: clamp(0.25rem, 0.75svw, 0.75rem);
-	--space-md: clamp(1rem, 2svw, 1.7rem);
-	--space-ml: clamp(1.5rem, 2.5svw, 2rem);
-	--space-lg: clamp(1.75rem, 4svw, 3rem);
-	--space-xl: clamp(3rem, 3svw, 6rem);
-
+	--space-sm: 0.5rem;
+	--space-md: 1.5rem;
+	--space-ml: 2rem;
+	--space-lg: 4rem;
+	--space-xl: 6rem;
+	
 	--radius: 0.5rem;
 	--border: 0.15rem;
-	--border-sm: 0.15rem;
-	--button: clamp(3rem, 6svw, 6rem);
+	--border-sm: 0.1rem;
+	--button: 3rem;
 	--button-wide: calc(var(--button) * 3);
 	--image-size: clamp(4.8rem, 10vw, 5.8rem);
-	--card-inline-size: clamp(20rem, 50svw, 26rem);
-	--card-block-size: clamp(27rem, 70svh, 42rem);
+	--card-inline-size: clamp(20rem, 50vw, 26rem);
+	--card-block-size: clamp(27rem, 70vh, 42rem);
 
 	/* Card Rotation */
 	--card-rotate-1: 9deg;
@@ -108,7 +108,7 @@ main {
 	inline-size: 100%;
 	display: flex;
 	position: absolute;
-	padding-block-start: var(--space-lg);
+	padding-block-start: var(--space-md);
 	justify-content: center;
 	align-items: center;
 	grid-column: 1;
@@ -195,20 +195,6 @@ main {
 	}
 }
 
-body:has(.home.modal.current, .Output.modal.current) {
-	background-color: var(--color-text);
-
-	main {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-main) 0,
-				var(--color-main) var(--space-xl),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-text);
-	}
-}
-
 /* === CARD / MODAL === */
 .modal {
 	display: none;
@@ -286,6 +272,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 	}
 }
 
+body:has(.home.modal.current, .Output.modal.current) {
+	background-color: var(--color-text);
+
+	main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-main) 0,
+				var(--color-main) var(--space-md),
+				transparent 2vh,
+				transparent 8vh),
+			var(--color-text);
+	}
+}
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
@@ -305,7 +304,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 .Plate {
 	position: relative;
 	inline-size: var(--card-inline-size);
-	block-size: var(--card-block-size);
+	block-size: var(--card-block-size); 
 	display: grid;
 	justify-items: center;
 	align-items: start;
@@ -322,19 +321,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 	ul {
 		display: grid;
-		grid-template-columns: repeat(3, var(--image-size));
+		grid-template-columns: repeat(3, var(--image-size)); 
 		gap: var(--space-md);
 		padding-block-end: var(--space-md);
 		justify-content: center;
 		justify-items: center;
 		align-items: center;
 		margin-inline: auto;
-
+		
 
 		li {
 			display: flex;
 			inline-size: var(--image-size);
-			block-size: var(--image-size);
+			block-size: var(--image-size); 
 			align-items: center;
 			justify-content: center;
 			border: var(--border) solid transparent;
@@ -378,19 +377,10 @@ body:has(.home.modal.current, .Output.modal.current) {
 		z-index: 0;
 	}
 
-	.card-1 {
-		transform: rotate(var(--card-rotate-1));
-	}
-
-	.card-2 {
-		transform: rotate(var(--card-rotate-2));
-	}
-
-	.card-3 {
-		transform: rotate(var(--card-rotate-3));
-	}
+	.card-1 { transform: rotate(var(--card-rotate-1)); }
+	.card-2 { transform: rotate(var(--card-rotate-2)); }
+	.card-3 { transform: rotate(var(--card-rotate-3)); }
 }
-
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(:is(.Crunch, .Sweet, .Output).modal.current) .card-1,
@@ -416,7 +406,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		font-weight: var(--font-weight-bold);
 		color: var(--color-main);
 		line-height: 0.9;
-		-webkit-text-stroke: var(--border-sm) var(--color-text);
+		-webkit-text-stroke: var(--border) var(--color-text);
 	}
 
 	.output {
@@ -424,7 +414,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--space-sm);
-		border: var(--border-sm) solid var(--color-disabled-text);
+		border: var(--border) solid var(--color-disabled-text);
 		border-radius: var(--radius);
 		inline-size: 80%;
 		margin-inline: auto;
@@ -475,7 +465,6 @@ body:has(.home.modal.current, .Output.modal.current) {
 		max-inline-size: 30ch;
 		text-wrap: balance;
 	}
-
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
 
@@ -483,32 +472,42 @@ body:has(.home.modal.current, .Output.modal.current) {
 /* === RESPONSIVE DESIGN === */
 /* changing sizing for older/smaller phones */
 @media (300px <=width <=390px) {
-	.modal {
+	:root {
+		--font-size-xl: 3.5rem;
+		--font-size-lg: 2.5rem;
+		--font-size-md: 1rem;
+		--font-size-ml: 1.5rem;
+	}
+
+.modal {
 		padding: 0;
 	}
 }
 
-body:has(.home.modal.current, .Output.modal.current) {
-	main {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-main) 0,
-				var(--color-main) var(--space-ml),
-				transparent 1.5vh,
-				transparent 9vh),
-			var(--color-text);
-	}
-}
-
-@media (width <=500px) {
+@media ( width <=420px) {
 	:root {
+		--font-size-xl: 4.5rem;
+		--font-size-lg: 3rem; 
+		--font-size-ml: 1.75rem;
+		--image-size: 3.75rem;
 		--card-rotate-1: 4.5deg;
 		--card-rotate-2: 3deg;
 		--card-rotate-3: 1.5deg;
 	}
-
+	
+	body :has(.home.modal.current, .Output.modal.current) {
+		main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-text) 0,
+				var(--color-text) var(--space-ml),
+				transparent 2vh,
+				transparent 7vh),
+			var(--color-main);
+	}
+	}
 	.steps {
-		padding-block-start: var(--space-ml);
+		padding-block-start: var(--space-md);
 	}
 
 	.navigation {
@@ -517,118 +516,114 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 }
 
-@media (width >=688px) and (width < 800px) {
+@media (width >= 768px) and (width < 900px) {
 	:root {
 		--button: 3rem;
-		--image-size: clamp(4.8rem, 10vw, 5.8rem);
 	}
-
+		.Output.modal {
+		.output {
+			inline-size: 65%;
+		}
+	}
 }
 
-@media (width >=800px) {
+@media (width >=900px) {
 	:root {
-		--button: 3rem;
-		--card-rotate-1: 4.5deg;
-		--card-rotate-2: 3deg;
-		--card-rotate-3: 1.5deg;
+	--font-size-sm: 1rem;
+	--font-size-md: 1.25rem;
+	--font-size-ml: 2rem;
+	--font-size-lg: 5rem;
+	--font-size-xl: 6rem;
+	--button: 3rem;
+	--card-rotate-1: 4.5deg;
+	--card-rotate-2: 3deg;
+	--card-rotate-3: 1.5deg;
+	--card-inline-size: clamp(50rem, 70vw, 60rem);
+	--card-block-size: clamp(35rem, 50vh, 80rem);
+	--image-size: clamp(7rem, 7vw, 10rem);
 	}
+	#data-list ul {
+	grid-template-columns: repeat(5, var(--image-size));
 
+	}
 	.navigation {
 		margin-block-start: var(--space-ml);
 	}
-
-	.Output.modal .output {}
-
-	h2 {
-		max-inline-size: 50ch;
-		margin-inline: auto;
-		line-height: 1.5;
+	 .Output.modal .output {
+	inline-size: 50%;
 	}
 }
 
 @media (width >=1100px) {
 	:root {
+		--font-size-sm: 1.25rem;
+		--font-size-md: 1.25rem;
+		--font-size-ml: 2.25rem;
+		--font-size-lg: 5rem;
+		--font-size-xl: 8rem;
 		--button: 3.5rem;
 		--space-xl: 12rem;
-		--card-inline-size: clamp(50rem, 70svw, 60rem);
-		--card-block-size: clamp(50rem, 50svh, 80rem);
-		--image-size: clamp(7rem, 7svw, 10rem);
-	}
-
-	#data-list ul {
-		grid-template-columns: repeat(5, var(--image-size));
-	}
+	 }
 
 	.modal.home {
 		h1 {
 			font-size: var(--font-size-xl);
 		}
-
 		.home-content {
 			transform: translateY(calc(var(--space-md) * -1));
 		}
-
 		.navigation {
-			padding-block-start: var(--space-xl);
-			margin-block-start: calc(var(--space-xl) * -0.5);
-			inset-block-end: var(--space-sm);
-			z-index: 100;
-		}
+		padding-block-start: var(--space-xl);
+		margin-block-start: calc(var(--space-xl) * -0.5);
+		inset-block-end: var(--space-sm);
+		z-index: 100;
 	}
+	}
+		h2 {
+			max-inline-size: 50ch;
+			margin-inline: auto;
+			line-height: 1.5;
+		}
 
 	#data-list ul {
-		grid-template-columns: repeat(5, var(--image-size));
-		gap: var(--space-md);
+	grid-template-columns: repeat(5, var(--image-size));
+	gap: var(--space-md);
 	}
 
-	.Output.modal .output {
-		inline-size: 55%;
-	}
+
+	
 }
 
 @media (width >=1600px) {
-	:root {
+	 :root {
+		--font-size-sm: 1.5rem;
+		--font-size-lg: 6.5rem;
 		--button: 4rem;
-		--card-inline-size: clamp(60rem, 65svw, 80rem);
-		--card-block-size: clamp(40rem, 55svh, 90rem);
-		--image-size: clamp(7rem, 6svw, 10rem);
-	}
-
-	#data-list ul {
+		--card-inline-size: clamp(60rem, 65vw, 80rem);
+		--card-block-size: clamp(40rem, 55vh, 90rem);
+		--image-size: clamp(7rem, 6vw, 10rem);
+	 }
+#data-list ul {
 		gap: var(--space-lg);
 		max-inline-size: 75vw;
 	}
-
-	.Output.modal .output {
-		inline-size: 55%;
+	 .Output.modal .output {
+	inline-size: 55%;
 	}
 }
 
 @media (width >=2400px) {
-
-	.Output.modal .output {
-		inline-size: 50%;
+	 :root {
+		--font-size-sm: 2rem;
+		--font-size-md: 1.5rem;
+		--font-size-ml: 2.5rem;
+		--font-size-lg: 8rem;
+		--font-size-xl: 10rem;
+		--button: 6rem;
+	 }
+	 .Output.modal .output {
+	inline-size: 60%;
 	}
+
 }
-
-/* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
-
-@media (height <=1000px) {
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
-
-	--root {
-		--image-size: clamp(2.5rem, 15svh, 3.5rem);
-		--card-block-size: clamp(20rem, 75svh, 30rem);
-	}
-
-	#data-list ul {
-		row-gap: var(--space-sm);
-		column-gap: var(--space-md);
-	}
-
-	.modal .category-title h3 {
-		padding-block-end: 0;
-	}
-}
-
 /*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
