@@ -529,12 +529,12 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 @media (width >=900px) {
 	:root {
-	--font-size-sm: 1rem;
+	--font-size-sm: 1.25rem;
 	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
 	--font-size-lg: 5rem;
 	--font-size-xl: 6rem;
-	--button: 3rem;
+	--button: 4rem;
 	--card-rotate-1: 4.5deg;
 	--card-rotate-2: 3deg;
 	--card-rotate-3: 1.5deg;
@@ -561,7 +561,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-ml: 2.25rem;
 		--font-size-lg: 5rem;
 		--font-size-xl: 8rem;
-		--button: 3.5rem;
+		--button: 4rem;
 		--space-xl: 12rem;
 	 }
 
