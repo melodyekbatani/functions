@@ -31,6 +31,7 @@
 	--border: 0.15rem;
 	--border-sm: 0.1rem;
 	--button: 3rem;
+	--button-wide: calc(var(--button) * 3);
 	--image-size: 4.5rem;
 	--card-inline-size: 20rem;
 	--card-block-size: 40rem;
@@ -121,7 +122,7 @@ main {
 		color: var(--color-text);
 		border-radius: var(--radius);
 		block-size: var(--button);
-		inline-size: calc(var(--button) * 3);
+		inline-size: var(--button-wide);
 		text-align: center;
 		background-color: var(--color-buttons);
 		font-size: var(--font-size-sm);
@@ -164,7 +165,7 @@ main {
 	}
 }
 
-/* create plate buttons on sweet screen */
+/* Hiding next button and replacing it with create plate buttons on sweet screen */
 #create-plate {
 	display: none;
 }
@@ -179,7 +180,6 @@ main {
 	}
 
 	#create-plate {
-		visibility: visible;
 		display: block;
 	}
 }
@@ -273,8 +273,7 @@ main {
 	}
 }
 
-body:has(.home.modal.current) {
-
+body:has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
@@ -304,8 +303,8 @@ body:has(.home.modal.current) {
 	block-size: var(--card-block-size); 
 	display: grid;
 	justify-items: center;
-	align-items: center;
-	grid-template-rows: 1fr auto;
+	align-items: start;
+	grid-template-rows: auto auto;
 	margin-block-end: var(--space-lg);
 }
 
@@ -400,17 +399,6 @@ body:has(.home.modal.current) {
 }
 
 /* === OUTPUT === */
-body:has(.Output.modal.current) {
-
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-text) 0,
-				var(--color-text) var(--space-ml),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-main);
-}
-
 .Output.modal {
 	align-items: center;
 	justify-content: center;
@@ -499,16 +487,16 @@ body:has(.Output.modal.current) {
 		--font-size-lg: 2.5rem;
 		--font-size-md: 1rem;
 		--font-size-ml: 1.5rem;
-		--image-size: 2.75rem;
-		--card-inline-size: 15rem;
-		--card-block-size: 30rem;
+		--image-size: 3rem;
+		--card-inline-size: 20rem;
+		--card-block-size: 35rem;
 	}
 .modal {
 	padding: 0;
 }
 }
 
-@media (391px <=width <=420px) {
+@media (390px <=width <=420px) {
 	:root {
 		--font-size-lg: 2rem;
 		--font-size-ml: 1.5rem;
@@ -531,7 +519,7 @@ body:has(.Output.modal.current) {
 	}
 }
 
-@media (width >=901px) and (width < 1100px) {
+@media (width >=900px) and (width < 1100px) {
 	:root {
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
@@ -560,7 +548,7 @@ body:has(.Output.modal.current) {
 	}
 }
 
-@media (width >=1101px) {
+@media (width >=1100px) {
 	:root {
 		--font-size-sm: 1.25rem;
 		--font-size-md: 1.25rem;
