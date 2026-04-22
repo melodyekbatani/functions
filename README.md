@@ -31,7 +31,7 @@ The project is structured as a sequence of interactive steps that guide the user
 Selecting the items also functions as a toggle with an active and inactive state, so if the user clicks one by mistake, they can go back. At the same time, the design is meant to move the user through the process as a linear path from input to output, creating a clear and digestible user flow locked into the viewport height. 
 
 ## Visual Design
-The visual design leans into the “playfully chaotic and fun nature of the girl dinner, through the use of bright colors, sticker-like food imagery, and background patterns. The website is typeset in RL Horizon, a slab serif font that plays with softness and contrast, originally designed by Radek Lukasiewicz. You can find more on the typeface here: https://www.radluka.com/rl-horizon 
+The visual design leans into the “playfully chaotic and fun nature of the girl dinner, through the use of bright colors, sticker-like food imagery, and background patterns. The website is typeset in SN Pro and RL Horizon, a slab serif font originally designed by Radek Lukasiewicz. You can find more on the RL Horizonhere: https://www.radluka.com/rl-horizon 
 
 The interaction style is designed to enforce the idea of picking food rather than filling out a form. The plate also acts as a central motif of the design, inspired by the cafeteria plate, reinforcing the idea that the user is building a dinner piece by piece. I also thought about the favicon, metadata, and iconography as an extension of the website, integrating the brand identity and colors. 
 

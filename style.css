@@ -30,9 +30,15 @@
 	--border: 0.15rem;
 	--border-sm: 0.1rem;
 	--button: 3rem;
-	--image-size: 5rem;
-	--card-block-size: 70vh;
-	--card-inline-size: 75vw;
+	--image-size: 4.5rem;
+	--card-inline-size: 20rem;
+	--card-block-size: 40rem;
+
+	/* Card Rotation */
+	--card-rotate-1: 9deg;
+	--card-rotate-2: 6deg;
+	--card-rotate-3: 3deg;
+
 }
 
 /* === BASE STYLES === */
@@ -49,7 +55,7 @@ body {
 	}
 
 	p {
-		line-height: 130%;
+		line-height: 1.3;
 		font-size: var(--font-size-sm);
 		font-family: var(--font-header);
 	}
@@ -73,8 +79,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-md);
-	margin-block-start: calc(var(--space-md) * -1);
-	padding-block-start: 0;
+	padding-block-start: var(--space-md);
 	border-radius: var(--button);
 	font-family: var(--font-body);
 	font-size: var(--font-size-md);
@@ -107,7 +112,7 @@ main {
 	align-items: center;
 	grid-column: 1;
 	grid-row: 2;
-	margin-block-start: var(--space-sm);
+	margin-block-start: var(--space-md);
 	inset-inline-start: 0;
 
 
@@ -199,8 +204,9 @@ main {
 	gap: var(--space-sm);
 	min-block-size: var(--card-block-size);
 	inline-size: var(--card-inline-size);
-	justify-content: space-between;
+	justify-content: center;
 	padding: var(--space-md);
+	max-block-size: var(--card-block-size);
 
 	.category-title {
 		display: flex;
@@ -213,6 +219,7 @@ main {
 			font-size: var(--font-size-ml);
 			font-weight: var(--font-weight-bold);
 			text-align: center;
+			padding-block-end: var(--space-ml);
 		}
 	}
 
@@ -229,12 +236,13 @@ main {
 		}
 
 		h1 {
+			max-inline-size: 5ch;
 			margin-inline: auto;
 			font-family: var(--font-header);
 			font-size: var(--font-size-xl);
 			font-weight: var(--font-weight-bold);
 			color: var(--color-main);
-			line-height: 90%;
+			line-height: 0.9;
 			-webkit-text-stroke: var(--border-sm) var(--color-text);
 			text-align: center;
 
@@ -304,13 +312,16 @@ body:has(.home.modal.current) {
 	position: absolute;
 	z-index: 1;
 
+
 	ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: var(--space-sm);
+		gap: var(--space-md);
 		padding-block-end: var(--space-md);
 		justify-items: center;
 		align-items: center;
+		margin-inline: auto;
+		
 
 		li {
 			display: flex;
@@ -345,7 +356,7 @@ body:has(.home.modal.current) {
 	grid-column: 1;
 	grid-row: 1;
 	z-index: 0;
-}
+
 
 .card-1,
 .card-2,
@@ -359,18 +370,10 @@ body:has(.home.modal.current) {
 	z-index: 0;
 }
 
-.card-1 {
-	transform: rotate(9deg);
+	.card-1 { transform: rotate(var(--card-rotate-1)); }
+	.card-2 { transform: rotate(var(--card-rotate-2)); }
+	.card-3 { transform: rotate(var(--card-rotate-3)); }
 }
-
-.card-2 {
-	transform: rotate(6deg);
-}
-
-.card-3 {
-	transform: rotate(3deg);
-}
-
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(.Crunch.modal.current) {
@@ -407,7 +410,6 @@ body:has(.Output.modal.current) {
 }
 
 .Output.modal {
-	background-color: var(--color-cards);
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-md);
@@ -422,7 +424,7 @@ body:has(.Output.modal.current) {
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-bold);
 		color: var(--color-main);
-		line-height: 90%;
+		line-height: 0.9;
 		-webkit-text-stroke: var(--border-sm) var(--color-text);
 	}
 
@@ -461,7 +463,6 @@ body:has(.Output.modal.current) {
 
 	.category-title {
 		align-items: center;
-		padding-block-start: 0;
 		display: flex;
 		flex-direction: column;
 
@@ -482,7 +483,7 @@ body:has(.Output.modal.current) {
 		font-size: var(--font-size-md);
 		font-weight: var(--font-weight-bold);
 		max-inline-size: 30ch;
-		text-wrap: balanced;
+		text-wrap: balance;
 	}
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
@@ -490,158 +491,124 @@ body:has(.Output.modal.current) {
 
 /* === RESPONSIVE DESIGN === */
 /* changing sizing for older/smaller phones */
-@media (300px <=width <=420px) {
+@media (300px <=width <=390px) {
 	:root {
-		--image-size: 4rem;
-		--font-size-lg: 3rem;
-		--space-lg: 3rem;
+		--font-size-xl: 3.5rem;
+		--font-size-lg: 2.5rem;
+		--font-size-md: 1rem;
+		--font-size-ml: 1.5rem;
+		--image-size: 2.75rem;
+		--card-inline-size: 15rem;
+		--card-block-size: 30rem;
 	}
-
-	.navigation {
-		margin-block-start: var(--space-sm);
-	}
-
-	h1 {
-		max-inline-size: 5ch;
-	}
-
-	.Plate {
-		margin-block-end: var(--space-md);
-	}
+.modal {
+	padding: 0;
 }
+}
+
+@media (391px <=width <=420px) {
+	:root {
+		--font-size-lg: 2rem;
+		--font-size-ml: 1.5rem;
+		--image-size: 4rem;
+		--card-rotate-1: 4.5deg;
+		--card-rotate-2: 3deg;
+		--card-rotate-3: 1.5deg;
+	}
+
+}
+
 @media (width >= 768px) and (width < 900px) {
 	:root {
 		--button: 3rem;
 	}
-
-	#data-list ul {
-		grid-template-columns: repeat(3, 1fr);
-		gap: var(--space-md);
-		justify-content: space-between;
+		.Output.modal {
+		.output {
+			inline-size: 65%;
+		}
 	}
 }
 
-@media (width >=900px) {
+@media (width >=900px) and (width < 1100px) {
 	:root {
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
 	--font-size-lg: 5rem;
 	--font-size-xl: 6rem;
-	--image-size: 6rem;
+	--image-size: 5rem;
 	--button: 3rem;
-	--card-block-size: 80vh;
-	--card-inline-size: 75vw;
-	}
-
-	body {
-	height: 100%;
-	block-size: 100vh;
-	}
-	 h1 {
-		max-inline-size: 5ch;
+	--card-inline-size: 30rem;
+	--card-block-size: 40rem;
+	--card-rotate-1: 4.5deg;
+	--card-rotate-2: 3deg;
+	--card-rotate-3: 1.5deg;
 	}
 
 	.Output.modal {
-    .vibe-label {
-        max-inline-size: none;
-    }
-}
-
-	#data-list ul {
-		grid-template-columns: repeat(5, 1fr);
-		gap: var(--space-md);
-		justify-content: space-between;
+	.vibe-label {
+		max-inline-size: none;
 	}
+}
 
 	.Output.modal {
 		.output {
 			inline-size: 65%;
-			margin-inline: auto;
-			margin-block: var(--space-sm);
-			padding: var(--space-sm);
-			background-color: var(--color-main);
 		}
 	}
-.card-1 {
-	transform: rotate(4.5deg);
 }
-
-.card-2 {
-	transform: rotate(3deg);
-}
-
-.card-3 {
-	transform: rotate(1.5deg);
-}
-
-}
-
 
 @media (width >=1100px) {
 	:root {
 		--font-size-sm: 1.25rem;
-        --font-size-md: 1.25rem;
-        --font-size-ml: 2.25rem;
-        --font-size-lg: 5rem;
-        --font-size-xl: 8rem;
-        --image-size: 8rem;
+		--font-size-md: 1.25rem;
+		--font-size-ml: 2.25rem;
+		--font-size-lg: 5rem;
+		--font-size-xl: 8rem;
+		--image-size: 7rem;
 		--button: 3.5rem;
+		--card-inline-size: 55rem;
+		--card-block-size: 35rem;
 	 }
 
 	.modal.home {
 		h1 {
 			font-size: var(--font-size-xl);
-			max-inline-size: 5ch;
 		}
 	}
 		h2 {
-			max-width: 50ch;
+			max-inline-size: 50ch;
 			margin-inline: auto;
-			line-height: 150%;
+			line-height: 1.5;
 		}
-
 
 	#data-list ul {
 		grid-template-columns: repeat(5, 1fr);
 		gap: var(--space-md);
-		justify-content: space-between;
 	}
 	}
-
-
-
 
 @media (width >=2400px) {
 	 :root {
 		--font-size-sm: 2rem;
-        --font-size-md: 1.5rem;
-        --font-size-ml: 2.5rem;
-        --font-size-lg: 8rem;
-        --font-size-xl: 10rem;
-        --image-size: 8rem;
+		--font-size-md: 1.5rem;
+		--font-size-ml: 2.5rem;
+		--font-size-lg: 8rem;
+		--font-size-xl: 10rem;
+		--image-size: 8rem;
 		--button: 4rem;
-		--card-block-size: 60vh;
-    	--card-inline-size: 75vw;
+		--card-inline-size: 70rem;
+		--card-block-size: 50rem;
 	 }
-	 h1 {
-		max-inline-size: 5ch;
-	}
-
 
 	#data-list ul {
-		grid-template-columns: repeat(5, 1fr);
-		gap: var(--space-sm);
-		justify-content: space-between;
+		gap: var(--space-lg);
+		max-inline-size: 75vw;
 	}
 
 	.Output.modal {
 		.output {
 			inline-size: 70%;
-			margin-inline: auto;
-			margin-block: var(--space-sm);
-			padding: var(--space-sm);
-			background-color: var(--color-main);
 		}
 	}
 }
