@@ -285,7 +285,9 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
+
+/* references for slide in animation https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using and this youtube video for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
+
 @keyframes slide-in {
 	from {
 		transform: translateX(10%);
@@ -308,17 +310,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 	margin-block-end: var(--space-lg);
 }
 
-/* this is my reference for the swipe style animation https://www.youtube.com/watch?v=jdB-PQY5j-I*/
 #data-list {
 	position: absolute;
+	inset-block-start: 0;
+	inline-size: 100%;
 	z-index: 1;
 
 
 	ul {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, var(--image-size)); 
 		gap: var(--space-md);
 		padding-block-end: var(--space-md);
+		justify-content: center;
 		justify-items: center;
 		align-items: center;
 		margin-inline: auto;
@@ -326,12 +330,12 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 		li {
 			display: flex;
-			/* added an invisable border here so that the items don't jump around inside the li when selected*/
 			inline-size: var(--image-size);
 			block-size: var(--image-size); 
 			align-items: center;
 			justify-content: center;
-			border: var(--border-sm) solid transparent;
+			border: var(--border) solid transparent;
+			/* added an invisable border here so that the items don't jump around inside the li when selected*/
 			border-radius: var(--radius);
 			overflow: hidden;
 			aspect-ratio: 1;
@@ -359,17 +363,17 @@ body:has(.home.modal.current, .Output.modal.current) {
 	z-index: 0;
 
 
-.card-1,
-.card-2,
-.card-3 {
-	position: absolute;
-	inset: 0;
-	/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
-	border-radius: var(--radius);
-	border: var(--border-sm) solid var(--color-border);
-	background-color: var(--color-cards);
-	z-index: 0;
-}
+	.card-1,
+	.card-2,
+	.card-3 {
+		position: absolute;
+		inset: 0;
+		/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
+		border-radius: var(--radius);
+		border: var(--border-sm) solid var(--color-border);
+		background-color: var(--color-cards);
+		z-index: 0;
+	}
 
 	.card-1 { transform: rotate(var(--card-rotate-1)); }
 	.card-2 { transform: rotate(var(--card-rotate-2)); }
@@ -440,7 +444,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 			aspect-ratio: 1;
 			border: var(--border-sm) solid var(--color-disabled-text);
 			border-radius: var(--radius);
-			background-color: var(--color-buttons);
+			background-color: var(--color-buttons-secondary-disabled);
 			inline-size: 100%;
 			max-block-size: 30vh;
 			object-fit: contain;
@@ -534,18 +538,6 @@ body:has(.home.modal.current, .Output.modal.current) {
 	--card-rotate-2: 3deg;
 	--card-rotate-3: 1.5deg;
 	}
-
-	.Output.modal {
-	.vibe-label {
-		max-inline-size: none;
-	}
-}
-
-	.Output.modal {
-		.output {
-			inline-size: 65%;
-		}
-	}
 }
 
 @media (width >=1100px) {
@@ -567,7 +559,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 			font-size: var(--font-size-xl);
 		}
 		.home-content {
-			transform: translateY(-2rem);
+			transform: translateY(calc(var(--space-md) * -1));
 		}
 		.navigation {
 			padding-block-start: var(--space-xl);
