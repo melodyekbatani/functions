@@ -586,6 +586,10 @@ body:has(.Output.modal.current) {
 		grid-template-columns: repeat(5, 1fr);
 		gap: var(--space-md);
 	}
+	.Output.modal {
+		.output {
+			inline-size: 55%;
+		}
 	}
 
 @media (width >=2400px) {
@@ -604,12 +608,6 @@ body:has(.Output.modal.current) {
 	#data-list ul {
 		gap: var(--space-lg);
 		max-inline-size: 75vw;
-	}
-
-	.Output.modal {
-		.output {
-			inline-size: 70%;
-		}
 	}
 }
 
