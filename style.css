@@ -279,7 +279,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-main) 0,
-				var(--color-main) var(--space-md),
+				var(--color-main) var(--space-lg),
 				transparent 2vh,
 				transparent 8vh),
 			var(--color-text);
@@ -406,7 +406,8 @@ body:has(.home.modal.current, .Output.modal.current) {
 		font-weight: var(--font-weight-bold);
 		color: var(--color-main);
 		line-height: 0.9;
-		-webkit-text-stroke: var(--border) var(--color-text);
+		-webkit-text-stroke: var(--border-sm) var(--color-text);
+		letter-spacing: 0.1rem;
 	}
 
 	.output {
@@ -495,12 +496,12 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--card-rotate-3: 1.5deg;
 	}
 	
-	body :has(.home.modal.current, .Output.modal.current) {
+	body:has(.home.modal.current, .Output.modal.current) {
 		main {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
-				var(--color-text) var(--space-ml),
+				var(--color-text) var(--space-md),
 				transparent 2vh,
 				transparent 7vh),
 			var(--color-main);
@@ -529,6 +530,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 @media (width >=900px) {
 	:root {
+	--border-sm: 0.15rem;
 	--font-size-sm: 1.25rem;
 	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
@@ -622,7 +624,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--button: 6rem;
 	 }
 	 .Output.modal .output {
-	inline-size: 60%;
+	inline-size: 55%;
 	}
 
 }
