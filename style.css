@@ -44,9 +44,6 @@ body {
 	color: var(--color-text);
 	background-color: var(--color-main);
 
-	/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
-	/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
-
 	a {
 		text-decoration: underline;
 	}
@@ -277,6 +274,8 @@ body:has(.home.modal.current) {
 			var(--color-main);
 }
 
+/* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
+/* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/ */
 @keyframes slide-in {
 	from {
@@ -397,9 +396,7 @@ body:has(.home.modal.current) {
 
 /* === OUTPUT === */
 body:has(.Output.modal.current) {
-	background-color: var(--color-text);
 
-	main {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
@@ -407,7 +404,6 @@ body:has(.Output.modal.current) {
 				transparent 2vh,
 				transparent 8vh),
 			var(--color-main);
-	}
 }
 
 .Output.modal {
