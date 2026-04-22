@@ -15,7 +15,7 @@
 	--font-header: "rl-horizon", serif;
 	--font-size-sm: 1rem;
 	--font-size-md: 1.25rem;
-	--font-size-ml: 2rem;
+	--font-size-ml: 1.5rem;
 	--font-size-lg: 4rem;
 	--font-size-xl: 4.5rem;
 	--font-weight-bold: 600;
@@ -477,7 +477,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-xl: 3.5rem;
 		--font-size-lg: 2.5rem;
 		--font-size-md: 1rem;
-		--font-size-ml: 1.5rem;
+		--font-size-ml: 1.25rem;
 	}
 
 .modal {
@@ -489,7 +489,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 	:root {
 		--font-size-xl: 4.5rem;
 		--font-size-lg: 3rem; 
-		--font-size-ml: 1.75rem;
+		--font-size-ml: 1.25rem;
 		--image-size: 3.75rem;
 		--card-rotate-1: 4.5deg;
 		--card-rotate-2: 3deg;
@@ -503,7 +503,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 				var(--color-text) 0,
 				var(--color-text) var(--space-md),
 				transparent 2vh,
-				transparent 7vh),
+				transparent 8vh),
 			var(--color-main);
 	}
 	}
@@ -527,6 +527,36 @@ body:has(.home.modal.current, .Output.modal.current) {
 		}
 	}
 }
+body:has(.home.modal.current, .Output.modal.current) {
+		main {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-text) 0,
+				var(--color-text) var(--space-md),
+				transparent 2vh,
+				transparent 8vh),
+			var(--color-main);
+	}
+}
+/* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
+
+@media (height <=1000px) {
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
+
+	--root {
+		--image-size: clamp(2.5rem, 15svh, 3.5rem);
+		--card-block-size: clamp(20rem, 75svh, 30rem);
+	}
+
+	#data-list ul {
+		row-gap: var(--space-sm);
+		column-gap: var(--space-md);
+	}
+
+	.modal .category-title h3 {
+		padding-block-end: 0;
+	}
+}
 
 @media (width >=900px) {
 	:root {
@@ -535,7 +565,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 	--font-size-md: 1.25rem;
 	--font-size-ml: 2rem;
 	--font-size-lg: 5rem;
-	--font-size-xl: 6rem;
+	--font-size-xl: 7rem;
 	--button: 4rem;
 	--card-rotate-1: 4.5deg;
 	--card-rotate-2: 3deg;
@@ -554,6 +584,11 @@ body:has(.home.modal.current, .Output.modal.current) {
 	 .Output.modal .output {
 	inline-size: 50%;
 	}
+	h2 {
+			max-inline-size: 50ch;
+			margin-inline: auto;
+			line-height: 1.5;
+		}
 }
 
 @media (width >=1100px) {
@@ -565,7 +600,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-xl: 8rem;
 		--button: 4rem;
 		--space-xl: 12rem;
-		--space-lg: 5rem;
+		--space-lg: 3rem;
 	 }
 
 	.modal.home {
@@ -582,11 +617,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		z-index: 100;
 	}
 	}
-		h2 {
-			max-inline-size: 50ch;
-			margin-inline: auto;
-			line-height: 1.5;
-		}
+		
 
 	#data-list ul {
 	grid-template-columns: repeat(5, var(--image-size));
@@ -594,18 +625,9 @@ body:has(.home.modal.current, .Output.modal.current) {
 	}
 	body:has(.home.modal.current, .Output.modal.current) {
 	background-color: var(--color-text);
+}
+}
 
-	main {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-main) 0,
-				var(--color-main) var(--space-lg),
-				transparent 3vh,
-				transparent 13vh),
-			var(--color-text);
-	}
-}
-}
 
 @media (width >=1600px) {
 	 :root {
@@ -615,6 +637,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--card-inline-size: clamp(60rem, 65vw, 80rem);
 		--card-block-size: clamp(40rem, 55vh, 90rem);
 		--image-size: clamp(7rem, 6vw, 10rem);
+		--space-lg: 5rem;
 	 }
 #data-list ul {
 		gap: var(--space-lg);
@@ -638,23 +661,5 @@ body:has(.home.modal.current, .Output.modal.current) {
 	inline-size: 55%;
 	}
 }
-/* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
 
-@media (height <=1000px) {
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
-
-	--root {
-		--image-size: clamp(2.5rem, 15svh, 3.5rem);
-		--card-block-size: clamp(20rem, 75svh, 30rem);
-	}
-
-	#data-list ul {
-		row-gap: var(--space-sm);
-		column-gap: var(--space-md);
-	}
-
-	.modal .category-title h3 {
-		padding-block-end: 0;
-	}
-}
 /*CSS Organization - https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing, https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
