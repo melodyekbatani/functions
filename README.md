@@ -3,7 +3,7 @@
 ## Introduction
 This project was created for Typography & Interaction in the Parsons MPS Communication Design program, taught by Michael Fehrenbach and Eric Li. The assignment was to create a solution to a problem or a tool using web technologies while focusing on clear user inputs and outputs. 
 
-Using this framework, I developed a playful interface that generates a “girl dinner” based on items a user has in their fridge. The user selects ingredients from each of the four categories and as a result, the site selects the most ideal girl dinner pairings and provides the plate’s personality type. 
+Using this framework, I developed a playful interface that generates a “girl dinner” based on items a user has in their fridge. The user selects ingredients from each of the four categories and as a result, the site selects the most ideal dinner pairings and provides the plate’s personality type. 
 
 ## Live Link
 [https://melodyekbatani.github.io/functions/](https://melodyekbatani.github.io/functions)
@@ -22,7 +22,7 @@ Girl dinner is a term coined by TikTok creator Olivia Maher, a Castleton Univers
 When this trend first emerged, I noticed I had been unknowingly engaging in the “girl dinner” for years. I believe that a person's taste in food says a lot about their personality, and I wanted to create a relatable current experience around that. The interface transforms ingredient selections into a composed plate and personality reading, exploring how small everyday decisions can generate playful insights about identity and taste.
 
 ## Core Functionality 
-The project walks users through the four essential elements of a Girl Dinner: base, protein, crunch, and sweets, one category at a time. In each step, the user selects ingredients from that section. Every item is tagged with a plate vibe and a short descriptive word. The ingredient data is stored externally in a JSON dataset that I designed using a Google Sheets document. 
+The project walks users through the four essential elements of a Girl Dinner: base, main, side, and of course a sweet treat, one category at a time. In each step, the user selects ingredients from that section. Every item is tagged with a plate vibe and a short descriptive word. The ingredient data is stored externally in a JSON dataset that I designed using a Google Sheets document. 
 Once the user moves through all the modals, the generator looks at the list of selected ingredients and calculates the dominant vibe across them. The final screen reveals the generated plate along with its Girl Dinner personality type and a playful line that begins with “You’re giving…”, which pulls together the descriptive words assigned to each selected food.
 
 ## Results

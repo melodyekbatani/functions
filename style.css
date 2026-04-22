@@ -26,15 +26,15 @@
 	--space-ml: 2rem;
 	--space-lg: 4rem;
 	--space-xl: 6rem;
-	
+
 	--radius: 0.5rem;
 	--border: 0.15rem;
 	--border-sm: 0.1rem;
 	--button: 3rem;
 	--button-wide: calc(var(--button) * 3);
-	--image-size: clamp(4.8rem, 10vw, 5.8rem);
+	--image-size: clamp(4.5rem, 10vw, 5.8rem);
 	--card-inline-size: clamp(20rem, 50vw, 26rem);
-	--card-block-size: clamp(27rem, 70vh, 42rem);
+	--card-block-size: clamp(28rem, 70vh, 42rem);
 
 	/* Card Rotation */
 	--card-rotate-1: 9deg;
@@ -214,13 +214,12 @@ main {
 		flex-direction: column;
 		gap: var(--space-sm);
 
-
 		h3 {
 			font-family: var(--font-header);
 			font-size: var(--font-size-ml);
 			font-weight: var(--font-weight-bold);
 			text-align: center;
-			padding-block-end: var(--space-ml);
+			padding-block-end: var(--space-sm);
 		}
 	}
 
@@ -279,12 +278,12 @@ body:has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-main) 0,
-				var(--color-main) var(--space-lg),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-text);
+				var(--color-main) var(--space-md),
+				var(--color-text) var(--space-md),
+				var(--color-text) 8vh);
 	}
 }
+
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
@@ -304,7 +303,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 .Plate {
 	position: relative;
 	inline-size: var(--card-inline-size);
-	block-size: var(--card-block-size); 
+	block-size: var(--card-block-size);
 	display: grid;
 	justify-items: center;
 	align-items: start;
@@ -318,22 +317,21 @@ body:has(.home.modal.current, .Output.modal.current) {
 	inline-size: 100%;
 	z-index: 1;
 
-
 	ul {
 		display: grid;
-		grid-template-columns: repeat(3, var(--image-size)); 
+		grid-template-columns: repeat(3, var(--image-size));
 		gap: var(--space-md);
 		padding-block-end: var(--space-md);
 		justify-content: center;
 		justify-items: center;
 		align-items: center;
 		margin-inline: auto;
-		
+
 
 		li {
 			display: flex;
 			inline-size: var(--image-size);
-			block-size: var(--image-size); 
+			block-size: var(--image-size);
 			align-items: center;
 			justify-content: center;
 			border: var(--border) solid transparent;
@@ -377,10 +375,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 		z-index: 0;
 	}
 
-	.card-1 { transform: rotate(var(--card-rotate-1)); }
-	.card-2 { transform: rotate(var(--card-rotate-2)); }
-	.card-3 { transform: rotate(var(--card-rotate-3)); }
+	.card-1 {
+		transform: rotate(var(--card-rotate-1));
+	}
+
+	.card-2 {
+		transform: rotate(var(--card-rotate-2));
+	}
+
+	.card-3 {
+		transform: rotate(var(--card-rotate-3));
+	}
 }
+
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
 .Plate:has(:is(.Crunch, .Sweet, .Output).modal.current) .card-1,
@@ -466,6 +473,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 		max-inline-size: 30ch;
 		text-wrap: balance;
 	}
+
 	/* https://claude.ai/share/49155ede-3852-46de-8d97-e76df4bbbb0b and https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has for selecting the body background on only the output modal */
 }
 
@@ -480,33 +488,34 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--font-size-ml: 1.25rem;
 	}
 
-.modal {
+	.modal {
 		padding: 0;
 	}
 }
 
-@media ( width <=420px) {
+@media (width <=420px) {
 	:root {
 		--font-size-xl: 4.5rem;
-		--font-size-lg: 3rem; 
+		--font-size-lg: 3rem;
 		--font-size-ml: 1.25rem;
 		--image-size: 3.75rem;
 		--card-rotate-1: 4.5deg;
 		--card-rotate-2: 3deg;
 		--card-rotate-3: 1.5deg;
 	}
-	
+
 	body:has(.home.modal.current, .Output.modal.current) {
 		main {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-text) 0,
-				var(--color-text) var(--space-md),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-main);
+			background:
+				repeating-linear-gradient(0deg,
+					var(--color-text) 0,
+					var(--color-text) var(--space-md),
+					transparent 2vh,
+					transparent 8vh),
+				var(--color-main);
+		}
 	}
-	}
+
 	.steps {
 		padding-block-start: var(--space-md);
 	}
@@ -517,40 +526,38 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 }
 
-@media (width >= 768px) and (width < 900px) {
+@media (width >=768px) and (width < 900px) {
 	:root {
 		--button: 3rem;
+		--image-size: clamp(2.5rem, 15vw, 5rem);
+		--card-block-size: clamp(25rem, 75svh, 40rem);
 	}
-		.Output.modal {
+
+	.Output.modal {
 		.output {
 			inline-size: 65%;
 		}
 	}
-}
-body:has(.home.modal.current, .Output.modal.current) {
-		main {
-		background:
-			repeating-linear-gradient(0deg,
-				var(--color-text) 0,
-				var(--color-text) var(--space-md),
-				transparent 2vh,
-				transparent 8vh),
-			var(--color-main);
+
+	.modal .category-title h3 {
+		padding-block-end: 0;
 	}
 }
+
 /* My dots and content go outside the grid when phones are wider, and less tall, Adding a media query here to account for small heights https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height */
 
-@media (height <=1000px) {
+@media (800px <=height <=1000px) {
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/column-gap */
 
-	--root {
-		--image-size: clamp(2.5rem, 15svh, 3.5rem);
-		--card-block-size: clamp(20rem, 75svh, 30rem);
+	:root {
+		--image-size: clamp(2rem, 15svh, 3rem);
+		--card-block-size: clamp(23rem, 75svh, 35rem);
 	}
 
 	#data-list ul {
 		row-gap: var(--space-sm);
 		column-gap: var(--space-md);
+		justify-content: space-between;
 	}
 
 	.modal .category-title h3 {
@@ -560,35 +567,39 @@ body:has(.home.modal.current, .Output.modal.current) {
 
 @media (width >=900px) {
 	:root {
-	--border-sm: 0.15rem;
-	--font-size-sm: 1.25rem;
-	--font-size-md: 1.25rem;
-	--font-size-ml: 2rem;
-	--font-size-lg: 5rem;
-	--font-size-xl: 7rem;
-	--button: 4rem;
-	--card-rotate-1: 4.5deg;
-	--card-rotate-2: 3deg;
-	--card-rotate-3: 1.5deg;
-	--card-inline-size: clamp(50rem, 70vw, 60rem);
-	--card-block-size: clamp(35rem, 50vh, 80rem);
-	--image-size: clamp(7rem, 7vw, 10rem);
+		--border-sm: 0.15rem;
+		--font-size-sm: 1.25rem;
+		--font-size-md: 1.25rem;
+		--font-size-ml: 2rem;
+		--font-size-lg: 5rem;
+		--font-size-xl: 7rem;
+		--button: 4rem;
+		--card-rotate-1: 4.5deg;
+		--card-rotate-2: 3deg;
+		--card-rotate-3: 1.5deg;
+		--card-inline-size: clamp(50rem, 70vw, 60rem);
+		--card-block-size: clamp(35rem, 50vh, 80rem);
+		--image-size: clamp(7rem, 7vw, 10rem);
 	}
+
 	#data-list ul {
-	grid-template-columns: repeat(5, var(--image-size));
+		grid-template-columns: repeat(5, var(--image-size));
 
 	}
+
 	.navigation {
 		margin-block-start: var(--space-ml);
 	}
-	 .Output.modal .output {
-	inline-size: 50%;
+
+	.Output.modal .output {
+		inline-size: 55%;
 	}
+
 	h2 {
-			max-inline-size: 50ch;
-			margin-inline: auto;
-			line-height: 1.5;
-		}
+		max-inline-size: 50ch;
+		margin-inline: auto;
+		line-height: 1.5;
+	}
 }
 
 @media (width >=1100px) {
@@ -601,64 +612,59 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--button: 4rem;
 		--space-xl: 12rem;
 		--space-lg: 3rem;
-	 }
+	}
 
 	.modal.home {
 		h1 {
 			font-size: var(--font-size-xl);
 		}
+
 		.home-content {
 			transform: translateY(calc(var(--space-md) * -1));
 		}
+
 		.navigation {
-		padding-block-start: var(--space-xl);
-		margin-block-start: calc(var(--space-xl) * -0.5);
-		inset-block-end: var(--space-sm);
-		z-index: 100;
+			padding-block-start: var(--space-xl);
+			margin-block-start: calc(var(--space-xl) * -0.5);
+			inset-block-end: var(--space-sm);
+			z-index: 100;
+		}
 	}
-	}
-		
-
-	#data-list ul {
-	grid-template-columns: repeat(5, var(--image-size));
-	gap: var(--space-md);
-	}
-	body:has(.home.modal.current, .Output.modal.current) {
-	background-color: var(--color-text);
 }
-}
-
 
 @media (width >=1600px) {
-	 :root {
+	:root {
 		--font-size-sm: 1.5rem;
 		--font-size-lg: 6.5rem;
 		--button: 4rem;
 		--card-inline-size: clamp(60rem, 65vw, 80rem);
 		--card-block-size: clamp(40rem, 55vh, 90rem);
 		--image-size: clamp(7rem, 6vw, 10rem);
-		--space-lg: 5rem;
-	 }
-#data-list ul {
+		--space-lg: 3rem;
+	}
+
+	#data-list ul {
 		gap: var(--space-lg);
 		max-inline-size: 75vw;
 	}
-	 .Output.modal .output {
-	inline-size: 55%;
+
+	.Output.modal .output {
+		inline-size: 60%;
 	}
 }
 
 @media (width >=2400px) {
-	 :root {
+	:root {
 		--font-size-sm: 2rem;
 		--font-size-md: 1.5rem;
 		--font-size-ml: 2.5rem;
 		--font-size-lg: 8rem;
 		--font-size-xl: 10rem;
 		--button: 6rem;
-	 }
-	 .Output.modal .output {
-	inline-size: 55%;
+	}
+
+	.Output.modal .output {
+		inline-size: 55%;
 	}
 }
 
