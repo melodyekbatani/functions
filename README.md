@@ -11,7 +11,7 @@ Using this framework, I developed a playful interface that generates a “girl d
 ## Tech Stack 
 HTML
 CSS
-Vanilla JavaScript
+JavaScript
 
 ## Timeline
 6 weeks
@@ -19,7 +19,7 @@ Vanilla JavaScript
 ## Overview
 Girl dinner is a term coined by TikTok creator Olivia Maher, a Castleton University graduate, in a video she posted on May 11, 2023. She posted a video showing herself eating a spread of bread, cheese, pickles, grapes, and other snacks and jokingly called it "girl dinner". The idea quickly went viral, with people across social media using the phrase to describe improvised, snack-style meals cobbled together from whatever they have at home. Historically, these kinds of "scraps-plated" dinners have existed long before the term, but giving them a name both celebrated and made visible a pattern of casual, low-effort dining.
 
-When this trend first emerged, I noticed I had been unknowingly engaging in “girl dinner” for years. I believe that a person's taste in food says a lot about their personality, and I wanted to create a relatable current experience around that. The interface transforms ingredient selections into a composed plate and personality reading, exploring how small everyday decisions can generate playful insights about identity and taste.
+When this trend first emerged, I noticed I had been unknowingly engaging in the “girl dinner” for years. I believe that a person's taste in food says a lot about their personality, and I wanted to create a relatable current experience around that. The interface transforms ingredient selections into a composed plate and personality reading, exploring how small everyday decisions can generate playful insights about identity and taste.
 
 ## Core Functionality 
 The project walks users through the four essential elements of a Girl Dinner: base, protein, crunch, and sweets, one category at a time. In each step, the user selects ingredients from that section. Every item is tagged with a plate vibe and a short descriptive word. The ingredient data is stored externally in a JSON dataset that I designed using a Google Sheets document. 

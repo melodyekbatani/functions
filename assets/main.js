@@ -146,6 +146,7 @@ document.querySelector ('.plate-description').textContent = "You're giving "+ pe
 
 	document.querySelector('#vibe-name').textContent = mdc
 	document.querySelector('.output').innerHTML = plateHtml
+	// Update on this, I accidentally went in and command z a bunch of times and messed up all my comments and deleted my earlier bug fixes so this isn't how I solved it but wanted to share the chat in case. Basically, I kept noticing that when I changed my CSS, the vibe name would disappear. At first I thought it might be something in the styling, but after debugging I realized the earlier logic was still working, the vibe result was being returned. So the issue seems to be happening with the rendering the mdc vibe name into the element on the page. https://claude.ai/share/cd1dab8f-ab2e-4b65-b49a-0334ea4a7195. 
 
 	//In this section I'm counting the numbers of modals before the create plate button activates while combining the switch modal active state with the functionality of the next button. This is something I reviewed with a UC tutor. 
 	currentModal = 5;

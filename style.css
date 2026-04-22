@@ -1,11 +1,11 @@
 /* === DESIGN SYSTEM === */
 :root {
+	/* Colors */
 	--color-main: #ef93ae;
 	--color-border: #98C6FE;
 	--color-text: #D54E33;
 	--color-buttons: #fff6bb;
 	--color-cards: #FFF9EC;
-	--color-disabled: #fff6bb;
 	--color-disabled-text: #ffcfcf;
 	--color-disabled-border: #c4dfff;
 
@@ -25,13 +25,14 @@
 	--space-ml: 2rem;
 	--space-lg: 4rem;
 	--space-xl: 6rem;
-	--radius: 1rem;
+	
+	--radius: 1.5rem;
+	--border: 0.15rem;
+	--border-sm: 0.1rem;
+	--button: 4rem;
 	--image-size: 5rem;
 	--card-height: 70vh;
 	--card-width: 75vw;
-	--button: 3rem;
-	--border-size: 0.3rem;
-	--border-size-sm: 0.15rem;
 }
 
 /* === BASE STYLES === */
@@ -117,22 +118,36 @@ main {
 
 	button {
 		color: var(--color-text);
-		border-radius: var(--space-sm);
+		border-radius: var(--radius);
 		height: var(--button);
 		width: calc(var(--button) * 3);
 		text-align: center;
 		background-color: var(--color-buttons);
 		font-size: var(--font-size-sm);
 		font-weight: 600;
-		border: var(--border-size-sm) solid var(--color-border);
+		border: var(--border) solid var(--color-border);
 		font-family: var(--font-body);
 
+		
+		cursor: pointer;
+		transition: opacity 0.15s ease;
+
+		&:hover:not(:disabled) {
+			opacity: 0.8;
+		}
+
+		&:active:not(:disabled) {
+			opacity: 0.6;
+		}
+
 		&:disabled {
-			background-color: var(--color-disabled);
+			background-color: var(--color-buttons);
 			color: var(--color-disabled-text);
-			border: var(--border-size-sm) solid var(--color-disabled-border);
+			border: var(--border) solid var(--color-disabled-border);
+			cursor: not-allowed;
 		}
 	}
+	
 
 	.back-button {
 		aspect-ratio: 1;
@@ -185,11 +200,11 @@ main {
 .modal {
 	display: none;
 	border-radius: var(--radius);
-	border: var(--border-size) solid var(--color-border);
+	border: var(--border-sm) solid var(--color-border);
 	background-color: var(--color-cards);
 	list-style: none;
 	gap: var(--space-sm);
-	height: var(--card-height);
+	min-height: var(--card-height);
 	width: var(--card-width);
 	justify-content: space-between;
 	padding: var(--space-md);
@@ -198,6 +213,7 @@ main {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-sm);
+
 
 		h3 {
 			font-family: var(--font-header);
@@ -226,7 +242,7 @@ main {
 			font-weight: var(--font-weight-bold);
 			color: var(--color-main);
 			line-height: 90%;
-			-webkit-text-stroke: var(--border-size-sm) var(--color-text);
+			-webkit-text-stroke: var(--border-sm) var(--color-text);
 			text-align: center;
 
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke */
@@ -311,7 +327,7 @@ body:has(.home.modal.current) {
 			height: var(--image-size);
 			align-items: center;
 			justify-content: center;
-			border: var(--border-size) solid transparent;
+			border: var(--border-sm) solid transparent;
 			border-radius: var(--radius);
 			overflow: hidden;
 			aspect-ratio: 1;
@@ -346,7 +362,7 @@ body:has(.home.modal.current) {
 	inset: 0;
 	/* Relative units way to write top:0, bottom: 0 https://claude.ai/share/c47f41d0-b4f3-4895-a482-01396888f163 */
 	border-radius: var(--radius);
-	border: var(--border-size) solid var(--color-border);
+	border: var(--border-sm) solid var(--color-border);
 	background-color: var(--color-cards);
 	z-index: 0;
 }
@@ -413,7 +429,8 @@ body:has(.Output.modal.current) {
 	gap: var(--space-md);
 	text-align: center;
 	color: var(--color-main);
-	border: var(--border-size) solid var(--color-border);
+	border: var(--border-sm) solid var(--color-border);
+
 
 	#vibe-name {
 		text-transform: capitalize;
@@ -422,7 +439,7 @@ body:has(.Output.modal.current) {
 		font-weight: var(--font-weight-bold);
 		color: var(--color-main);
 		line-height: 90%;
-		-webkit-text-stroke: var(--border-size-sm) var(--color-text);
+		-webkit-text-stroke: var(--border-sm) var(--color-text);
 	}
 
 	.output {
@@ -430,7 +447,7 @@ body:has(.Output.modal.current) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--space-sm);
-		border: var(--border-size) solid var(--color-disabled-text);
+		border: var(--border-sm) solid var(--color-disabled-text);
 		border-radius: var(--radius);
 		width: 80%;
 		margin-inline: auto;
@@ -445,7 +462,7 @@ body:has(.Output.modal.current) {
 		img {
 			display: block;
 			aspect-ratio: 1;
-			border: var(--border-size) solid var(--color-disabled-text);
+			border: var(--border-sm) solid var(--color-disabled-text);
 			border-radius: var(--radius);
 			background-color: var(--color-buttons);
 			width: 100%;
@@ -461,12 +478,14 @@ body:has(.Output.modal.current) {
 	.category-title {
 		align-items: center;
 		padding-block-start: 0;
+		display: flex;
+		flex-direction: column;
 
 
 		/* "Girl Dinner Vibe" label */
 		.vibe-label {
 			padding-block-end: var(--space-sm);
-			font-family: var(--font-header);
+			font-family: var(--font-body);
 			font-size: var(--font-size-md);
 			color: var(--color-text);
 			font-weight: var(--font-weight-bold);
@@ -506,11 +525,23 @@ body:has(.Output.modal.current) {
 		margin-block-end: var(--space-md);
 	}
 	.Output.modal {
-    .vibe-label {
-        max-inline-size: none;
-    }
+		.vibe-label {
+			max-inline-size: none;
+		}
+	}
 }
+@media (width >= 768px) and (width < 900px) {
+	:root {
+		--button: 3rem;
+	}
+
+	#data-list ul {
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-md);
+		justify-content: space-between;
+	}
 }
+
 @media (width >=900px) {
 	:root {
 	--font-size-sm: 1rem;
@@ -519,7 +550,7 @@ body:has(.Output.modal.current) {
 	--font-size-lg: 5rem;
 	--font-size-xl: 6rem;
 	--image-size: 6rem;
-	--button: 3.5rem;
+	--button: 3rem;
 	--card-height: 80vh;
 	--card-width: 75vw;
 	}
@@ -540,13 +571,13 @@ body:has(.Output.modal.current) {
 
 	#data-list ul {
 		grid-template-columns: repeat(5, 1fr);
-		gap: var(--space-sm);
+		gap: var(--space-md);
 		justify-content: space-between;
 	}
 
 	.Output.modal {
 		.output {
-			width: 50%;
+			width: 65%;
 			margin-inline: auto;
 			margin-block: var(--space-sm);
 			padding: var(--space-sm);
@@ -576,7 +607,7 @@ body:has(.Output.modal.current) {
         --font-size-lg: 5rem;
         --font-size-xl: 8rem;
         --image-size: 8rem;
-		--button: 4rem;
+		--button: 3.5rem;
 	 }
 
 	.modal.home {
@@ -610,7 +641,7 @@ body:has(.Output.modal.current) {
         --font-size-lg: 8rem;
         --font-size-xl: 10rem;
         --image-size: 8rem;
-		--button: 7rem;
+		--button: 4rem;
 		--card-height: 60vh;
     	--card-width: 75vw;
 	 }
@@ -627,7 +658,7 @@ body:has(.Output.modal.current) {
 
 	.Output.modal {
 		.output {
-			width: 50%;
+			width: 70%;
 			margin-inline: auto;
 			margin-block: var(--space-sm);
 			padding: var(--space-sm);
