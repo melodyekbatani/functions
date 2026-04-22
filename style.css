@@ -347,7 +347,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 			}
 
 			&.active {
-				border-color: var(--color-border);
+				border-color: var(--color-main);
 			}
 		}
 	}
