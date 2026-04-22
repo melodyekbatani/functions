@@ -48,7 +48,6 @@ body {
 	block-size: 100svh;
 	overflow: hidden;
 	inline-size: 100%;
-	padding: var(--space-sm);
 	color: var(--color-text);
 	background-color: var(--color-main);
 
@@ -273,7 +272,9 @@ main {
 	}
 }
 
-body:has(.home.modal.current, .Output.modal.current) {
+body {
+background-color: var(--color-text);
+:has(.home.modal.current, .Output.modal.current) {
 		background:
 			repeating-linear-gradient(0deg,
 				var(--color-text) 0,
@@ -282,7 +283,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 				transparent 8vh),
 			var(--color-main);
 }
-
+}
 /* Resource for gradient background https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient*/
 /* https://claude.ai/share/da9b2718-d050-490e-82a4-88e4321a78ea */
 
@@ -381,25 +382,10 @@ body:has(.home.modal.current, .Output.modal.current) {
 }
 /* Since thee cards are decorative - and the modals and cards are siblings, I thought about using the has selector here to remove it when the user gets to sweets, learnt this from previous projects and used the MDN resource to figure out how to write it properly https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has*/
 
-.Plate:has(.Crunch.modal.current) {
-	.card-1 {
-		display: none;
-	}
-}
-
-.Plate:has(.Sweet.modal.current) {
-	.card-1,
-	.card-2 {
-		display: none;
-	}
-}
-
-.Plate:has(.Output.modal.current) {
-	.card-1,
-	.card-2,
-	.card-3 {
-		display: none;
-	}
+.Plate:has(:is(.Crunch, .Sweet, .Output).modal.current) .card-1,
+.Plate:has(:is(.Sweet, .Output).modal.current) .card-2,
+.Plate:has(.Output.modal.current) .card-3 {
+	display: none;
 }
 
 /* === OUTPUT === */
@@ -433,7 +419,6 @@ body:has(.home.modal.current, .Output.modal.current) {
 		margin-inline: auto;
 		padding: var(--space-sm);
 		background-color: var(--color-main);
-
 
 		li {
 			overflow: hidden;
@@ -495,19 +480,19 @@ body:has(.home.modal.current, .Output.modal.current) {
 		--card-inline-size: 20rem;
 		--card-block-size: 32rem;
 	}
-	body {
-	background:
-		repeating-linear-gradient(0deg,
-			var(--color-text) 0,
-			var(--color-text) var(--space-ml),
-			transparent 2vh,
-			transparent 7vh),
-			var(--color-main);
-			}
 
+	body {
+		background:
+			repeating-linear-gradient(0deg,
+				var(--color-text) 0,
+				var(--color-text) var(--space-ml),
+				transparent 2vh,
+				transparent 7vh),
+			var(--color-main);
+	}
 .modal {
-	padding: 0;
-}
+		padding: 0;
+	}
 }
 
 @media (390px <=width <=420px) {
@@ -572,7 +557,7 @@ body:has(.home.modal.current, .Output.modal.current) {
 			transform: translateY(calc(var(--space-md) * -1));
 		}
 		.navigation {
-			padding-block-start: var(--space-xl);
+		padding-block-start: var(--space-xl);
 		margin-block-start: calc(var(--space-xl) * -0.5);
 		inset-block-end: var(--space-sm);
 		z-index: 100;
@@ -585,13 +570,12 @@ body:has(.home.modal.current, .Output.modal.current) {
 		}
 
 	#data-list ul {
-		grid-template-columns: repeat(5, 1fr);
-		gap: var(--space-md);
+	grid-template-columns: repeat(5, var(--image-size));
+	gap: var(--space-md);
 	}
-	.Output.modal {
-		.output {
-			inline-size: 55%;
-		}
+
+	.Output.modal .output {
+	inline-size: 55%;
 	}
 	
 }
@@ -626,4 +610,4 @@ body:has(.home.modal.current, .Output.modal.current) {
 	}
 }
 
-/*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 */
+/*CSS Organization - https://claude.ai/share/d88a981a-c2ea-41fc-b3da-aea6661cd832 and https://claude.ai/share/2e9f3a0a-cda3-412e-bdbd-7979159f46ff*/
